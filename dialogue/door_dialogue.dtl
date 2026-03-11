@@ -4,4 +4,4 @@ if {door_name} != "":
 		[signal arg="door_accept"]
 	- Nevermind
 		[signal arg="door_decline"]
-	set {door_name} = "\"\""
+	set {door_name} = ""

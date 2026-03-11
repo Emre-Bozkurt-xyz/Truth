@@ -38,5 +38,5 @@ func _on_choice_made(arg: String):
 			#TODO: Switch scene
 			print("tryna switch scene")
 			waiting = false
-		"door_reject":
+		"door_decline":
 			waiting = false
