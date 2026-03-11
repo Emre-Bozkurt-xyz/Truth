@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b1r33p53rreh0"]
+
+[ext_resource type="Script" uid="uid://clklmd8jxks2t" path="res://scenes/game_scene.gd" id="1_wfs7u"]
+[ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="2_i2l1n"]
+[ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="2_wfs7u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(76, 158)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1bvp3"]
+size = Vector2(74, 160)
+
+[node name="Intro" type="Node2D" unique_id=2137103333 node_paths=PackedStringArray("door_container", "floor_marker")]
+script = ExtResource("1_wfs7u")
+door_container = NodePath("Doors")
+floor_marker = NodePath("Floor")
+
+[node name="Floor" type="Marker2D" parent="." unique_id=1621575072]
+position = Vector2(611, 640)
+
+[node name="Doors" type="Node2D" parent="." unique_id=1547849621]
+
+[node name="PDDoor" parent="Doors" unique_id=863308510 node_paths=PackedStringArray("player_spawn") instance=ExtResource("2_wfs7u")]
+position = Vector2(79, 568)
+door_name = "Corridor"
+id = "door1"
+player_spawn = NodePath("PlayerSpawnPos")
+
+[node name="ProximityTarget" parent="Doors/PDDoor" unique_id=1054872069 instance=ExtResource("2_i2l1n")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/PDDoor/ProximityTarget" unique_id=732235801]
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Doors/PDDoor" unique_id=2064344748]
+texture = SubResource("PlaceholderTexture2D_1bvp3")
+
+[node name="PlayerSpawnPos" type="Marker2D" parent="Doors/PDDoor" unique_id=2080633565]
+position = Vector2(102, 78)

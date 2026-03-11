@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c4wixahd2y8py"]
+
+[ext_resource type="Script" uid="uid://igbhmeqmrjtw" path="res://systems/item/item.gd" id="1_g1k3y"]
+
+[resource]
+script = ExtResource("1_g1k3y")
+item_name = "Diary page"
+description = "A page from your diary."
+metadata/_custom_type_script = "uid://igbhmeqmrjtw"

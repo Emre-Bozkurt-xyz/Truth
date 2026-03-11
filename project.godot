@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
+Inventory="*uid://p6q5487dect5"
+Global="*uid://b85gpsxlgy5xx"
 
 [dialogic]
 

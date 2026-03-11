@@ -1,0 +1,10 @@
+class_name Item
+extends Resource
+
+@export var item_name: String
+@export var description: String
+@export var stack_size: int = 1:
+	set(val):
+		stack_size = min(val, 1)
+
+var stack: int = 0

@@ -1,40 +1,14 @@
 [gd_scene format=3 uid="uid://b1s5a0hg4k2qn"]
 
-[ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="1_7mycd"]
-[ext_resource type="PackedScene" uid="uid://xywuecei1c2h" path="res://systems/environment/door.tscn" id="1_272bh"]
-[ext_resource type="PackedScene" uid="uid://dphh13vg15hgj" path="res://systems/player/player.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://cfkrlguj0r7r2" path="res://systems/game_controller.gd" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://de0omckouscrg" path="res://debug_ui.gd" id="4_1bvp3"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
-size = Vector2(76, 158)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lquwl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
 font_size = 38
 font_color = Color(0.0071837073, 0.80383474, 1.1551381e-06, 1)
 
-[node name="Main" type="Node" unique_id=1594305342]
-
-[node name="Intro" type="Node2D" parent="." unique_id=275085785]
-
-[node name="Door" parent="Intro" unique_id=1545549716 instance=ExtResource("1_272bh")]
-position = Vector2(340, 560)
-door_name = "Nathan's room"
-
-[node name="ProximityTarget" parent="Intro/Door" unique_id=1054872069 instance=ExtResource("1_7mycd")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Intro/Door/ProximityTarget" unique_id=445245537]
-shape = SubResource("RectangleShape2D_7mycd")
-
-[node name="Player" parent="Intro" unique_id=581451676 instance=ExtResource("3_h2yge")]
-position = Vector2(673, 577)
-
-[node name="Floor" type="StaticBody2D" parent="Intro" unique_id=527409335]
-position = Vector2(480, 661)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Intro/Floor" unique_id=211155903]
-shape = SubResource("WorldBoundaryShape2D_lquwl")
+[node name="GameController" type="Node" unique_id=1594305342]
+script = ExtResource("1_lquwl")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=575519366]
 
