@@ -6,6 +6,7 @@ var curr_selected: ProximityTarget
 
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
+	area_exited.connect(_on_area_exited)
 
 func _on_area_entered(area: Area2D):
 	proximity_targets.append(area)
@@ -25,7 +26,8 @@ func update_selected_target():
 				nearest_dist = absf(dist)
 				nearest = target
 	
-	if nearest == null or curr_selected == nearest: return
+	if nearest == curr_selected: return
 	if curr_selected: curr_selected.selected = false
-	nearest.selected = true
+	
 	curr_selected = nearest
+	if curr_selected: curr_selected.selected = true
