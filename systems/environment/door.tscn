@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://xywuecei1c2h"]
+
+[ext_resource type="Script" uid="uid://7ll0nedhl6ok" path="res://systems/environment/door.gd" id="1_ba8gm"]
+
+[node name="Door" type="Node2D" unique_id=1545549716]
+script = ExtResource("1_ba8gm")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cli8k5s6slb2o"]
+
+[ext_resource type="Script" uid="uid://dd6duy17nuo3n" path="res://systems/interaction/proximity_target.gd" id="1_nh38f"]
+
+[node name="ProximityTarget" type="Area2D" unique_id=1054872069]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_nh38f")

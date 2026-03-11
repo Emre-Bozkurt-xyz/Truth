@@ -1,0 +1,7 @@
+if {door_name} != "":
+	{door_name}...
+	- Go in
+		[signal arg="door_accept"]
+	- Nevermind
+		[signal arg="door_decline"]
+	set {door_name} = "\"\""
