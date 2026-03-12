@@ -1,3 +1,4 @@
+@tool
 class_name ProximityDialogueDoor
 extends Door
 
@@ -11,6 +12,7 @@ var selected: bool = false
 var waiting: bool = false
 
 func _ready() -> void:
+	super()
 	Dialogic.signal_event.connect(_on_choice_made)
 	
 	proximity_target = find_child("ProximityTarget")
@@ -45,3 +47,14 @@ func _on_choice_made(arg: String):
 			waiting = false
 		"door_decline":
 			waiting = false
+
+
+func _get_configuration_warnings() -> PackedStringArray:
+	var proximity_target_found: bool = false
+	for child in get_children():
+		if child is ProximityTarget:
+			proximity_target_found = true
+	if not proximity_target_found:
+		cfg_warnings.append("Missing ProximityTarget child.")
+
+	return super()
