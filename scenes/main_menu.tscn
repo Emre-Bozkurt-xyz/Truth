@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://uou8oon0vufg"]
+
+[ext_resource type="Texture2D" uid="uid://bsayukeff6xev" path="res://assets/mainMenu/mainMenuBg.jpg" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://cq7tl162evpok" path="res://icon.svg" id="2_bqqt6"]
+[ext_resource type="FontFile" uid="uid://dc8gt6bgvy5p8" path="res://assets/mainMenu/ValentrixDemo.otf" id="2_wu84c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ln24"]
+font = ExtResource("2_wu84c")
+font_size = 400
+font_color = Color(0.627451, 0.39215687, 0, 1)
+outline_size = 100
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.84313726)
+shadow_offset = Vector2(100, 100)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7mycd"]
+diffuse_texture = ExtResource("2_bqqt6")
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_rtw2f"]
+
+[node name="MainMenu" type="MarginContainer" unique_id=215004982]
+offset_right = 696.0
+offset_bottom = 458.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1568930409]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1716783755]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=870153746]
+layout_direction = 2
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/CenterContainer" unique_id=1862321969]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer/CenterContainer" unique_id=1157275331]
+layout_mode = 2
+texture = ExtResource("1_ekxnf")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1946931507]
+layout_direction = 1
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer2" unique_id=581269801]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2" unique_id=1528132662]
+layout_mode = 2
+text = "Truth"
+label_settings = SubResource("LabelSettings_8ln24")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer2" unique_id=1047714180]
+custom_minimum_size = Vector2(0, 1500)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2" unique_id=840932087]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2/VBoxContainer" unique_id=172799512]
+visible = false
+custom_minimum_size = Vector2(0, 1000)
+layout_mode = 2
+texture = SubResource("CanvasTexture_7mycd")
+
+[node name="MenuButton" type="MenuButton" parent="VBoxContainer2/VBoxContainer" unique_id=345986694]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_rtw2f")
