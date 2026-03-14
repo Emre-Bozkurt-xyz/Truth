@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 Dialogic="*uid://ds2q0uclmolvu"
 Inventory="*uid://p6q5487dect5"
 Global="*uid://b85gpsxlgy5xx"
+EventBus="*uid://b7u8vaqunkhhd"
+QuestManager="*uid://busvnp5jouxrw"
 
 [dialogic]
 

@@ -24,6 +24,7 @@ position = Vector2(611, 640)
 position = Vector2(79, 568)
 door_name = "Corridor"
 id = "door1"
+to_door_id = null
 player_spawn = NodePath("PlayerSpawnPos")
 
 [node name="ProximityTarget" parent="Doors/PDDoor" unique_id=1054872069 instance=ExtResource("2_i2l1n")]

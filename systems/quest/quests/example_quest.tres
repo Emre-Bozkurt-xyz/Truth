@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://7uhydbqesnaf"]
+
+[ext_resource type="Script" uid="uid://dpqeeo4okflix" path="res://systems/quest/quest.gd" id="1_h6sjd"]
+[ext_resource type="Script" uid="uid://bfpo04t3m1jsp" path="res://systems/quest/task.gd" id="2_bpoou"]
+[ext_resource type="Script" uid="uid://cixpy1q26djxw" path="res://systems/quest/tasks/item_pickup_tracker_task.gd" id="3_tfnmh"]
+
+[sub_resource type="Resource" id="Resource_ytq3c"]
+script = ExtResource("3_tfnmh")
+item_name = "diary_page_1"
+task_id = "get_diary_page_1"
+task_description = "Go through your diary"
+metadata/_custom_type_script = "uid://cixpy1q26djxw"
+
+[sub_resource type="Resource" id="Resource_cm81l"]
+script = ExtResource("3_tfnmh")
+metadata/_custom_type_script = "uid://cixpy1q26djxw"
+
+[resource]
+script = ExtResource("1_h6sjd")
+quest_name = "Test"
+tasks = Array[ExtResource("2_bpoou")]([SubResource("Resource_ytq3c"), SubResource("Resource_cm81l")])
+metadata/_custom_type_script = "uid://dpqeeo4okflix"
