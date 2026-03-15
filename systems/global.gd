@@ -2,6 +2,7 @@ extends Node
 
 const OUTLINE = preload("uid://bambsokuuajbs")
 
+var player: Player
 var game_controller: GameController
 var item_outline: ShaderMaterial
 var door_outline: ShaderMaterial

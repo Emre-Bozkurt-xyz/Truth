@@ -11,8 +11,11 @@ var game_state: Dictionary = {}
 
 func _ready() -> void:
 	Global.game_controller = self
+	game_state.set("lock_on_dialogue", true)
 	change_scene("res://scenes/intro.tscn", "door1")
 	
+	Dialogic.timeline_started.connect(_on_dialogue_start)
+	Dialogic.timeline_ended.connect(_on_dialogue_end)
 	EventBus.DoorEntered.connect(_on_door_entered)
 
 
@@ -63,3 +66,17 @@ func _on_door_entered(door: Door):
 		return
 	
 	change_scene(door.to_scene.resource_path, door.to_door_id)
+
+
+func _on_dialogue_start():
+	if (Global.player == null) \
+		or (not game_state.get("lock_on_dialogue")): return
+	
+	Global.player.locked = true
+
+
+func _on_dialogue_end():
+	if (Global.player == null) \
+		or (not game_state.get("lock_on_dialogue")): return
+	
+	Global.player.locked = false
