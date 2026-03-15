@@ -30,6 +30,7 @@ script = ExtResource("3_4khys")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor/ProximitySensor" unique_id=2001543375]
 shape = SubResource("CircleShape2D_5vw27")
+debug_color = Color(0.77254903, 0.5764706, 1, 0.11764706)
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=326399238]
 position = Vector2(0, -65.00001)

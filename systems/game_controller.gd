@@ -1,9 +1,11 @@
 class_name GameController
 extends Node
 
+@onready var loading_screen: Control = $LoadingScreen
+
 const PLAYER = preload("uid://dphh13vg15hgj")
 
-var current_scene: GameScene
+var current_scene: Node
 var scene_cache: Dictionary[String, PackedScene]
 var game_state: Dictionary = {}
 
@@ -15,6 +17,8 @@ func _ready() -> void:
 
 
 func change_scene(scene_path: String, door_id: String = "") -> void:
+	loading_screen.enter()
+	
 	var packed: PackedScene
 	
 	if scene_cache.has(scene_path):
@@ -33,6 +37,8 @@ func change_scene(scene_path: String, door_id: String = "") -> void:
 	
 	if new_scene is GameScene:
 		spawn_player(door_id)
+	
+	loading_screen.exit()
 
 
 func spawn_player(door_id: String):
@@ -53,4 +59,7 @@ func spawn_player(door_id: String):
 
 
 func _on_door_entered(door: Door):
+	if door.to_scene == null:
+		return
+	
 	change_scene(door.to_scene.resource_path, door.to_door_id)

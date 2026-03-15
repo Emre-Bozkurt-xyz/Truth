@@ -1,53 +1,64 @@
 @tool
-class_name ProximityDialogueDoor
-extends Door
+class_name WorldItem
+extends Sprite2D
 
-@export var door_name: String
+@export var item: Item
 
 @onready var proximity_target: ProximityTarget = $ProximityTarget
-# Temp
-@onready var sprite_2d: Sprite2D = $Sprite2D
 
 var selected: bool = false
 var waiting: bool = false
 
 func _ready() -> void:
-	super()
-	Dialogic.signal_event.connect(_on_choice_made)
-
-	if not proximity_target:
-		push_warning("No proximity target found for door: ", door_name)
+	if Engine.is_editor_hint():
 		return
 	
+	child_entered_tree.connect(_on_children_changed)
+	child_exiting_tree.connect(_on_children_changed)
+	
+	Dialogic.signal_event.connect(_on_choice_made)
+	
+	if not proximity_target:
+		push_warning("No proximity target found for world item: " + name)
+		return
 	proximity_target.interacted.connect(_on_interacted)
 	proximity_target.selection_changed.connect(_on_selection_changed)
 
-func _on_selection_changed(state: bool):
-	selected = state
-	if selected:
-		sprite_2d.material = Global.door_outline
-	else:
-		sprite_2d.material = null
 
 func _on_interacted() -> void:
 	if waiting: return
 	
-	Dialogic.VAR.door_name = door_name
-	Dialogic.start('door_dialogue')
+	Dialogic.VAR.item_name = item.item_name
+	Dialogic.VAR.item_description = item.description
+	Dialogic.start('item_pickup_dialogue')
 	waiting = true
+
+
+func _on_selection_changed(state: bool):
+	selected = state
+	if selected:
+		material = Global.item_outline
+	else:
+		material = null
+
 
 func _on_choice_made(arg: String):
 	if not selected: return
 	
 	match arg:
-		"door_accept":
-			enter()
+		"item_pickup_accept":
+			Inventory.obtain(item)
+			queue_free()
+		"item_pickup_decline":
 			waiting = false
-		"door_decline":
-			waiting = false
+
+
+func _on_children_changed(_node = null) -> void:
+	update_configuration_warnings()
 
 
 func _get_configuration_warnings() -> PackedStringArray:
+	var cfg_warnings = []
 	var proximity_target_found: bool = false
 	for child in get_children():
 		if child is ProximityTarget:
@@ -55,4 +66,4 @@ func _get_configuration_warnings() -> PackedStringArray:
 	if not proximity_target_found:
 		cfg_warnings.append("Missing ProximityTarget child.")
 
-	return super()
+	return cfg_warnings

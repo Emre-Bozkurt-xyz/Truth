@@ -1,18 +1,58 @@
 [gd_scene format=3 uid="uid://b1s5a0hg4k2qn"]
 
 [ext_resource type="Script" uid="uid://cfkrlguj0r7r2" path="res://systems/game_controller.gd" id="1_lquwl"]
-[ext_resource type="PackedScene" uid="uid://uou8oon0vufg" path="res://scenes/main_menu.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://p4yh3kkfla2w" path="res://systems/loading_screen.gd" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://b3cqfdyvp5byh" path="res://systems/notification/notification_manager.gd" id="3_lquwl"]
 [ext_resource type="Script" uid="uid://de0omckouscrg" path="res://debug_ui.gd" id="4_1bvp3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
 font_size = 38
 font_color = Color(0.0071837073, 0.80383474, 1.1551381e-06, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0.08524492, 0.08524493, 0.08524489, 1)
+
+[sub_resource type="Animation" id="Animation_lquwl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7mycd"]
+resource_name = "fade_in"
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_272bh"]
+_data = {
+&"RESET": SubResource("Animation_lquwl"),
+&"fade_in": SubResource("Animation_7mycd")
+}
+
 [node name="GameController" type="Node" unique_id=1594305342]
 script = ExtResource("1_lquwl")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=575519366]
-visible = false
 
 [node name="Debug" type="Control" parent="UI" unique_id=518849676]
 layout_mode = 3
@@ -35,4 +75,53 @@ offset_bottom = 62.0
 text = "FPS: 9999"
 label_settings = SubResource("LabelSettings_lquwl")
 
-[node name="MainMenu" parent="." unique_id=215004982 instance=ExtResource("3_h2yge")]
+[node name="NotificationManager" type="Control" parent="UI" unique_id=13146895]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -213.0
+offset_top = -113.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("3_lquwl")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/NotificationManager" unique_id=1148820662]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="NotificationContainer" type="VBoxContainer" parent="UI/NotificationManager/MarginContainer" unique_id=540470595]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 2
+
+[node name="LoadingScreen" type="Control" parent="." unique_id=624564239]
+visible = false
+z_index = 1000
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_h2yge")
+
+[node name="Panel" type="Panel" parent="LoadingScreen" unique_id=1235840777]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1bvp3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LoadingScreen" unique_id=1090377913]
+libraries/ = SubResource("AnimationLibrary_272bh")

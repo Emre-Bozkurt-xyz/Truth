@@ -1,0 +1,9 @@
+if {item_name} != "":
+	{item_name}\
+	{item_description}
+	- Take
+		[signal arg="item_pickup_accept"]
+	- Nevermind
+		[signal arg="item_pickup_decline"]
+set {item_name} = ""
+set {item_description} = ""

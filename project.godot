@@ -27,11 +27,14 @@ QuestManager="*uid://busvnp5jouxrw"
 
 directories/dch_directory={}
 directories/dtl_directory={
-"door_dialogue": "res://dialogue/door_dialogue.dtl"
+"door_dialogue": "res://dialogue/door_dialogue.dtl",
+"item_pickup_dialogue": "res://dialogue/item_pickup_dialogue.dtl"
 }
 layout/style_directory={}
 variables={
-"door_name": "\"\""
+"door_name": "",
+"item_description": "",
+"item_name": ""
 }
 layout/style_list=[]
 layout/default_style="Default"

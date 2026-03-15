@@ -3,12 +3,16 @@
 [ext_resource type="Script" uid="uid://clklmd8jxks2t" path="res://scenes/game_scene.gd" id="1_wfs7u"]
 [ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="2_i2l1n"]
 [ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="2_wfs7u"]
+[ext_resource type="PackedScene" uid="uid://uou8oon0vufg" path="res://scenes/main_menu.tscn" id="3_i2l1n"]
+[ext_resource type="Texture2D" uid="uid://cq7tl162evpok" path="res://icon.svg" id="5_0naf5"]
+[ext_resource type="Script" uid="uid://bl45cncjujn27" path="res://systems/item/world_item.gd" id="5_wfs7u"]
+[ext_resource type="Resource" uid="uid://c4wixahd2y8py" path="res://systems/item/items/clue1.tres" id="6_0naf5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(76, 158)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1bvp3"]
-size = Vector2(74, 160)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1qkj"]
+size = Vector2(128, 136.53369)
 
 [node name="Intro" type="Node2D" unique_id=2137103333 node_paths=PackedStringArray("door_container", "floor_marker")]
 script = ExtResource("1_wfs7u")
@@ -24,7 +28,7 @@ position = Vector2(611, 640)
 position = Vector2(79, 568)
 door_name = "Corridor"
 id = "door1"
-to_door_id = null
+to_scene = ExtResource("3_i2l1n")
 player_spawn = NodePath("PlayerSpawnPos")
 
 [node name="ProximityTarget" parent="Doors/PDDoor" unique_id=1054872069 instance=ExtResource("2_i2l1n")]
@@ -33,7 +37,22 @@ player_spawn = NodePath("PlayerSpawnPos")
 shape = SubResource("RectangleShape2D_7mycd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Doors/PDDoor" unique_id=2064344748]
-texture = SubResource("PlaceholderTexture2D_1bvp3")
+scale = Vector2(0.5625, 1.265625)
+texture = ExtResource("5_0naf5")
 
 [node name="PlayerSpawnPos" type="Marker2D" parent="Doors/PDDoor" unique_id=2080633565]
 position = Vector2(102, 78)
+
+[node name="WorldItem" type="Sprite2D" parent="." unique_id=543580362]
+position = Vector2(286, 612)
+scale = Vector2(0.34375, 0.234375)
+texture = ExtResource("5_0naf5")
+script = ExtResource("5_wfs7u")
+item = ExtResource("6_0naf5")
+
+[node name="ProximityTarget" parent="WorldItem" unique_id=1240417860 instance=ExtResource("2_i2l1n")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldItem/ProximityTarget" unique_id=1359449399]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_t1qkj")
+debug_color = Color(0, 0.6, 0.69803923, 0.0627451)
