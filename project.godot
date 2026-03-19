@@ -78,7 +78,7 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
-window/vsync/vsync_mode=0
+window/vsync/vsync_mode=2
 
 [editor_plugins]
 
@@ -115,7 +115,9 @@ right={
 
 [layer_names]
 
+2d_physics/layer_1="Player"
 2d_physics/layer_2="Interactable"
+2d_physics/layer_3="Environment"
 
 [physics]
 
