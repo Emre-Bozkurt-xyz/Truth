@@ -11,6 +11,7 @@ signal advanced(task: Task)
 var is_complete: bool
 
 @export var steps: int = 1
+
 var progress: int = 0
 
 @abstract 
