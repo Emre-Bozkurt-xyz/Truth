@@ -5,7 +5,9 @@ extends Node
 
 
 var current_stage: int = 0
-var lives: int = 3
+@export var lives: int = 3
+
+
 
 var stages = [
 	{
@@ -18,18 +20,23 @@ var stages = [
 ]
 
 
+func _ready():
+	if not Dialogic.signal_event.is_connected(_on_choice_made):
+		Dialogic.signal_event.connect(_on_choice_made)
+		
 func start():
 	current_stage = 0
 	lives = 3
 	_start_stage()
+	Dialogic.signal_event.connect(_on_choice_made)
+
 	
 func _start_stage():
 	var stage = stages[current_stage]
 	Dialogic.start(stage["dialogue"])
 	
-func _on_choice_made(choice):
-	var selected_id = _map_choice_to_evidence(choice)
-	_check_answer(selected_id)
+func _on_choice_made(choice): #separate function in case i wanted to do a map choice to evidence function or smt
+	_check_answer(choice)
 	
 func _check_answer(selected_id):
 	var correct = stages[current_stage]["correct_evidence"]
@@ -41,21 +48,17 @@ func _check_answer(selected_id):
 func _correct():
 	current_stage += 1
 	if current_stage >= stages.size():
-		_win()
+		Dialogic.signal_event.emit("win")
+	else:
+		Dialogic.signal_event.emit("next_stage")
 
 func _wrong():
 	lives -= 1
 	if lives <= 0:
-		_lose()
+		Dialogic.signal_event.emit("lose")
 	else:
-		Dialogic.start("wrong_answer_dialogue")
+		Dialogic.signal_event.emit("retry")
 	
 
 
-func _win():
-	print("winner")
-
-func _lose():
-	print("got gaslit")
-	
 	
