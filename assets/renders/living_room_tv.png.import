@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8hfpy1l538fo"
-path="res://.godot/imported/kitchen_LRK.png-b129232a9fe2f7248f24458facf98fb5.ctex"
+uid="uid://bj7085w7ir2w8"
+path="res://.godot/imported/living_room_tv.png-a5cd716deb28b090a41a75ef963b6141.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pixelinterior_LRK_v1.1/kitchen_LRK.png"
-dest_files=["res://.godot/imported/kitchen_LRK.png-b129232a9fe2f7248f24458facf98fb5.ctex"]
+source_file="res://assets/renders/living_room_tv.png"
+dest_files=["res://.godot/imported/living_room_tv.png-a5cd716deb28b090a41a75ef963b6141.ctex"]
 
 [params]
 

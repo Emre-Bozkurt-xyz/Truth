@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b51bcm5fpn8v5"
-path="res://.godot/imported/fixtures_BA.png-1e1868402c3a14d9081af2e6b745f10f.ctex"
+uid="uid://brrdkc2npgv8f"
+path="res://.godot/imported/indicator.png-740da2a3433db51a7f665c61673dc201.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pixelinterior_BR_v1.1/pixelinterior_BA_v1.0/fixtures_BA.png"
-dest_files=["res://.godot/imported/fixtures_BA.png-1e1868402c3a14d9081af2e6b745f10f.ctex"]
+source_file="res://assets/indicator.png"
+dest_files=["res://.godot/imported/indicator.png-740da2a3433db51a7f665c61673dc201.ctex"]
 
 [params]
 

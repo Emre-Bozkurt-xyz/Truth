@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b75xwhmdfeycv"
-path="res://.godot/imported/cabinets_LRK.png-422d5dc622141117b8af8e980b82485a.ctex"
+uid="uid://bkq5fh5n3ss1x"
+path="res://.godot/imported/hallway.png-ef35aae2fc165c57ba78e31af3d16a5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pixelinterior_LRK_v1.1/cabinets_LRK.png"
-dest_files=["res://.godot/imported/cabinets_LRK.png-422d5dc622141117b8af8e980b82485a.ctex"]
+source_file="res://assets/renders/hallway.png"
+dest_files=["res://.godot/imported/hallway.png-ef35aae2fc165c57ba78e31af3d16a5f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3dpih07toomd"
-path="res://.godot/imported/cabinets_BA.png-5d5b3a5d9354a140fd606457c9afd90e.ctex"
+uid="uid://b5xdy76r07dri"
+path="res://.godot/imported/hallway_stairs.png-2142ced25135f29fe48c45b321e53cc4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pixelinterior_BR_v1.1/pixelinterior_BA_v1.0/cabinets_BA.png"
-dest_files=["res://.godot/imported/cabinets_BA.png-5d5b3a5d9354a140fd606457c9afd90e.ctex"]
+source_file="res://assets/renders/hallway_stairs.png"
+dest_files=["res://.godot/imported/hallway_stairs.png-2142ced25135f29fe48c45b321e53cc4.ctex"]
 
 [params]
 

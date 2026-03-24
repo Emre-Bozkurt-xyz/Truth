@@ -103,7 +103,8 @@ unique_name_in_owner = true
 layout_mode = 2
 alignment = 2
 
-[node name="LoadingScreen" type="Control" parent="." unique_id=624564239]
+[node name="LoadingScreen" type="Control" parent="UI" unique_id=624564239]
+unique_name_in_owner = true
 visible = false
 z_index = 1000
 layout_mode = 3
@@ -114,7 +115,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_h2yge")
 
-[node name="Panel" type="Panel" parent="LoadingScreen" unique_id=1235840777]
+[node name="Panel" type="Panel" parent="UI/LoadingScreen" unique_id=1235840777]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -123,5 +124,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1bvp3")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LoadingScreen" unique_id=1090377913]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/LoadingScreen" unique_id=1090377913]
 libraries/ = SubResource("AnimationLibrary_272bh")

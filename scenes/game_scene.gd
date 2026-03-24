@@ -10,6 +10,10 @@ extends Node2D
 	set(val):
 		floor_marker = val
 		update_configuration_warnings()
+@export var left_cam_limit: Node2D
+@export var right_cam_limit: Node2D
+@export var top_cam_limit: Node2D
+@export var bottom_cam_limit: Node2D
 
 func get_door(door_id: String) -> Door:
 	for door in door_container.get_children():

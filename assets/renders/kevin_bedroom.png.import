@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsayukeff6xev"
-path="res://.godot/imported/mainMenuBg.jpg-0963c9af6facfbbf757d96d99f079666.ctex"
+uid="uid://dqsela6um6g7b"
+path="res://.godot/imported/kevin_bedroom.png-58e8762a613565e44b03c1f1a078b42f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mainMenu/mainMenuBg.jpg"
-dest_files=["res://.godot/imported/mainMenuBg.jpg-0963c9af6facfbbf757d96d99f079666.ctex"]
+source_file="res://assets/renders/kevin_bedroom.png"
+dest_files=["res://.godot/imported/kevin_bedroom.png-58e8762a613565e44b03c1f1a078b42f.ctex"]
 
 [params]
 

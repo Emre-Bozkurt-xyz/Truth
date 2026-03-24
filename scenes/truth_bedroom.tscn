@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://b1r33p53rreh0"]
+
+[ext_resource type="Script" uid="uid://clklmd8jxks2t" path="res://scenes/game_scene.gd" id="1_wfs7u"]
+[ext_resource type="Texture2D" uid="uid://bvw6k07hnkror" path="res://assets/renders/truth_bedroom.png" id="2_bu1yb"]
+[ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="2_i2l1n"]
+[ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="2_wfs7u"]
+[ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_bkspa"]
+[ext_resource type="Script" uid="uid://bl45cncjujn27" path="res://systems/item/world_item.gd" id="5_wfs7u"]
+[ext_resource type="Resource" uid="uid://c4wixahd2y8py" path="res://systems/item/items/clue1.tres" id="6_0naf5"]
+[ext_resource type="Script" uid="uid://7ll0nedhl6ok" path="res://systems/environment/door.gd" id="7_jfhh3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(124, 542)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1qkj"]
+size = Vector2(128, 136.53369)
+
+[node name="TruthBedroom" type="Node2D" unique_id=2137103333 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
+script = ExtResource("1_wfs7u")
+door_container = NodePath("Environment/Doors")
+floor_marker = NodePath("Floor")
+left_cam_limit = NodePath("Left")
+right_cam_limit = NodePath("Right")
+top_cam_limit = NodePath("Top")
+bottom_cam_limit = NodePath("Bottom")
+
+[node name="Floor" type="Marker2D" parent="." unique_id=1621575072]
+position = Vector2(1760, 687)
+
+[node name="Environment" type="Node2D" parent="." unique_id=1469737252]
+z_index = -1
+position = Vector2(-6, -72)
+
+[node name="bg" type="Sprite2D" parent="Environment" unique_id=1068271810]
+position = Vector2(965, 431)
+texture = ExtResource("2_bu1yb")
+
+[node name="Doors" type="Node2D" parent="Environment" unique_id=1547849621]
+
+[node name="PDDoor" parent="Environment/Doors" unique_id=863308510 node_paths=PackedStringArray("indicator", "player_spawn") instance=ExtResource("2_wfs7u")]
+position = Vector2(1867, 667)
+description = "To hallway"
+indicator = NodePath("Indicator")
+id = "hallway"
+to_door_id = "bedroom"
+to_scene = "hallway"
+player_spawn = NodePath("PlayerSpawnPos")
+
+[node name="ProximityTarget" parent="Environment/Doors/PDDoor" unique_id=1054872069 instance=ExtResource("2_i2l1n")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Doors/PDDoor/ProximityTarget" unique_id=732235801]
+position = Vector2(6, -164)
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="PlayerSpawnPos" type="Marker2D" parent="Environment/Doors/PDDoor" unique_id=2080633565]
+position = Vector2(-162, 56)
+
+[node name="Indicator" parent="Environment/Doors/PDDoor" unique_id=323006049 instance=ExtResource("5_bkspa")]
+position = Vector2(40.999996, -151.99998)
+
+[node name="Door" type="Node2D" parent="Environment/Doors" unique_id=596370582 node_paths=PackedStringArray("player_spawn")]
+position = Vector2(6, 72)
+script = ExtResource("7_jfhh3")
+id = "bed"
+player_spawn = NodePath("PlayerSpawnPos2")
+metadata/_custom_type_script = "uid://7ll0nedhl6ok"
+
+[node name="PlayerSpawnPos2" type="Marker2D" parent="Environment/Doors/Door" unique_id=1498832975]
+position = Vector2(697, 662)
+
+[node name="WorldItem" type="Sprite2D" parent="Environment" unique_id=543580362]
+position = Vector2(740, 507.00006)
+scale = Vector2(0.34375, 0.234375)
+script = ExtResource("5_wfs7u")
+item = ExtResource("6_0naf5")
+
+[node name="ProximityTarget" parent="Environment/WorldItem" unique_id=1240417860 instance=ExtResource("2_i2l1n")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WorldItem/ProximityTarget" unique_id=1359449399]
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_t1qkj")
+debug_color = Color(0, 0.6, 0.69803923, 0.0627451)
+
+[node name="Left" type="Marker2D" parent="." unique_id=2132395752]
+position = Vector2(4, 582)
+
+[node name="Bottom" type="Marker2D" parent="." unique_id=1408346509]
+position = Vector2(1018, 711)
+
+[node name="Top" type="Marker2D" parent="." unique_id=1190551335]
+position = Vector2(1016, 6)
+
+[node name="Right" type="Marker2D" parent="." unique_id=797125771]
+position = Vector2(1920, 438)

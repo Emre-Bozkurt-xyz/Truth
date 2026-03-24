@@ -1,5 +1,4 @@
 @tool
-@abstract
 class_name Door
 extends Node2D
 
@@ -7,10 +6,7 @@ var cfg_warnings = []
 
 @export var id: String = ""
 @export var to_door_id: String = ""
-@export var to_scene: PackedScene:
-	set(val):
-		to_scene = val
-		update_configuration_warnings()
+@export var to_scene: String
 @export var player_spawn: Node2D:
 	set(val):
 		player_spawn = val

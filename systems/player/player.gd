@@ -1,9 +1,9 @@
 class_name Player
 extends CharacterBody2D
 
-@export var speed: float = 240.0
-@export var acceleration: float = 10.0
-@export var friction: float = 20.0
+@export var speed: float = 280.0
+@export var acceleration: float = 20.0
+@export var friction: float = 50.0
 
 var locked: bool = false
 

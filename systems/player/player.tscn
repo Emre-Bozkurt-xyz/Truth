@@ -6,22 +6,32 @@
 [ext_resource type="Texture2D" uid="uid://cq7tl162evpok" path="res://icon.svg" id="4_7n85q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_272bh"]
-radius = 41.0
-height = 150.0
+radius = 80.0
+height = 278.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5vw27"]
-radius = 79.00633
+radius = 176.01137
 
 [node name="Player" type="CharacterBody2D" unique_id=581451676]
 collision_mask = 5
 script = ExtResource("1_q27vv")
 
+[node name="Icon" type="Sprite2D" parent="." unique_id=326399238]
+position = Vector2(0, -229.5)
+scale = Vector2(1.390625, 3.539062)
+texture = ExtResource("4_7n85q")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1282853346]
+position = Vector2(0, -340)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=19116089]
-position = Vector2(0, -65)
+position = Vector2(2, -136)
 shape = SubResource("CapsuleShape2D_272bh")
 
 [node name="Interactor" type="Node2D" parent="." unique_id=1934113898]
-position = Vector2(0, -65)
+position = Vector2(-1, -147)
 script = ExtResource("2_e4lrk")
 
 [node name="ProximitySensor" type="Area2D" parent="Interactor" unique_id=577912630]
@@ -32,8 +42,3 @@ script = ExtResource("3_4khys")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor/ProximitySensor" unique_id=2001543375]
 shape = SubResource("CircleShape2D_5vw27")
 debug_color = Color(0.77254903, 0.5764706, 1, 0.11764706)
-
-[node name="Icon" type="Sprite2D" parent="." unique_id=326399238]
-position = Vector2(0, -65.00001)
-scale = Vector2(0.4375, 1.015625)
-texture = ExtResource("4_7n85q")
