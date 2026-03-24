@@ -8,11 +8,16 @@ truth: We went out that night. You all remember that, right?
 mark: I do remember that.
 iris: I think so?...
 kevin: What? What are you guys talking about? We never went anywhere!
-truth: Kevin...
+truth: Kevin... are you serious?
 truth: Where did we all go?
 - The cinema
 	[signal arg="choice_cinema"]
-- The convenience store
-	[signal arg="choice_convenience"]
+- The hobbyist store
+	[signal arg="choice_hobbyist store"]
 - The arcade
 	[signal arg="choice_arcade"]
+
+truth: *show receipt* This receipt tells us all we need to know. We went to the hobby store.
+truth: It clearly shows the date, the name of the place and even what we all bought. 
+kevin: Oh yeah... I guess I remember now...
+iris: We went to the shop, but then what?.. W-what was wrong?
