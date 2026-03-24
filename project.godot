@@ -25,7 +25,12 @@ QuestManager="*uid://busvnp5jouxrw"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"iris": "res://dialogue/characters/iris.dch",
+"kevin": "res://dialogue/characters/kevin.dch",
+"mark": "res://dialogue/characters/mark.dch",
+"truth": "res://dialogue/characters/truth.dch"
+}
 directories/dtl_directory={
 "door_dialogue": "res://dialogue/door_dialogue.dtl",
 "item_pickup_dialogue": "res://dialogue/item_pickup_dialogue.dtl",

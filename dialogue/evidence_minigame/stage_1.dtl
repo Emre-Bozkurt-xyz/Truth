@@ -1,7 +1,18 @@
-Something off?
-I remember that day, nothing was wrong. We just chilled at home all day and watched some show.
-T-that's right, I remember that...
-I-it was that rerun...we watched it all day.
-What's off about sitting at home all day?
-No... something's wrong about what they're saying.
-- I have to find a way to prove it to them
+truth: Kevin's been acting strange... he won't tell me. Something happened that day, and I need to know.
+mark: Something off?
+truth: Yes, I think Kevin did something that day. But no one's admitting it.
+mark: I don't remember anything unusual... but maybe I missed something. What do you mean?
+iris: I-I... I don't really know... maybe...
+kevin: ...
+truth: We went out that night. You all remember that, right?
+mark: I do remember that.
+iris: I think so?...
+kevin: What? What are you guys talking about? We never went anywhere!
+truth: Kevin...
+truth: Where did we all go?
+- The cinema
+	[signal arg="choice_cinema"]
+- The convenience store
+	[signal arg="choice_convenience"]
+- The arcade
+	[signal arg="choice_arcade"]
