@@ -25,10 +25,18 @@ QuestManager="*uid://busvnp5jouxrw"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"iris": "res://dialogue/characters/iris.dch",
+"kevin": "res://dialogue/characters/kevin.dch",
+"mark": "res://dialogue/characters/mark.dch",
+"truth": "res://dialogue/characters/truth.dch"
+}
 directories/dtl_directory={
 "door_dialogue": "res://dialogue/door_dialogue.dtl",
-"item_pickup_dialogue": "res://dialogue/item_pickup_dialogue.dtl"
+"item_pickup_dialogue": "res://dialogue/item_pickup_dialogue.dtl",
+"stage_1": "res://dialogue/evidence_minigame/stage_1.dtl",
+"stage_2": "res://dialogue/evidence_minigame/stage_2.dtl",
+"stage_3": "res://dialogue/evidence_minigame/stage_3.dtl"
 }
 layout/style_directory={}
 variables={
@@ -78,7 +86,7 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
-window/vsync/vsync_mode=2
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 
@@ -115,9 +123,7 @@ right={
 
 [layer_names]
 
-2d_physics/layer_1="Player"
 2d_physics/layer_2="Interactable"
-2d_physics/layer_3="Environment"
 
 [physics]
 

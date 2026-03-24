@@ -17,6 +17,6 @@ metadata/_custom_type_script = "uid://cixpy1q26djxw"
 
 [resource]
 script = ExtResource("1_h6sjd")
-quest_name = "Test"
-tasks = Array[ExtResource("2_bpoou")]([SubResource("Resource_ytq3c"), SubResource("Resource_cm81l")])
+quest_name = "evidence_collection_1"
+tasks = Array[ExtResource("2_bpoou")]([SubResource("Resource_ytq3c"), SubResource("Resource_cm81l"), null, null, null])
 metadata/_custom_type_script = "uid://dpqeeo4okflix"
