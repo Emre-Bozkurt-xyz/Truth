@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cg7mh8o38ax51" path="res://systems/item/world_item.tscn" id="7_bkspa"]
 [ext_resource type="Script" uid="uid://7ll0nedhl6ok" path="res://systems/environment/door.gd" id="7_jfhh3"]
 [ext_resource type="Texture2D" uid="uid://bejla0xrjm2au" path="res://assets/renders/diary_truth_bedroom.png" id="9_jfhh3"]
+[ext_resource type="PackedScene" uid="uid://dphh13vg15hgj" path="res://systems/player/player.tscn" id="10_bvybi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -113,3 +114,6 @@ position = Vector2(1016, 6)
 
 [node name="Right" type="Marker2D" parent="." unique_id=797125771]
 position = Vector2(1920, 438)
+
+[node name="Player" parent="." unique_id=581451676 instance=ExtResource("10_bvybi")]
+position = Vector2(1005, 700)
