@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bifxy2n42f2tu"]
+
+[ext_resource type="Texture2D" uid="uid://b2ikayvw0o36" path="res://inventory/InventorySlotImg.png" id="1_dfngl"]
+[ext_resource type="Script" uid="uid://nlwx8nm0bf81" path="res://inventory/inv_ui_slot.gd" id="1_fcwim"]
+
+[sub_resource type="GDScript" id="GDScript_jagxy"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Inv_UI_slot" type="Panel" unique_id=5980127]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(6.667, 7)
+offset_right = 6.667
+offset_bottom = 7.0
+script = ExtResource("1_fcwim")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=284954551]
+scale = Vector2(0.09722223, 0.097222224)
+texture = ExtResource("1_dfngl")
+centered = false
+
+[node name="item_display" type="Sprite2D" parent="." unique_id=980651200]
+script = SubResource("GDScript_jagxy")
