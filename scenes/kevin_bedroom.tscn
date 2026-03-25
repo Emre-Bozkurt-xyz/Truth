@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://p007goe3877w"]
+
+[ext_resource type="Script" uid="uid://clklmd8jxks2t" path="res://scenes/game_scene.gd" id="1_ghv62"]
+[ext_resource type="Texture2D" uid="uid://dqsela6um6g7b" path="res://assets/renders/kevin_bedroom.png" id="2_m06uc"]
+[ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="3_2xesi"]
+[ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="4_gxht5"]
+[ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_f8yvb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(124, 542)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m06uc"]
+size = Vector2(251, 201)
+
+[node name="TruthBedroom" type="Node2D" unique_id=2137103333 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
+script = ExtResource("1_ghv62")
+door_container = NodePath("Environment/Doors")
+floor_marker = NodePath("Floor")
+left_cam_limit = NodePath("Left")
+right_cam_limit = NodePath("Right")
+top_cam_limit = NodePath("Top")
+bottom_cam_limit = NodePath("Bottom")
+
+[node name="Floor" type="Marker2D" parent="." unique_id=1621575072]
+position = Vector2(384, 666)
+
+[node name="Environment" type="Node2D" parent="." unique_id=1469737252]
+z_index = -1
+position = Vector2(-6, -72)
+
+[node name="bg" type="Sprite2D" parent="Environment" unique_id=1068271810]
+position = Vector2(965, 431)
+texture = ExtResource("2_m06uc")
+
+[node name="Doors" type="Node2D" parent="Environment" unique_id=1547849621]
+
+[node name="PDDoor" parent="Environment/Doors" unique_id=863308510 node_paths=PackedStringArray("indicator", "player_spawn") instance=ExtResource("3_2xesi")]
+position = Vector2(99, 671)
+description = "To hallway"
+indicator = NodePath("Indicator")
+id = "hallway"
+to_door_id = "kevin_bedroom"
+to_scene = "hallway"
+player_spawn = NodePath("PlayerSpawnPos")
+
+[node name="ProximityTarget" parent="Environment/Doors/PDDoor" unique_id=1054872069 instance=ExtResource("4_gxht5")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Doors/PDDoor/ProximityTarget" unique_id=732235801]
+position = Vector2(6, -164)
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="PlayerSpawnPos" type="Marker2D" parent="Environment/Doors/PDDoor" unique_id=2080633565]
+position = Vector2(140, 63)
+
+[node name="Indicator" parent="Environment/Doors/PDDoor" unique_id=323006049 instance=ExtResource("5_f8yvb")]
+position = Vector2(32.999996, -191.00002)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Environment" unique_id=1957643159]
+position = Vector2(1581, 656)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D2" unique_id=1001041733]
+shape = SubResource("RectangleShape2D_m06uc")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Environment/StaticBody2D2" unique_id=760440678]
+position = Vector2(-1525, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D2/StaticBody2D2" unique_id=1281814998]
+shape = SubResource("RectangleShape2D_m06uc")
+
+[node name="Left" type="Marker2D" parent="." unique_id=2132395752]
+position = Vector2(4, 582)
+
+[node name="Bottom" type="Marker2D" parent="." unique_id=1408346509]
+position = Vector2(1019, 696)
+
+[node name="Top" type="Marker2D" parent="." unique_id=1190551335]
+position = Vector2(1015, 25)
+
+[node name="Right" type="Marker2D" parent="." unique_id=797125771]
+position = Vector2(1920, 438)

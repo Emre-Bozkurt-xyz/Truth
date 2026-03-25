@@ -12,6 +12,8 @@ var waiting: bool = false
 
 func _ready() -> void:
 	super()
+	if Engine.is_editor_hint(): return
+	
 	Dialogic.signal_event.connect(_on_choice_made)
 	
 	if indicator != null:

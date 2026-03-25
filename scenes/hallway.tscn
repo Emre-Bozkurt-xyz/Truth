@@ -15,6 +15,9 @@ size = Vector2(106, 557)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_txc3n"]
 size = Vector2(185, 460)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjeik"]
+size = Vector2(251, 201)
+
 [node name="TruthBedroom" type="Node2D" unique_id=2137103333 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_yjeik")
 door_container = NodePath("Environment/Doors")
@@ -57,7 +60,7 @@ shape = SubResource("RectangleShape2D_7mycd")
 position = Vector2(134, 76)
 
 [node name="Indicator" parent="Environment/Doors/PDDoor" unique_id=323006049 instance=ExtResource("5_txc3n")]
-position = Vector2(-14.000004, -152)
+position = Vector2(-22.000004, -141)
 
 [node name="PDDoor3" parent="Environment/Doors" unique_id=2138438867 node_paths=PackedStringArray("indicator", "player_spawn") instance=ExtResource("3_w57m6")]
 position = Vector2(2389, 685)
@@ -65,6 +68,7 @@ description = "To Kevin's bedroom"
 indicator = NodePath("Indicator")
 id = "kevin_bedroom"
 to_door_id = "hallway"
+to_scene = "kevin_bedroom"
 player_spawn = NodePath("PlayerSpawnPos")
 
 [node name="ProximityTarget" parent="Environment/Doors/PDDoor3" unique_id=229740392 instance=ExtResource("4_drbwl")]
@@ -84,7 +88,8 @@ position = Vector2(1288, 685)
 description = "To living room"
 indicator = NodePath("Indicator")
 id = "living_room"
-to_door_id = "halway"
+to_door_id = "hallway"
+to_scene = "living_room"
 player_spawn = NodePath("PlayerSpawnPos")
 
 [node name="ProximityTarget" parent="Environment/Doors/PDDoor2" unique_id=388836334 instance=ExtResource("4_drbwl")]
@@ -98,6 +103,18 @@ position = Vector2(25, 59)
 
 [node name="Indicator" parent="Environment/Doors/PDDoor2" unique_id=684646619 instance=ExtResource("5_txc3n")]
 position = Vector2(-51, -226)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Environment" unique_id=863172294]
+position = Vector2(34, 685)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D2" unique_id=928256629]
+shape = SubResource("RectangleShape2D_yjeik")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Environment" unique_id=1438975813]
+position = Vector2(2464, 689)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D3" unique_id=1930863507]
+shape = SubResource("RectangleShape2D_yjeik")
 
 [node name="Left" type="Marker2D" parent="." unique_id=2132395752]
 position = Vector2(1, 546)
