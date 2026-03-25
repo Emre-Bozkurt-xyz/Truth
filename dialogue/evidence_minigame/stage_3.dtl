@@ -1,3 +1,5 @@
+#STAGE 3
+
 truth: Ok... maybe we're reading too much into Kevin for now. Let's put him aside for a second and focus on something else. The elephant in the room...
 iris: E-Elephant?
 truth: ...The blackout. The lights going out, and the loud noise that followed. Something about that day doesn't add up, and I think it's because of this.
@@ -9,10 +11,14 @@ mark: Are you ok?
 truth: I'm fine. I just want to get to the bottom of this.
 truth: Listen. Something about this situation was deliberate.
 iris: D-deliberate?
-truth: Some time after the lights shut off, something happened\:
+label: what_happened
+truth: Some time after the lights shut off, something happened:
 - Someone screamed
+	[signal arg="what_scream"]
 - There was a loud noise
+	[signal arg="what_loud"]
 - The roof fell
+	[signal arg="what_roof"]
 truth: There was a very loud noise.
 mark: That's true, I do remember hearing that.
 kevin: Same.
@@ -26,29 +32,42 @@ iris: This little thing... i-it made such a loud noise?
 kevin: Hm. I've seen these before, they are really loud.
 truth: There's no other plausible explanation.
 mark: Man, I'm confused. How does this prove it was premeditated?
+label: who_felt
 truth: We'll get to that. First we need proof something happened that needed covering.
 truth: Who felt something strange once the lights went off?
 - Iris
+	[signal arg="who_iris"]
 - Kevin
+	[signal arg="who_kevin"]
 - Mark
+	[signal arg="who_mark"]
 truth: Iris, remember what you told me? About walking in the dark?
 iris: Oh yeah... It was super scary. I couldn't see a thing.
 truth: Uh... yeah, but that thing you felt beneath you?
 iris: Oh! Um... yeah! It felt like I was walking on something weird, poking at my shoes!
 truth: And where were you walking when you felt that, Iris?
 iris: I... I think it was near that display case... you know, the one with the fancy figurines? The limited edition one or whatever...
-truth: I had a feeling... that glass beneath your feet obviously wasn't supposed to be there. The case must have been smashed.
+truth: I had a feeling... it would be the only thing in the store that's worth it....
+truth: That glass beneath your feet obviously wasn't supposed to be there. The case must have been smashed.
 iris: S-smashed? W-wouldn't that be too... overt?
+label: where_noisemaker
 truth: Exactly. Smashing glass like that would make a huge racket. This is why the noisemaker was used.
 truth: Where did I find the noisemaker?
 - In the back of the store
+	[signal arg="noisemaker_back"]
 - Outside the door
+	[signal arg="noisemaker_outside"]
 - Across the counter
+	[signal arg="noisemaker_counter"]
+label: purpose_noisemaker
 truth: I found it on the floor, across the counter. Now, it makes sense.
 truth: What was the noisemaker used for?
 - To deafen the cashier
+	[signal arg="purpose_deafen"]
 - To scare somebody nearby
+	[signal arg="purpose_scare"]
 - To send a message
+	[signal arg="purpose_signal"]
 truth: It was to deafen the cashier.
 kevin: Deafen the cashier?
 truth: Yes.
@@ -79,15 +98,23 @@ kevin: Oh yeah, you're right. I remember we all tried to mess with the cashier a
 iris: Oh... so it has nothing to do with the blackout? Sorry...
 truth: Don't be sorry, you're on the right track, Iris.
 iris: W-what?
+label: place
 truth: Let's take a step back. What place of interest was nearby the breaker?
 - Cash Register
+	[signal arg="place_register"]
 - Collectibles Area
+	[signal arg="place_collectibles"]
 - Supply Corner
+	[signal arg="place_supply"]
+label: cause_blackout
 truth: The supply corner. With all those outlets, I think it could be tied directly to the blackout. In fact... I think I know how it happened.
-truth: The way the blackout was caused was through\:
+truth: The way the blackout was caused was through:
 - A power surge
+	[signal arg="blackout_surge"]
 - Destroying the breaker
+	[signal arg="blackout_destroy"]
 - Flipping a switch
+	[signal arg="blackout_switch"]
 truth: A power surge. The supply corner is close to the breaker, so it could have been chosen to instantly overload the system. It's also behind a bunch of shelves, so nobody would notice anything.
 mark: I think I understand now.
 iris: Surge..?
@@ -150,3 +177,70 @@ iris: Guide? But you found everything that was at the place, right?
 truth: Yeah, I did... But there's one thing I found that pieces it all together. 
 truth: How was the culprit able to move in the dark?  *present evidence*
 truth: This. A paper I found in Kevin's room.
+mark: Hm. This means that he didn't bring it to the store. 
+truth: I'm not sure how you can conclude that, but you're right. It wasn't on him.
+mark: It makes perfect sense how...
+mark: ...
+mark: Whatever.
+iris: Guys... I'm confused. What does this have to do with anything? 
+mark: You said it has to do with him getting around? 
+truth: Yeah. 
+mark: If he didn't bring this paper with him, and you're saying it has to do with everything, what was its use?
+truth: Well, it had to serve its purpose beforehand. 
+mark: No shit... I'm asking you how these arrows have anything to do with him moving around. 
+iris: I-it's kinda obvious... arrows just mean direction, right? 
+truth: Iris is right. I know exactly how he did it. 
+truth: He followed the arrows. 
+kevin: F-fol... wha? Are you genuinely serious? 
+mark: Oh, damn. You're right. I see now. 
+kevin: I don't see. How am I supposed to follow directions in the dark? How do I know what my left is?
+iris: Um... if I was really deep in the store like that, I wouldn't know what directions are... 
+label: arrows_drawing
+mark: Look at Truth's shitty drawing, it all makes sense. There is a way to follow those instructions.
+truth: The way Kevin was able to follow the paper's instructions was:
+- Using his hearing
+	[signal arg="move_hearing"]
+- Using touch
+	[signal arg="move_touch"]
+- Echolocation
+	[signal arg="move_echo"]
+truth: He just felt his way around. Look at my drawing. There are clear stopping points. 
+truth: Now look at the arrows. If we start him off at the supply corner...
+truth: He follows the down arrow, going until he feels the wall...
+truth: He goes right, until he touches the aisle...
+truth: He turns right again, and right in front of him:
+iris: T-the figurine!
+kevin: ...
+iris: There are more arrows though...
+truth: Let's just do the same thing here.
+truth: He follows the arrows, retracing his steps to the supply corner. Then he turns right until he hits the wall, and goes left to get out the back entrance.
+kevin: ... 
+mark: I think you're right... but...
+truth: But what?
+mark: I dunno... you're describing a perfect plan, but it doesn't feel like it ended that way. 
+truth: ... 
+truth: It doesn't matter how clean it was. 
+truth: The glass was shattered. 
+truth: That means he made it to the display case.
+truth: That's all we need to know. 
+mark: ...
+kevin: ...
+truth: ...
+truth: Anyways, this proves it. All that strange stuff that happened, the reason the day was off—it was because Kevin tried to pull a heist in front of us. 
+kevin: ...
+truth: Do you understand? He does all of that shit, then he gets to walk out the back door like nothing happened? 
+kevin: ...
+truth: The lights were off, the cameras too. Who would the most suspicious people be?
+iris: Um... Us?
+truth: Yes, US! 
+truth: You two walked out the front door, it's a fucking miracle none of us have gotten arrested! 
+mark: ...
+truth: Kevin, say something.
+kevin: ...
+iris: Um... 
+truth: It's finally clear. I finally see the truth. But... It's still all so weird. 
+mark: ...
+mark: ...
+iris: Uh, maybe... you felt weird for another reason that day? Like some deja vu?..
+truth: ...
+[signal arg="stage_3_complete"]

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://uou8oon0vufg"]
 
-[ext_resource type="Texture2D" uid="uid://bsayukeff6xev" path="res://assets/mainMenu/mainMenuBg.jpg" id="1_ekxnf"]
+[ext_resource type="Texture2D" path="res://assets/mainMenu/mainMenuBg.jpg" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://cq7tl162evpok" path="res://icon.svg" id="2_bqqt6"]
-[ext_resource type="FontFile" uid="uid://dc8gt6bgvy5p8" path="res://assets/mainMenu/ValentrixDemo.otf" id="2_wu84c"]
+[ext_resource type="FontFile" path="res://assets/mainMenu/ValentrixDemo.otf" id="2_wu84c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8ln24"]
 font = ExtResource("2_wu84c")

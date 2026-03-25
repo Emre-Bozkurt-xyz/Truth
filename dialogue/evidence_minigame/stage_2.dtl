@@ -1,10 +1,17 @@
+#STAGE 2 
+
+label stage2_step1
 truth: It was the same shop, same items as always. What was weird... was one of us.
 iris: O-one of us?..
 truth: The person who was acting weird was:
 - Me
+	[signal arg="choice_me"]
 - Iris
+	[signal arg="choice_1_iris"]
 - Mark
+	[signal arg="choice_1_mark"]
 - Kevin
+	[signal arg="choice_1_kevin"]
 truth: Something about Kevin... he wasn't acting like himself that day. He kept doing little things that didn't make sense.
 kevin: Me? Do tell, what did I do that was soooooo weird? 
 truth: The evidence that points to his weird behavior is: *Option to select piece of evidence, present Mark's account*
@@ -18,3 +25,6 @@ iris: Y-yea looking around! His h-head was on a spinner.
 truth: Head on a swivel, Iris... 
 kevin: I actually can't believe we're all here to talk about this. 
 kevin: I learned to stop restricting myself and try new things. You should too... you never know what might become visible if you actually look.
+
+
+[signal arg="stage_2_complete"]
