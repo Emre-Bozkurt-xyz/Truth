@@ -16,7 +16,7 @@ layout_mode = 0
 offset_right = 42.0
 offset_bottom = 7.0
 scale = Vector2(10, 10)
-pivot_offset = Vector2(22, 25)
+pivot_offset = Vector2(22, 60)
 texture = ExtResource("2_a6wki")
 
 [node name="GridContainer" type="GridContainer" parent="InvSlots" unique_id=2006898938]
@@ -29,25 +29,25 @@ theme_override_constants/v_separation = 0
 columns = 6
 
 [node name="Inv_UI_slot" parent="InvSlots/GridContainer" unique_id=5980127 instance=ExtResource("3_3j4yx")]
-modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 1)
 layout_mode = 2
 
 [node name="Inv_UI_slot2" parent="InvSlots/GridContainer" unique_id=1339477545 instance=ExtResource("3_3j4yx")]
-modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 1)
 layout_mode = 2
 
 [node name="Inv_UI_slot3" parent="InvSlots/GridContainer" unique_id=6060099 instance=ExtResource("3_3j4yx")]
-modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 1)
 layout_mode = 2
 
 [node name="Inv_UI_slot4" parent="InvSlots/GridContainer" unique_id=1622456428 instance=ExtResource("3_3j4yx")]
-modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 1)
 layout_mode = 2
 
 [node name="Inv_UI_slot5" parent="InvSlots/GridContainer" unique_id=259063137 instance=ExtResource("3_3j4yx")]
-modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 1)
 layout_mode = 2
 
 [node name="Inv_UI_slot6" parent="InvSlots/GridContainer" unique_id=612555294 instance=ExtResource("3_3j4yx")]
-modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 1)
 layout_mode = 2

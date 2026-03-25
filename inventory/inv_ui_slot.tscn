@@ -19,13 +19,16 @@ func _process(delta: float) -> void:
 
 [node name="Inv_UI_slot" type="Panel" unique_id=5980127]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(6.667, 7)
-offset_right = 6.667
+custom_minimum_size = Vector2(6.5, 6.5)
+offset_left = 0.5
+offset_top = 0.5
+offset_right = 7.0
 offset_bottom = 7.0
 script = ExtResource("1_fcwim")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=284954551]
-scale = Vector2(0.09722223, 0.097222224)
+position = Vector2(0.5, 0.5)
+scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_dfngl")
 centered = false
 
