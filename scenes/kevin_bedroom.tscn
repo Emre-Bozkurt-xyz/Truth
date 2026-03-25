@@ -5,12 +5,18 @@
 [ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="3_2xesi"]
 [ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="4_gxht5"]
 [ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_f8yvb"]
+[ext_resource type="PackedScene" uid="uid://cg7mh8o38ax51" path="res://systems/item/world_item.tscn" id="6_ephxw"]
+[ext_resource type="Resource" uid="uid://b77rrtxaww3gw" path="res://systems/item/items/paper.tres" id="7_7d7gv"]
+[ext_resource type="Texture2D" uid="uid://dhw817ys3khfb" path="res://assets/renders/paper_kevin_bedroom.png" id="7_ghv62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m06uc"]
 size = Vector2(251, 201)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7d7gv"]
+size = Vector2(94.00012, 54.000122)
 
 [node name="TruthBedroom" type="Node2D" unique_id=2133708482 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_ghv62")
@@ -67,6 +73,25 @@ position = Vector2(-1525, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D2/StaticBody2D2" unique_id=1281814998]
 shape = SubResource("RectangleShape2D_m06uc")
+
+[node name="WorldItem" parent="Environment" unique_id=1736156436 node_paths=PackedStringArray("indicator") instance=ExtResource("6_ephxw")]
+position = Vector2(1005, 572)
+item = ExtResource("7_7d7gv")
+indicator = NodePath("Indicator")
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/WorldItem" unique_id=865430689]
+texture = ExtResource("7_ghv62")
+flip_h = true
+
+[node name="Indicator" parent="Environment/WorldItem" unique_id=1568676190 instance=ExtResource("5_f8yvb")]
+
+[node name="ProximityTarget" parent="Environment/WorldItem" unique_id=1973387771 instance=ExtResource("4_gxht5")]
+interactable_after = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WorldItem/ProximityTarget" unique_id=1892425050]
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_7d7gv")
+debug_color = Color(0, 0.6, 0.69803923, 0.0627451)
 
 [node name="Left" type="Marker2D" parent="." unique_id=2132395752]
 position = Vector2(4, 582)

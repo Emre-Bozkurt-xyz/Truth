@@ -36,7 +36,7 @@ func _on_interacted() -> void:
 	waiting = true
 
 
-func _on_selection_changed(state: bool):
+func _on_selection_changed(state: bool):	
 	selected = state
 	if indicator == null: return
 	

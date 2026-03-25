@@ -16,7 +16,7 @@ size = Vector2(324, 578)
 collision_mask = 5
 script = ExtResource("1_q27vv")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=326399238]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=326399238]
 position = Vector2(0, -229.5)
 scale = Vector2(1.390625, 3.539062)
 texture = ExtResource("4_7n85q")

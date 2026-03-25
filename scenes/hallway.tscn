@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clklmd8jxks2t" path="res://scenes/game_scene.gd" id="1_yjeik"]
 [ext_resource type="Texture2D" uid="uid://bkq5fh5n3ss1x" path="res://assets/renders/hallway.png" id="2_1k2v8"]
+[ext_resource type="Texture2D" uid="uid://b5xdy76r07dri" path="res://assets/renders/hallway_stairs.png" id="3_txc3n"]
 [ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="3_w57m6"]
 [ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="4_drbwl"]
 [ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_txc3n"]
@@ -40,6 +41,12 @@ position = Vector2(1229, 433.18753)
 scale = Vector2(1.2776269, 1.3072917)
 texture = ExtResource("2_1k2v8")
 
+[node name="bg2" type="Sprite2D" parent="Environment/bg" unique_id=1345363914]
+z_index = 20
+z_as_relative = false
+scale = Vector2(1, 0.99999994)
+texture = ExtResource("3_txc3n")
+
 [node name="Doors" type="Node2D" parent="Environment" unique_id=1547849621]
 
 [node name="PDDoor" parent="Environment/Doors" unique_id=863308510 node_paths=PackedStringArray("indicator", "player_spawn") instance=ExtResource("3_w57m6")]
@@ -61,10 +68,10 @@ shape = SubResource("RectangleShape2D_7mycd")
 position = Vector2(134, 76)
 
 [node name="Indicator" parent="Environment/Doors/PDDoor" unique_id=323006049 instance=ExtResource("5_txc3n")]
-position = Vector2(-22.000004, -141)
+position = Vector2(-39, -132)
 
 [node name="PDDoor3" parent="Environment/Doors" unique_id=2138438867 node_paths=PackedStringArray("indicator", "player_spawn") instance=ExtResource("3_w57m6")]
-position = Vector2(2389, 685)
+position = Vector2(2373, 679)
 description = "To Kevin's bedroom"
 indicator = NodePath("Indicator")
 id = "kevin_bedroom"
@@ -85,7 +92,7 @@ position = Vector2(-128, 60)
 position = Vector2(5.9999943, -180)
 
 [node name="PDDoor2" parent="Environment/Doors" unique_id=507506728 node_paths=PackedStringArray("indicator", "player_spawn") instance=ExtResource("3_w57m6")]
-position = Vector2(1288, 685)
+position = Vector2(1265, 672)
 description = "To living room"
 indicator = NodePath("Indicator")
 id = "living_room"
@@ -103,7 +110,7 @@ shape = SubResource("RectangleShape2D_txc3n")
 position = Vector2(25, 59)
 
 [node name="Indicator" parent="Environment/Doors/PDDoor2" unique_id=684646619 instance=ExtResource("5_txc3n")]
-position = Vector2(-51, -226)
+position = Vector2(-56, -223)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Environment" unique_id=863172294]
 position = Vector2(34, 685)
@@ -112,7 +119,7 @@ position = Vector2(34, 685)
 shape = SubResource("RectangleShape2D_yjeik")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Environment" unique_id=1438975813]
-position = Vector2(2464, 689)
+position = Vector2(2435, 694)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D3" unique_id=1930863507]
 shape = SubResource("RectangleShape2D_yjeik")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dognm5pudlp7d"]
+
+[ext_resource type="Script" uid="uid://igbhmeqmrjtw" path="res://systems/item/item.gd" id="1_2m1vb"]
+
+[resource]
+script = ExtResource("1_2m1vb")
+item_id = "receipt"
+item_name = "Receipt"
+description = "A receipt from the Hobbyist Store"
+metadata/_custom_type_script = "uid://igbhmeqmrjtw"

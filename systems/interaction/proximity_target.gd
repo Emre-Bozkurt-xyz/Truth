@@ -4,6 +4,8 @@ extends Area2D
 signal selection_changed(val: bool)
 signal interacted()
 
+@export var interactable_after: GameController.GameState = GameController.GameState.GAME_BEGIN
+
 var selected: bool = false:
 	get: 
 		return selected

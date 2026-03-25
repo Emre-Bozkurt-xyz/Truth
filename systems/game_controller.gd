@@ -1,18 +1,26 @@
 class_name GameController
 extends Node
 
+enum GameState {
+	GAME_BEGIN,
+	STARTED,
+	PRE_MINIGAME,
+	MINIGAME,
+	POST_MINIGAME
+}
+
 @onready var loading_screen: Control = %LoadingScreen
 
 const PLAYER = preload("uid://dphh13vg15hgj")
 
 var current_scene: Node
 var scene_cache: Dictionary[String, PackedScene]
-var game_state: Dictionary = {}
+var game_state: GameState
+var lock_on_dialogue: bool = true
 
 func _ready() -> void:
 	Global.game_controller = self
-	game_state.set("progression", "game_begin")
-	game_state.set("lock_on_dialogue", true)
+	game_state = GameState.GAME_BEGIN
 	change_scene("res://scenes/truth_bedroom.tscn", "bed")
 	
 	Dialogic.timeline_started.connect(_on_dialogue_start)
@@ -25,7 +33,6 @@ func change_scene(scene_path: String, door_id: String = "") -> void:
 	
 	var packed: PackedScene
 	if scene_path.find("res://") == -1:
-		print("brah")
 		scene_path = "res://scenes/" + scene_path + ".tscn"
 	
 	if scene_cache.has(scene_path):
@@ -90,13 +97,13 @@ func _on_door_entered(door: Door):
 
 func _on_dialogue_start():
 	if (Global.player == null) \
-		or (not game_state.get("lock_on_dialogue")): return
+		or (not lock_on_dialogue): return
 	
 	Global.player.locked = true
 
 
 func _on_dialogue_end():
 	if (Global.player == null) \
-		or (not game_state.get("lock_on_dialogue")): return
+		or (not lock_on_dialogue): return
 	
 	Global.player.locked = false

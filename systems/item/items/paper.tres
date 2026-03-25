@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b77rrtxaww3gw"]
+
+[ext_resource type="Script" uid="uid://igbhmeqmrjtw" path="res://systems/item/item.gd" id="1_56nk1"]
+
+[resource]
+script = ExtResource("1_56nk1")
+item_id = "paper"
+item_name = "Piece of paper"
+description = "Something seems to be drawn on it..."
+metadata/_custom_type_script = "uid://igbhmeqmrjtw"
