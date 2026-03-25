@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://c6f3rqw24ihsu"]
 
 [ext_resource type="Texture2D" uid="uid://brrdkc2npgv8f" path="res://assets/indicator.png" id="1_iqpb6"]
+[ext_resource type="Script" uid="uid://kylh66k7mvy3" path="res://systems/indicator.gd" id="2_vmfqr"]
+[ext_resource type="AudioStream" uid="uid://bilkrelx57nex" path="res://assets/sounds/click.wav" id="3_rjihr"]
 
 [node name="Indicator" type="Sprite2D" unique_id=323006049]
 modulate = Color(1, 1, 1, 0.91800004)
 texture_filter = 1
 scale = Vector2(0.3125, 0.3125)
 texture = ExtResource("1_iqpb6")
+script = ExtResource("2_vmfqr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=979980207]
+stream = ExtResource("3_rjihr")
+volume_db = 10.0

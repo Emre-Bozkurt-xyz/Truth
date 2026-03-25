@@ -1,11 +1,12 @@
 @tool
 class_name WorldItem
-extends Sprite2D
+extends Node2D
 
 @export var item: Item
 @export var indicator: Sprite2D
 
 @onready var proximity_target: ProximityTarget = $ProximityTarget
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var selected: bool = false
 var waiting: bool = false
@@ -24,9 +25,6 @@ func _ready() -> void:
 		return
 	proximity_target.interacted.connect(_on_interacted)
 	proximity_target.selection_changed.connect(_on_selection_changed)
-	
-	if indicator != null:
-		indicator.visible = false
 
 
 func _on_interacted() -> void:
@@ -42,10 +40,7 @@ func _on_selection_changed(state: bool):
 	selected = state
 	if indicator == null: return
 	
-	if selected:
-		indicator.visible = true
-	else:
-		indicator.visible = false
+	indicator.toggle(selected)
 
 
 func _on_choice_made(arg: String):
@@ -53,6 +48,7 @@ func _on_choice_made(arg: String):
 	
 	match arg:
 		"item_pickup_accept":
+			audio_player.play()
 			Inventory.obtain(item)
 			queue_free()
 		"item_pickup_decline":

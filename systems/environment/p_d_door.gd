@@ -15,9 +15,6 @@ func _ready() -> void:
 	if Engine.is_editor_hint(): return
 	
 	Dialogic.signal_event.connect(_on_choice_made)
-	
-	if indicator != null:
-		indicator.visible = false
 
 	if not proximity_target:
 		push_warning("No proximity target found for door: ", description)
@@ -30,10 +27,7 @@ func _on_selection_changed(state: bool):
 	selected = state
 	if indicator == null: return
 	
-	if selected:
-		indicator.visible = true
-	else:
-		indicator.visible = false
+	indicator.toggle(selected)
 
 func _on_interacted() -> void:
 	if waiting: return
