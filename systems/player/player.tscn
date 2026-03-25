@@ -9,8 +9,8 @@
 radius = 80.0
 height = 278.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5vw27"]
-radius = 176.01137
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q27vv"]
+size = Vector2(324, 578)
 
 [node name="Player" type="CharacterBody2D" unique_id=581451676]
 collision_mask = 5
@@ -35,10 +35,11 @@ position = Vector2(-1, -147)
 script = ExtResource("2_e4lrk")
 
 [node name="ProximitySensor" type="Area2D" parent="Interactor" unique_id=577912630]
+position = Vector2(7, -84)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_4khys")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor/ProximitySensor" unique_id=2001543375]
-shape = SubResource("CircleShape2D_5vw27")
+shape = SubResource("RectangleShape2D_q27vv")
 debug_color = Color(0.77254903, 0.5764706, 1, 0.11764706)

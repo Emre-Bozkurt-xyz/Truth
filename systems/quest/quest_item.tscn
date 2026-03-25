@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://brqxxf0m7iym8"]
+
+[ext_resource type="Script" uid="uid://bmtd3bxd32ik4" path="res://systems/quest/quest_item.gd" id="1_m7fl1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3bnpu"]
+bg_color = Color(0.11774104, 0.11774104, 0.11774104, 0)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_m7fl1"]
+font_size = 24
+
+[node name="QuestItem" type="Panel" unique_id=332167892]
+custom_minimum_size = Vector2(0, 65)
+theme_override_styles/panel = SubResource("StyleBoxFlat_3bnpu")
+script = ExtResource("1_m7fl1")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1812896405]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=393425514]
+layout_mode = 2
+
+[node name="QuestName" type="Label" parent="MarginContainer/VBoxContainer" unique_id=120328539]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quest Name"
+label_settings = SubResource("LabelSettings_m7fl1")
+
+[node name="TaskContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1208070748]
+unique_name_in_owner = true
+layout_mode = 2

@@ -12,7 +12,7 @@ size = Vector2(124, 542)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m06uc"]
 size = Vector2(251, 201)
 
-[node name="TruthBedroom" type="Node2D" unique_id=2137103333 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
+[node name="TruthBedroom" type="Node2D" unique_id=1051288321 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_8ih8r")
 door_container = NodePath("Environment/Doors")
 floor_marker = NodePath("Floor")
@@ -20,6 +20,7 @@ left_cam_limit = NodePath("Left")
 right_cam_limit = NodePath("Right")
 top_cam_limit = NodePath("Top")
 bottom_cam_limit = NodePath("Bottom")
+metadata/_custom_type_script = "uid://clklmd8jxks2t"
 
 [node name="Floor" type="Marker2D" parent="." unique_id=1621575072]
 position = Vector2(384, 666)
@@ -56,7 +57,7 @@ position = Vector2(189, 76)
 position = Vector2(44.000004, -211.00002)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Environment" unique_id=1957643159]
-position = Vector2(1824, 624)
+position = Vector2(1808, 621)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D2" unique_id=1001041733]
 shape = SubResource("RectangleShape2D_m06uc")

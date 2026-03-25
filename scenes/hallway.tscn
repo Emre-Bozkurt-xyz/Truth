@@ -18,7 +18,7 @@ size = Vector2(185, 460)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjeik"]
 size = Vector2(251, 201)
 
-[node name="TruthBedroom" type="Node2D" unique_id=2137103333 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
+[node name="TruthBedroom" type="Node2D" unique_id=1664769679 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_yjeik")
 door_container = NodePath("Environment/Doors")
 floor_marker = NodePath("Floor")
@@ -26,6 +26,7 @@ left_cam_limit = NodePath("Left")
 right_cam_limit = NodePath("Right")
 top_cam_limit = NodePath("Top")
 bottom_cam_limit = NodePath("Bottom")
+metadata/_custom_type_script = "uid://clklmd8jxks2t"
 
 [node name="Floor" type="Marker2D" parent="." unique_id=1621575072]
 position = Vector2(144, 694)

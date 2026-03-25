@@ -2,7 +2,7 @@ class_name Quest
 extends Resource
 
 @export var quest_name: String
-
+@export var display_name: String
 @export var tasks: Array[Task]
 
 var is_complete: bool = false

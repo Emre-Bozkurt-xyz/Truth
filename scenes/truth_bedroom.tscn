@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b1r33p53rreh0"]
 
-[ext_resource type="Script" uid="uid://clklmd8jxks2t" path="res://scenes/game_scene.gd" id="1_wfs7u"]
+[ext_resource type="Script" uid="uid://t24wi46hek60" path="res://systems/truth_bedroom.gd" id="1_u16mr"]
 [ext_resource type="Texture2D" uid="uid://bvw6k07hnkror" path="res://assets/renders/truth_bedroom.png" id="2_bu1yb"]
 [ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="2_i2l1n"]
 [ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="2_wfs7u"]
@@ -13,19 +13,20 @@
 size = Vector2(124, 542)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1qkj"]
-size = Vector2(128, 136.53369)
+size = Vector2(94.00012, 54.000122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u16mr"]
 size = Vector2(251, 201)
 
-[node name="TruthBedroom" type="Node2D" unique_id=2137103333 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
-script = ExtResource("1_wfs7u")
+[node name="TruthBedroom" type="Node2D" unique_id=1419511038 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
+script = ExtResource("1_u16mr")
 door_container = NodePath("Environment/Doors")
 floor_marker = NodePath("Floor")
 left_cam_limit = NodePath("Left")
 right_cam_limit = NodePath("Right")
 top_cam_limit = NodePath("Top")
 bottom_cam_limit = NodePath("Bottom")
+metadata/_custom_type_script = "uid://clklmd8jxks2t"
 
 [node name="Floor" type="Marker2D" parent="." unique_id=1621575072]
 position = Vector2(1760, 687)
@@ -70,11 +71,11 @@ metadata/_custom_type_script = "uid://7ll0nedhl6ok"
 
 [node name="PlayerSpawnPos2" type="Marker2D" parent="Environment/Doors/Door" unique_id=1498832975]
 
-[node name="WorldItem" type="Sprite2D" parent="Environment" unique_id=543580362]
+[node name="WorldItem" type="Sprite2D" parent="Environment" unique_id=543580362 node_paths=PackedStringArray("indicator")]
 position = Vector2(740, 507.00006)
-scale = Vector2(0.34375, 0.234375)
 script = ExtResource("5_wfs7u")
 item = ExtResource("6_0naf5")
+indicator = NodePath("Indicator")
 
 [node name="ProximityTarget" parent="Environment/WorldItem" unique_id=1240417860 instance=ExtResource("2_i2l1n")]
 
@@ -82,6 +83,8 @@ item = ExtResource("6_0naf5")
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_t1qkj")
 debug_color = Color(0, 0.6, 0.69803923, 0.0627451)
+
+[node name="Indicator" parent="Environment/WorldItem" unique_id=216955117 instance=ExtResource("5_bkspa")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Environment" unique_id=475504376]
 position = Vector2(541, 674)

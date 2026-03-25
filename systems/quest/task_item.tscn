@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bpoh14u3jgi8t"]
+
+[ext_resource type="Script" uid="uid://ne8nfy43a5kv" path="res://systems/quest/task_item.gd" id="1_8xj0o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owhmi"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ibjt"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_8xj0o"]
+font_size = 22
+
+[node name="TaskItem" type="Panel" unique_id=830761732]
+custom_minimum_size = Vector2(0, 30)
+theme_override_styles/panel = SubResource("StyleBoxFlat_owhmi")
+script = ExtResource("1_8xj0o")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1779754400]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StepDescription" type="Label" parent="HBoxContainer" unique_id=1784682766]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quest step"
+label_settings = SubResource("LabelSettings_0ibjt")
+
+[node name="StepProgress" type="Label" parent="HBoxContainer" unique_id=861187945]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0/1"
+label_settings = SubResource("LabelSettings_8xj0o")

@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_g1k3y")
-item_name = "Diary page"
+item_id = "diary_page_1"
+item_name = "Diary"
 description = "A page from your diary."
 metadata/_custom_type_script = "uid://igbhmeqmrjtw"

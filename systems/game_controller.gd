@@ -11,6 +11,7 @@ var game_state: Dictionary = {}
 
 func _ready() -> void:
 	Global.game_controller = self
+	game_state.set("progression", "game_begin")
 	game_state.set("lock_on_dialogue", true)
 	change_scene("res://scenes/truth_bedroom.tscn", "bed")
 	

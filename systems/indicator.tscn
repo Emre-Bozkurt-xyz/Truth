@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://brrdkc2npgv8f" path="res://assets/indicator.png" id="1_iqpb6"]
 
 [node name="Indicator" type="Sprite2D" unique_id=323006049]
-modulate = Color(1, 1, 1, 0.69000006)
+modulate = Color(1, 1, 1, 0.91800004)
 texture_filter = 1
 scale = Vector2(0.3125, 0.3125)
 texture = ExtResource("1_iqpb6")

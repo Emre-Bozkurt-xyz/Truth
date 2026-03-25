@@ -1,6 +1,7 @@
 class_name Item
 extends Resource
 
+@export var item_id: String
 @export var item_name: String
 @export var description: String
 @export var stack_size: int = 1:
