@@ -1,14 +1,31 @@
 truth: Kevin's been acting strange... he won't tell me. Something happened that day, and I need to know.
+
 mark: Something off?
 truth: Yes, I think Kevin did something that day. But no one's admitting it.
+
+
 mark: I don't remember anything unusual... but maybe I missed something. What do you mean?
+
 iris: I-I... I don't really know... maybe...
+
+
 kevin: ...
+
+ 
 truth: We went out that night. You all remember that, right?
+
+
 mark: I do remember that.
+
+ 
 iris: I think so?...
+
+
 kevin: What? What are you guys talking about? We never went anywhere!
+
+
 truth: Kevin... are you serious?
+
 label stage1_step1
 
 truth: Where did we all go?
@@ -23,10 +40,11 @@ truth: Where did we all go?
 
 truth: The receipt tells us all we need to know. We went to the hobby store.
 truth: It clearly shows the date, the name of the place and even what we all bought.
+
+
 kevin: Oh yeah... I guess I remember now...
+
+
 iris: We went to the shop, but then what?.. W-what was wrong?
-
-
-
 
 [signal arg="stage_1_complete"]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Truth"
-run/main_scene="res://main_menu.tscn"
+run/main_scene="uid://uou8oon0vufg"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -36,8 +36,13 @@ directories/dch_directory={
 directories/dtl_directory={
 "crying_sleeping": "res://dialogue/crying_sleeping.dtl",
 "door_dialogue": "res://dialogue/door_dialogue.dtl",
+"iris_account": "res://dialogue/iris/iris_account.dtl",
+"iris_intro": "res://dialogue/iris/iris_intro.dtl",
 "item_pickup_dialogue": "res://dialogue/item_pickup_dialogue.dtl",
+"kevin_intro": "res://dialogue/kevin/kevin_intro.dtl",
 "loss_reaction": "res://dialogue/evidence_minigame/loss_reaction.dtl",
+"mark_intro": "res://dialogue/mark/mark_intro.dtl",
+"marks_account": "res://dialogue/mark/marks_account.dtl",
 "mistake_reaction": "res://dialogue/evidence_minigame/mistake_reaction.dtl",
 "stage_1": "res://dialogue/evidence_minigame/stage_1.dtl",
 "stage_2": "res://dialogue/evidence_minigame/stage_2.dtl",
@@ -55,7 +60,7 @@ variables={
 layout/style_list=["res://dialogue/styling/New_File.tres"]
 layout/default_style="res://dialogue/styling/New_File.tres"
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.005
+text/letter_speed=0.02
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1

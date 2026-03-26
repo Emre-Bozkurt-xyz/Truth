@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bhb60tdsynu6j"]
+
+[ext_resource type="Texture2D" uid="uid://crlsy1b5vx8ka" path="res://assets/renders/battery_kevin_bedroom_raw.png" id="1_4t6u0"]
+[ext_resource type="Script" uid="uid://igbhmeqmrjtw" path="res://systems/item/item.gd" id="2_832ae"]
+
+[resource]
+script = ExtResource("2_832ae")
+item_id = "battery_pack"
+item_name = "Battery pack"
+icon = ExtResource("1_4t6u0")
+description = "A battery pack that has been mostly drained."
+metadata/_custom_type_script = "uid://igbhmeqmrjtw"

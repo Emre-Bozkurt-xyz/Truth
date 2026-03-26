@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://csdgs6xm0wont"]
 
 [ext_resource type="Script" uid="uid://b73tu48sifrah" path="res://systems/sleeping_scene.gd" id="1_15brm"]
+[ext_resource type="AudioStream" uid="uid://cm3bel82q1sfe" path="res://assets/sounds/crying.mp3" id="2_ipegv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
 bg_color = Color(0.057510607, 0.05751062, 0.057510577, 1)
@@ -19,3 +20,5 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lquwl")
 
 [node name="CryPlayer" type="AudioStreamPlayer" parent="." unique_id=1681437418]
+stream = ExtResource("2_ipegv")
+volume_db = -8.0
