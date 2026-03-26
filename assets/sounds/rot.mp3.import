@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/rot.mp3-0591c9bf42ed777cf7943359ff4366e5.mp3s
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

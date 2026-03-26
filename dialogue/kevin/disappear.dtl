@@ -29,4 +29,7 @@ kevin: You already know what happened.
 kevin: ... 
 kevin: You were there.
 audio "res://assets/sounds/rot.mp3" [volume="-29.0"]
-kevin: [aa][ns][b][mood = LOUD]ROT IN HELL ROT IN HELL ROT IN HELL ROT IN HELL ROT IN HELL ROT IN HELL ROT IN HELL ROT IN HELL ROT IN HELL ROT IN HELL ROT IN HELL [/b]
+kevin: [b][aa][ns][mood = LOUD][font_size=20]ROT IN HELL R O T   I N   H E L L  R O T  IN H E L L—ROT IN—  HELL ROT IN HELL ROT IN HELL R—OT— 
+audio "res://assets/sounds/rot.mp3" [volume="-28.0"]
+kevin: [aa][ns][i][b][mood = LOUD][font_size=10] LOOK AT IT LOOK AT IT LOOK AT IT YOU SEE IT NOW DON'T YOU[/i] 
+kevin: [aa][ns][b][mood = LOUD][font_size=20]ROT IN HELL ROT IN HELL ROT IN HELL
