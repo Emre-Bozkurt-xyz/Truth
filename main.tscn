@@ -5,6 +5,9 @@
 [ext_resource type="Script" uid="uid://b3cqfdyvp5byh" path="res://systems/notification/notification_manager.gd" id="3_lquwl"]
 [ext_resource type="Script" uid="uid://de0omckouscrg" path="res://debug_ui.gd" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://cb5s2rp8rk2ne" path="res://systems/quest/quest_panel.gd" id="4_lquwl"]
+[ext_resource type="Script" uid="uid://0pfuydsudflo" path="res://inventory/inv_UI.gd" id="6_5vw27"]
+[ext_resource type="Texture2D" uid="uid://b4xfymkl468om" path="res://inventory/InventoryImg.png" id="7_kek77"]
+[ext_resource type="PackedScene" uid="uid://bifxy2n42f2tu" path="res://inventory/inv_ui_slot.tscn" id="8_4c57u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
 font_size = 38
@@ -50,10 +53,31 @@ _data = {
 &"fade_in": SubResource("Animation_7mycd")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efxa6"]
+bg_color = Color(0.16862746, 0.101960786, 0.101960786, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.090505965, 0.04620392, 0.048817955, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_5vw27"]
+font_color = Color(0.99999994, 0.93583995, 0.84280056, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kek77"]
+font_size = 13
+font_color = Color(1, 0.9372549, 0.84313726, 1)
+
 [node name="GameController" type="Node" unique_id=1594305342]
 script = ExtResource("1_lquwl")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=575519366]
+layer = 10
 
 [node name="Debug" type="Control" parent="UI" unique_id=518849676]
 layout_mode = 3
@@ -152,3 +176,126 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1bvp3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/LoadingScreen" unique_id=1090377913]
 libraries/ = SubResource("AnimationLibrary_272bh")
+
+[node name="Inv_UI" type="Control" parent="UI" unique_id=912777243]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_5vw27")
+
+[node name="InvSlots" type="TextureRect" parent="UI/Inv_UI" unique_id=104982383]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.0
+offset_top = -46.0
+offset_right = 245.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("7_kek77")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Inv_UI/InvSlots" unique_id=1639474049]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="ItemContainer" type="GridContainer" parent="UI/Inv_UI/InvSlots/MarginContainer" unique_id=2006898938]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 0
+columns = 6
+
+[node name="Inv_UI_slot" parent="UI/Inv_UI/InvSlots/MarginContainer/ItemContainer" unique_id=5980127 instance=ExtResource("8_4c57u")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="Inv_UI_slot2" parent="UI/Inv_UI/InvSlots/MarginContainer/ItemContainer" unique_id=1339477545 instance=ExtResource("8_4c57u")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="Inv_UI_slot3" parent="UI/Inv_UI/InvSlots/MarginContainer/ItemContainer" unique_id=6060099 instance=ExtResource("8_4c57u")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="Inv_UI_slot4" parent="UI/Inv_UI/InvSlots/MarginContainer/ItemContainer" unique_id=1622456428 instance=ExtResource("8_4c57u")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="Inv_UI_slot5" parent="UI/Inv_UI/InvSlots/MarginContainer/ItemContainer" unique_id=259063137 instance=ExtResource("8_4c57u")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="Inv_UI_slot6" parent="UI/Inv_UI/InvSlots/MarginContainer/ItemContainer" unique_id=612555294 instance=ExtResource("8_4c57u")]
+self_modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
+[node name="DescriptionPanel" type="Panel" parent="UI/Inv_UI" unique_id=728081503]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 63.0
+offset_right = 200.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0)
+theme_override_styles/panel = SubResource("StyleBoxFlat_efxa6")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Inv_UI/DescriptionPanel" unique_id=1353766150]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Inv_UI/DescriptionPanel/MarginContainer" unique_id=1077673620]
+layout_mode = 2
+
+[node name="ItemName" type="Label" parent="UI/Inv_UI/DescriptionPanel/MarginContainer/HBoxContainer" unique_id=262700326]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+text = "Item Name: "
+label_settings = SubResource("LabelSettings_5vw27")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Inv_UI/DescriptionPanel/MarginContainer/HBoxContainer" unique_id=622080763]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 5
+
+[node name="ItemDescription" type="Label" parent="UI/Inv_UI/DescriptionPanel/MarginContainer/HBoxContainer/MarginContainer" unique_id=209124820]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Some description niceeee"
+label_settings = SubResource("LabelSettings_kek77")

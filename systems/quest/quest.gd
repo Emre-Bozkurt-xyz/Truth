@@ -4,6 +4,7 @@ extends Resource
 @export var quest_name: String
 @export var display_name: String
 @export var tasks: Array[Task]
+@export var next_quest: Quest
 
 var is_complete: bool = false
 

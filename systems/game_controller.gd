@@ -21,7 +21,7 @@ var lock_on_dialogue: bool = true
 func _ready() -> void:
 	Global.game_controller = self
 	game_state = GameState.GAME_BEGIN
-	change_scene("res://scenes/truth_bedroom.tscn", "bed")
+	change_scene("truth_bedroom", "bed")
 	
 	Dialogic.timeline_started.connect(_on_dialogue_start)
 	Dialogic.timeline_ended.connect(_on_dialogue_end)
@@ -53,6 +53,7 @@ func change_scene(scene_path: String, door_id: String = "") -> void:
 	
 	if new_scene is GameScene:
 		spawn_player(door_id)
+		EventBus.RoomEntered.emit(current_scene.room_name)
 	
 	loading_screen.exit()
 

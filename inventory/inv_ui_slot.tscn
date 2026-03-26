@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bifxy2n42f2tu"]
+
+[ext_resource type="Script" uid="uid://nlwx8nm0bf81" path="res://inventory/inv_ui_slot.gd" id="1_fcwim"]
+
+[node name="Inv_UI_slot" type="Button" unique_id=1987051927]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_fcwim")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1539101785]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_right = 5
+
+[node name="Icon" type="TextureRect" parent="MarginContainer" unique_id=20910762]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 3

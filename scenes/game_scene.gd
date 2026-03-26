@@ -2,6 +2,8 @@
 class_name GameScene
 extends Node2D
 
+@export var room_name: String
+
 @export var door_container: Node:
 	set(val):
 		door_container = val
