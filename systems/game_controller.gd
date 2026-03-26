@@ -26,8 +26,16 @@ func _ready() -> void:
 	Dialogic.timeline_started.connect(_on_dialogue_start)
 	Dialogic.timeline_ended.connect(_on_dialogue_end)
 	EventBus.DoorEntered.connect(_on_door_entered)
+	
+	
+	
+
+func start_minigame():
+	var minigame = preload("res://minigame.tscn").instantiate()
+	get_tree().current_scene.add_child(minigame)
 
 
+	
 func change_scene(scene_path: String, door_id: String = "") -> void:
 	loading_screen.enter()
 	

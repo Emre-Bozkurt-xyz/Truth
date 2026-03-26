@@ -21,7 +21,7 @@ truth: Where did we all go?
 - The arcade
 	[signal arg="choice_arcade"]
 
-truth: *show receipt* This receipt tells us all we need to know. We went to the hobby store.
+truth: The receipt tells us all we need to know. We went to the hobby store.
 truth: It clearly shows the date, the name of the place and even what we all bought.
 kevin: Oh yeah... I guess I remember now...
 iris: We went to the shop, but then what?.. W-what was wrong?
