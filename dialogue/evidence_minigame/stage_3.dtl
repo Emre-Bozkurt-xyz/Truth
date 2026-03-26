@@ -3,9 +3,6 @@
 
 
 
-truth: I began to scribble furiously at the paper, trying to draw the outline of the store.
-
-join noisemaker right 
 truth: Ok... maybe we're reading too much into Kevin for now. Let's put him aside for a second and focus on something else. The elephant in the room...
 iris: E-Elephant?
 
@@ -47,11 +44,16 @@ truth: I have to think about all the evidence I've gotten so far... the thing th
 	[signal arg="evidence1_crumpled"]
 - Battery pack
 	[signal arg="evidence1_battery"]
-truth: Obviously the noisemaker. *noisemaker pic comes up*
+truth: Obviously the noisemaker. 
+join noisemaker right 
+
 iris: This little thing... i-it made such a loud noise?
 kevin: Hm. I've seen these before, they are really loud.
+
 truth: There's no other plausible explanation.
+leave noisemaker
 mark: Man, I'm confused. How does this prove it was premeditated?
+
 label who_felt
 truth: We'll get to that. First we need proof something happened that needed covering.
 truth: Who felt something strange once the lights went off?
@@ -142,7 +144,7 @@ iris: Surge..?
 kevin: Slow down man. A power surge? How the hell was that done?
 truth: With a specific item, it wouldn't be hard at all. One made specifically for this...
 label evidence_2
-truth: What caused the power surge? *Select from evidence*
+truth: What caused the power surge? 
 - Receipt
 	[signal arg="evidence2_receipt"]
 - Noisemaker
@@ -232,7 +234,7 @@ truth: How was the culprit able to move in the dark?
 	[signal arg="evidence3_crumpled"]
 - Battery pack
 	[signal arg="evidence3_battery"]
-[background fade="0.5"]
+[background arg="" fade="0.6"]
 
 
 truth: This. A paper I found in Kevin's room.

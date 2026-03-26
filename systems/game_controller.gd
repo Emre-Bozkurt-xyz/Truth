@@ -101,7 +101,8 @@ func _on_door_entered(door: Door):
 	if door.to_scene == null:
 		return
 	
-	change_scene(door.to_scene, door.to_door_id)
+	start_minigame()
+	#change_scene(door.to_scene, door.to_door_id)
 
 
 func _on_dialogue_start():
