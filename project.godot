@@ -34,7 +34,10 @@ directories/dch_directory={
 "truth": "res://dialogue/characters/truth.dch"
 }
 directories/dtl_directory={
+"angry_monster": "res://dialogue/mark/angry_monster.dtl",
+"crying_monster": "res://dialogue/iris/crying_monster.dtl",
 "crying_sleeping": "res://dialogue/crying_sleeping.dtl",
+"disappear": "res://dialogue/kevin/disappear.dtl",
 "door_dialogue": "res://dialogue/door_dialogue.dtl",
 "iris_account": "res://dialogue/iris/iris_account.dtl",
 "iris_intro": "res://dialogue/iris/iris_intro.dtl",
@@ -44,6 +47,11 @@ directories/dtl_directory={
 "mark_intro": "res://dialogue/mark/mark_intro.dtl",
 "marks_account": "res://dialogue/mark/marks_account.dtl",
 "mistake_reaction": "res://dialogue/evidence_minigame/mistake_reaction.dtl",
+"pickup_battery": "res://dialogue/evidence_minigame/evidence_collection/pickup_battery.dtl",
+"pickup_crumpled": "res://dialogue/evidence_minigame/evidence_collection/pickup_crumpled.dtl",
+"pickup_noisemaker": "res://dialogue/evidence_minigame/evidence_collection/pickup_noisemaker.dtl",
+"pickup_receipt": "res://dialogue/evidence_minigame/evidence_collection/pickup_receipt.dtl",
+"pre_minigame": "res://dialogue/mark/pre_minigame.dtl",
 "stage_1": "res://dialogue/evidence_minigame/stage_1.dtl",
 "stage_2": "res://dialogue/evidence_minigame/stage_2.dtl",
 "stage_3": "res://dialogue/evidence_minigame/stage_3.dtl"
@@ -64,7 +72,7 @@ text/letter_speed=0.02
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
-text/autoadvance_per_character_delay=0.1
+text/autoadvance_per_character_delay=0.0
 text/autoadvance_ignored_characters_enabled=true
 animations/join_default_length=0.5
 animations/join_default_wait=true
@@ -93,6 +101,8 @@ audio/channel_defaults={
 }
 }
 glossary/default_case_sensitive=true
+text/autoadvance_fixed_delay=0.0
+text/autoadvance_per_word_delay=0
 
 [display]
 
