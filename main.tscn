@@ -185,6 +185,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_5vw27")
 
+[node name="ColorRect" type="ColorRect" parent="UI/Inv_UI" unique_id=1434384109]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4627451)
+
 [node name="InvSlots" type="TextureRect" parent="UI/Inv_UI" unique_id=104982383]
 texture_filter = 1
 layout_mode = 1

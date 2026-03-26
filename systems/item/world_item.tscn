@@ -5,6 +5,7 @@
 
 [node name="WorldItem" type="Node2D" unique_id=1736156436]
 script = ExtResource("1_yt7ce")
+world_item_id = null
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1815931280]
 stream = ExtResource("2_yt7ce")
