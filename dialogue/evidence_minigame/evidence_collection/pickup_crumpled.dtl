@@ -1,1 +1,17 @@
-truth:
+truth: ...What’s this?
+truth: [color=#e85670][i]A crumpled piece of paper.[/i][/color]
+truth: [color=#e85670][i]I smooth it out against my desk.[/i][/color]
+truth: ...
+join crumpled right 
+truth: [color=#e85670][i]Arrows.[/i][/color]
+truth: [color=#e85670][i]Just arrows.[/i][/color]
+truth: [color=#e85670][i]Down. Left. Left. Right. Down. Right. Left.[/i][/color]
+truth: ...
+truth: [color=#e85670][i]No labels. No markings. No explanation.[/i][/color]
+truth: [color=#e85670][i]Just the same sequence...[/i][/color]
+truth: [color=#e85670][i]Written over and over.[/i][/color]
+truth: ...
+truth: [color=#e85670][i]Some of them are scratched out. Rewritten. Pressed in harder.[/i][/color]
+leave crumpled
+truth: ...
+truth: Hm... this could be useful.

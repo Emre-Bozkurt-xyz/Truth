@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1u6wm0dqc32x"
-path="res://.godot/imported/noisemaker.png-d92daadc50f0945c663c9496f30078a5.ctex"
+uid="uid://fwqghnur32hy"
+path="res://.godot/imported/crumpled.png-1fcf96cbb9d0c14477be0a7a65d701a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dialogue/evidence_minigame/images/noisemaker.png"
-dest_files=["res://.godot/imported/noisemaker.png-d92daadc50f0945c663c9496f30078a5.ctex"]
+source_file="res://dialogue/evidence_minigame/images/crumpled.png"
+dest_files=["res://.godot/imported/crumpled.png-1fcf96cbb9d0c14477be0a7a65d701a8.ctex"]
 
 [params]
 

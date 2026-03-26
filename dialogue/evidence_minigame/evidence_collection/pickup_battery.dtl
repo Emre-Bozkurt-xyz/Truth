@@ -1,9 +1,11 @@
 truth: A... battery pack? 
 truth: [color=#e85670][i] I turn it over in my hands. Just a standard unit—something you'd hook up to a car, maybe.
+join batterypack right
 truth: Hmm...
 truth: [color=#e85670][i] ...there’s something on it.
 truth: [color=#e85670][i] Dark red. Dried into the grooves.
 truth: ...
+leave batterypack
 truth: [color=#e85670][i] I must’ve picked this up that night.
 truth: [color=#e85670][i] Right... from the store.
 truth: ...

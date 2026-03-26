@@ -12,19 +12,19 @@
 },
 &"default_portrait": "Default",
 &"description": "",
-&"display_name": "Paper",
+&"display_name": "Crumpled",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
 "Default": {
 "export_overrides": {
-"image": "\"res://dialogue/evidence_minigame/drawings/draw1.png\""
+"image": "\"res://dialogue/evidence_minigame/images/crumpled.png\""
 },
 "mirror": false,
-"offset": Vector2(0, -300),
-"scale": 0.5,
-"scene": ""
+"offset": Vector2(0, -250),
+"scale": 0.6,
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
 }
 },
 &"scale": 1.0

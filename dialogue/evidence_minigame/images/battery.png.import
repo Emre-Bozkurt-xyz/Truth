@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1u6wm0dqc32x"
-path="res://.godot/imported/noisemaker.png-d92daadc50f0945c663c9496f30078a5.ctex"
+uid="uid://dn8qyt10dy3yr"
+path="res://.godot/imported/battery.png-9ddeb990f99d29e3c106e2515ea9e1d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dialogue/evidence_minigame/images/noisemaker.png"
-dest_files=["res://.godot/imported/noisemaker.png-d92daadc50f0945c663c9496f30078a5.ctex"]
+source_file="res://dialogue/evidence_minigame/images/battery.png"
+dest_files=["res://.godot/imported/battery.png-9ddeb990f99d29e3c106e2515ea9e1d3.ctex"]
 
 [params]
 
