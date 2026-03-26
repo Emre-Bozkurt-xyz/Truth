@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cg7mh8o38ax51" path="res://systems/item/world_item.tscn" id="7_bkspa"]
 [ext_resource type="Script" uid="uid://7ll0nedhl6ok" path="res://systems/environment/door.gd" id="7_jfhh3"]
 [ext_resource type="Texture2D" uid="uid://bejla0xrjm2au" path="res://assets/renders/diary_truth_bedroom.png" id="9_jfhh3"]
+[ext_resource type="Resource" uid="uid://dognm5pudlp7d" path="res://systems/item/items/receipt.tres" id="10_atxgw"]
+[ext_resource type="Texture2D" uid="uid://bvfubupc8o67g" path="res://assets/renders/receipt_living_room.png" id="11_xkwa0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -17,6 +19,9 @@ size = Vector2(124, 542)
 size = Vector2(251, 201)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1qkj"]
+size = Vector2(94.00012, 54.000122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1f0fx"]
 size = Vector2(94.00012, 54.000122)
 
 [node name="TruthBedroom" type="Node2D" unique_id=1419511038 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
@@ -115,3 +120,24 @@ position = Vector2(1016, 6)
 
 [node name="Right" type="Marker2D" parent="." unique_id=797125771]
 position = Vector2(1920, 438)
+
+[node name="WorldItem" parent="." unique_id=1736156436 node_paths=PackedStringArray("indicator") instance=ExtResource("7_bkspa")]
+position = Vector2(1236, 409)
+world_item_id = "receipt"
+item = ExtResource("10_atxgw")
+indicator = NodePath("Indicator")
+
+[node name="Sprite2D" type="Sprite2D" parent="WorldItem" unique_id=713589367]
+rotation = 0.43750697
+scale = Vector2(0.68085104, 0.68085104)
+texture = ExtResource("11_xkwa0")
+
+[node name="Indicator" parent="WorldItem" unique_id=1602243680 instance=ExtResource("5_bkspa")]
+
+[node name="ProximityTarget" parent="WorldItem" unique_id=397128475 instance=ExtResource("2_i2l1n")]
+interactable_after = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldItem/ProximityTarget" unique_id=580765470]
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_1f0fx")
+debug_color = Color(0, 0.6, 0.69803923, 0.0627451)
