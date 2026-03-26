@@ -26,6 +26,7 @@ QuestManager="*uid://busvnp5jouxrw"
 [dialogic]
 
 directories/dch_directory={
+"drawing": "res://dialogue/characters/evidence pics/drawing.dch",
 "iris": "res://dialogue/characters/iris.dch",
 "kevin": "res://dialogue/characters/kevin.dch",
 "mark": "res://dialogue/characters/mark.dch",
@@ -41,16 +42,19 @@ directories/dtl_directory={
 "stage_2": "res://dialogue/evidence_minigame/stage_2.dtl",
 "stage_3": "res://dialogue/evidence_minigame/stage_3.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://dialogue/styling/New_File.tres",
+"Style1": "res://dialogue/styling/New_File.tres"
+}
 variables={
 "door_name": "",
 "item_description": "",
 "item_name": ""
 }
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://dialogue/styling/New_File.tres"]
+layout/default_style="res://dialogue/styling/New_File.tres"
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.01
+text/letter_speed=0.005
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
@@ -61,8 +65,8 @@ animations/join_default_wait=true
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
 animations/cross_fade_default_length=0.5
-choices/autofocus_first=true
-choices/delay=0.2
+choices/autofocus_first=false
+choices/delay=0.3
 choices/reveal_delay=0
 choices/reveal_by_input=false
 save/autosave_delay=60.0

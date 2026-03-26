@@ -46,35 +46,55 @@ var stages = {
 
 		},
 		{
+			"correct_choice": "evidence1_noisemaker",
+			"retry_label": "evidence_1",
+			"step_index": 1
+
+		},
+		{
 			"correct_choice": "who_iris",
 			"retry_label": "who_felt",
-			"step_index": 1
+			"step_index": 2
 	
 		},
 		{
 			"correct_choice": "noisemaker_counter",
 			"retry_label": "where_noisemaker",
-			"step_index": 2
+			"step_index": 3
 		},
 		{
 			"correct_choice": "purpose_deafen",
 			"retry_label": "purpose_noisemaker",
-			"step_index": 3
+			"step_index": 4
 		},
 		{
 			"correct_choice": "place_supply",
 			"retry_label": "place",
-			"step_index": 4
+			"step_index": 5
 		},
 		{
 			"correct_choice": "blackout_surge",
 			"retry_label": "cause_blackout",
-			"step_index": 5
+			"step_index": 6
 		},
+		{
+			"correct_choice": "evidence2_battery",
+			"retry_label": "evidence_2",
+			"step_index": 7
+
+		},
+		
+		{
+			"correct_choice": "evidence3_crumpled",
+			"retry_label": "evidence_3",
+			"step_index": 8
+
+		},
+		
 		{
 			"correct_choice": "move_touch",
 			"retry_label": "arrows_drawing",
-			"step_index": 6
+			"step_index": 9
 
 		},
 	]
@@ -86,8 +106,8 @@ func _ready():
 	
 	if not Dialogic.signal_event.is_connected(_on_choice_made):
 		Dialogic.signal_event.connect(_on_choice_made)
-	start("stage_1")
-
+	start("stage_3")
+	
 
 # start a stage
 func start(stage_name: String):
@@ -127,6 +147,7 @@ func _on_choice_made(choice_id: String):
 			start("stage_3")
 		if choice_id == "stage_3_complete":
 			_win()
+		return #don't treat this signal as wrong
 			
 	
 	if current_stage == "":

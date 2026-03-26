@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cetamsb254g02"]
+
+[ext_resource type="Script" uid="uid://dt0ldqyekjif3" path="res://dialogue/CustomChoiceLayer.gd" id="1_qcrtn"]
+
+[node name="Control" type="Control" unique_id=2003354718]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qcrtn")
