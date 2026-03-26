@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cwaaj08pnmjfq" path="res://systems/player/player.gd" id="1_q27vv"]
 [ext_resource type="Script" uid="uid://croilvcyc3wnn" path="res://systems/interaction/interactor.gd" id="2_e4lrk"]
 [ext_resource type="Script" uid="uid://dynt26sno302y" path="res://systems/interaction/proximity_sensor.gd" id="3_4khys"]
-[ext_resource type="Texture2D" uid="uid://cq7tl162evpok" path="res://icon.svg" id="4_7n85q"]
+[ext_resource type="Texture2D" uid="uid://dsm7dam6h6vyd" path="res://assets/characters/truth_idle.png" id="4_q27vv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_272bh"]
 radius = 80.0
@@ -16,15 +16,9 @@ size = Vector2(324, 578)
 collision_mask = 5
 script = ExtResource("1_q27vv")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=326399238]
-position = Vector2(0, -229.5)
-scale = Vector2(1.390625, 3.539062)
-texture = ExtResource("4_7n85q")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1282853346]
 position = Vector2(0, -340)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
+position_smoothing_speed = 1.0
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=19116089]
 position = Vector2(2, -136)
@@ -47,3 +41,8 @@ debug_color = Color(0.77254903, 0.5764706, 1, 0.11764706)
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=98378531]
 position = Vector2(4, -262)
 current = true
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=326399238]
+position = Vector2(3, -219)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_q27vv")
