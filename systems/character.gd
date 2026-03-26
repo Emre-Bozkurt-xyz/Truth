@@ -1,3 +1,4 @@
+class_name Character
 extends Sprite2D
 
 @export var spawn_during: GameController.GameState
