@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://uou8oon0vufg"]
 
-[ext_resource type="Script" uid="uid://w8yda66mmo2k" path="res://main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_l6cm7"]
 [ext_resource type="FontFile" uid="uid://6s033s0g361t" path="res://addons/dialogic/Example Assets/Fonts/PixeloidSansBold-1jpBg.ttf" id="2_ekxnf"]
 [ext_resource type="FontFile" uid="uid://ohfjlrcjg7hg" path="res://addons/dialogic/Example Assets/Fonts/MaverlypixelRegularDemo-KVqYD.otf" id="3_bqqt6"]
 

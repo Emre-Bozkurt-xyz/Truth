@@ -289,7 +289,8 @@ label_settings = SubResource("LabelSettings_5vw27")
 [node name="MarginContainer" type="MarginContainer" parent="UI/Inv_UI/DescriptionPanel/MarginContainer/HBoxContainer" unique_id=622080763]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_top = 3
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
 theme_override_constants/margin_right = 5
 
 [node name="ItemDescription" type="Label" parent="UI/Inv_UI/DescriptionPanel/MarginContainer/HBoxContainer/MarginContainer" unique_id=209124820]
@@ -299,3 +300,4 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "Some description niceeee"
 label_settings = SubResource("LabelSettings_kek77")
+autowrap_mode = 2
