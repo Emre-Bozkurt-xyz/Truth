@@ -21,9 +21,6 @@ truth: Where did we all go?
 - The arcade
 	[signal arg="choice_arcade"]
 
-
-label stage1_step2
-truth: Now test.
 truth: *show receipt* This receipt tells us all we need to know. We went to the hobby store.
 truth: It clearly shows the date, the name of the place and even what we all bought.
 kevin: Oh yeah... I guess I remember now...

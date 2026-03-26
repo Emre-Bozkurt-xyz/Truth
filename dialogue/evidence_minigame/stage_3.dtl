@@ -1,8 +1,16 @@
 # #STAGE 3
+[style name="Style1"]
 
+
+
+truth: I began to scribble furiously at the paper, trying to draw the outline of the store.
+
+join drawing right 
 truth: Ok... maybe we're reading too much into Kevin for now. Let's put him aside for a second and focus on something else. The elephant in the room...
 iris: E-Elephant?
+
 truth: ...The blackout. The lights going out, and the loud noise that followed. Something about that day doesn't add up, and I think it's because of this.
+
 mark: Oh... yeah. I do remember that, actually. But I just assumed it was a power flicker or something.
 truth: No, it wasn't. If this were a normal day, none of that would happen. I'm telling you guys, we have to reconstruct this properly.
 kevin: Truth, relax. It could be a coincidence?
@@ -29,8 +37,17 @@ iris: Me too...
 truth: So we're all in agreement. We can all chalk it up to coincidence like Kevin said, or we can examine the source of the noise and see the reality.
 iris: L-like he said?..
 mark: Hurry up and show us, Truth.
-truth: The thing that caused the loud noise was\: *Choose from evidence*
-truth: A noisemaker.
+label evidence_1
+truth: I have to think about all the evidence I've gotten so far... the thing that caused the loud noise was\:
+- Receipt
+	[signal arg="evidence1_receipt"]
+- Noisemaker
+	[signal arg="evidence1_noisemaker"]
+- Crumpled paper
+	[signal arg="evidence1_crumpled"]
+- Battery pack
+	[signal arg="evidence1_battery"]
+truth: Obviously the noisemaker. *noisemaker pic comes up*
 iris: This little thing... i-it made such a loud noise?
 kevin: Hm. I've seen these before, they are really loud.
 truth: There's no other plausible explanation.
@@ -56,7 +73,8 @@ iris: S-smashed? W-wouldn't that be too... overt?
 label where_noisemaker
 truth: Exactly. Smashing glass like that would make a huge racket. This is why the noisemaker was used.
 truth: Where did I find the noisemaker?
-- In the back of the store
+- In the back of the store | [=""]
+	[style]
 	[signal arg="noisemaker_back"]
 - Outside the door
 	[signal arg="noisemaker_outside"]
@@ -123,7 +141,16 @@ mark: I think I understand now.
 iris: Surge..?
 kevin: Slow down man. A power surge? How the hell was that done?
 truth: With a specific item, it wouldn't be hard at all. One made specifically for this...
+label evidence_2
 truth: What caused the power surge? *Select from evidence*
+- Receipt
+	[signal arg="evidence2_receipt"]
+- Noisemaker
+	[signal arg="evidence2_noisemaker"]
+- Crumpled paper
+	[signal arg="evidence2_crumpled"]
+- Battery pack
+	[signal arg="evidence2_battery"]
 truth: This battery pack. Plug this guy anywhere, and suddenly the small grey box doesn't matter anymore. Surge, overload, lights out. Even the cameras would cut off.
 mark: What is that red stuff on it? Is it blood?
 truth: ... I'm not sure.
@@ -152,15 +179,30 @@ mark: ...
 iris: T-Truth, you're being weird...
 truth: Just... give me a second. I'm gonna pull up the store on my phone and it'll make sense.
 mark: None of this shit makes sense... why wouldn't he...
-truth: Just let me find a top down picture and it'll make sense! Iris, give me a paper!
+truth: Just let me find a top down picture and it'll make sense! Iris, give me a pen and paper!
 iris: O-ok... Here...
 truth: I began to scribble furiously at the paper, trying to draw the outline of the store.
+[background arg="res://dialogue/evidence_minigame/drawings/draw1.png" fade="0.6"]
 truth: The entrance...
+[background arg="res://dialogue/evidence_minigame/drawings/draw2.png" fade="0.6"]
+
 truth: The back door...
-truth: The cash register...
+[background arg="res://dialogue/evidence_minigame/drawings/draw3.png" fade="0.6"]
+
+
+truth: The counter...
+[background arg="res://dialogue/evidence_minigame/drawings/draw4.png" fade="0.6"]
+
 truth: The supply corner...
+[background arg="res://dialogue/evidence_minigame/drawings/draw5.png" fade="0.6"]
+
 truth: The figurine...
+[background arg="res://dialogue/evidence_minigame/drawings/draw6.png" fade="0.6"]
+
 truth: Then the aisles..
+
+
+
 mark: Soo, a horrible drawing of the store?
 truth: ...
 kevin: You see something here.
@@ -174,11 +216,25 @@ truth: Shit, wait. Maybe he wasn't moving blindly at all.
 iris: W-what do you mean?
 truth: He needed some sort of method to get around. Otherwise, he couldn't make any movements in the dark.
 mark: Like... hidden lights? But then... how couldn't we see them?
+
+
+label evidence_3
 truth: Exactly. It had to be some sort of guide. Something that showed him, and only him, the way.
 kevin: ...
 iris: Guide? But you found everything that was at the place, right?
 truth: Yeah, I did... But there's one thing I found that pieces it all together.
-truth: How was the culprit able to move in the dark?  *present evidence*
+truth: How was the culprit able to move in the dark?
+- Receipt
+	[signal arg="evidence3_receipt"]
+- Noisemaker
+	[signal arg="evidence3_noisemaker"]
+- Crumpled paper
+	[signal arg="evidence3_crumpled"]
+- Battery pack
+	[signal arg="evidence3_battery"]
+[background fade="0.5"]
+
+
 truth: This. A paper I found in Kevin's room.
 mark: Hm. This means that he didn't bring it to the store.
 truth: I'm not sure how you can conclude that, but you're right. It wasn't on him.
@@ -209,9 +265,12 @@ truth: The way Kevin was able to follow the paper's instructions was\:
 	[signal arg="move_echo"]
 truth: He just felt his way around. Look at my drawing. There are clear stopping points.
 truth: Now look at the arrows. If we start him off at the supply corner...
+
+
+# #down, right, right
 truth: He follows the down arrow, going until he feels the wall...
 truth: He goes right, until he touches the aisle...
-truth: He turns right again, and right in front of him\:
+truth: He turns right again, and there in front of him...
 iris: T-the figurine!
 kevin: ...
 iris: There are more arrows though...
