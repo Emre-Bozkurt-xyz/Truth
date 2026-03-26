@@ -13,4 +13,3 @@ script = ExtResource("2_vmfqr")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=979980207]
 stream = ExtResource("3_rjihr")
-volume_db = 10.0

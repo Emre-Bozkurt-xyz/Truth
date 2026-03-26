@@ -88,6 +88,7 @@ shape = SubResource("RectangleShape2D_u16mr")
 
 [node name="WorldItem" parent="Environment" unique_id=1862319695 node_paths=PackedStringArray("indicator") instance=ExtResource("7_bkspa")]
 position = Vector2(720, 510)
+world_item_id = "diary"
 item = ExtResource("6_0naf5")
 indicator = NodePath("Indicator")
 

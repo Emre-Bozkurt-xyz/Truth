@@ -83,6 +83,7 @@ shape = SubResource("RectangleShape2D_m06uc")
 
 [node name="WorldItem" parent="Environment" unique_id=1736156436 node_paths=PackedStringArray("indicator") instance=ExtResource("7_rdpj6")]
 position = Vector2(1783, 551)
+world_item_id = "receipt"
 item = ExtResource("8_fbsx8")
 indicator = NodePath("Indicator")
 

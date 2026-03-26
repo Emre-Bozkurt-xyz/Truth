@@ -2,6 +2,7 @@
 class_name WorldItem
 extends Node2D
 
+@export var world_item_id: String
 @export var item: Item
 @export var indicator: Sprite2D
 
@@ -14,6 +15,13 @@ var waiting: bool = false
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
+	
+	var state = Global.world_item_state.get(world_item_id)
+	if state != null and state:
+		queue_free()
+		return
+	else:
+		Global.world_item_state[world_item_id] = false
 	
 	child_entered_tree.connect(_on_children_changed)
 	child_exiting_tree.connect(_on_children_changed)
@@ -50,6 +58,7 @@ func _on_choice_made(arg: String):
 		"item_pickup_accept":
 			audio_player.play()
 			Inventory.obtain(item)
+			Global.world_item_state.set(world_item_id, true)
 			queue_free()
 		"item_pickup_decline":
 			waiting = false
