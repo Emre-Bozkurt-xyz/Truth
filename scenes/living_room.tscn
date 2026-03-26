@@ -6,18 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://bj7085w7ir2w8" path="res://assets/renders/living_room_tv.png" id="3_v1l6s"]
 [ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="4_rdpj6"]
 [ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_cidui"]
-[ext_resource type="PackedScene" uid="uid://cg7mh8o38ax51" path="res://systems/item/world_item.tscn" id="7_rdpj6"]
-[ext_resource type="Texture2D" uid="uid://bvfubupc8o67g" path="res://assets/renders/receipt_living_room.png" id="8_cidui"]
-[ext_resource type="Resource" uid="uid://dognm5pudlp7d" path="res://systems/item/items/receipt.tres" id="8_fbsx8"]
+[ext_resource type="Script" path="res://systems/character.gd" id="10_fbsx8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m06uc"]
 size = Vector2(251, 201)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbsx8"]
-size = Vector2(94.00012, 54.000122)
 
 [node name="LivingRoom" type="Node2D" unique_id=1051288321 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_8ih8r")
@@ -81,25 +76,6 @@ position = Vector2(37, 654)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D3" unique_id=1281814998]
 shape = SubResource("RectangleShape2D_m06uc")
 
-[node name="WorldItem" parent="Environment" unique_id=1736156436 node_paths=PackedStringArray("indicator") instance=ExtResource("7_rdpj6")]
-position = Vector2(1783, 551)
-world_item_id = "receipt"
-item = ExtResource("8_fbsx8")
-indicator = NodePath("Indicator")
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/WorldItem" unique_id=1317653327]
-texture = ExtResource("8_cidui")
-
-[node name="Indicator" parent="Environment/WorldItem" unique_id=1352924489 instance=ExtResource("5_cidui")]
-
-[node name="ProximityTarget" parent="Environment/WorldItem" unique_id=1215526311 instance=ExtResource("4_rdpj6")]
-interactable_after = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WorldItem/ProximityTarget" unique_id=1847541951]
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_fbsx8")
-debug_color = Color(0, 0.6, 0.69803923, 0.0627451)
-
 [node name="Left" type="Marker2D" parent="." unique_id=2132395752]
 position = Vector2(4, 582)
 
@@ -111,3 +87,8 @@ position = Vector2(1015, 25)
 
 [node name="Right" type="Marker2D" parent="." unique_id=797125771]
 position = Vector2(1920, 438)
+
+[node name="Character" type="Sprite2D" parent="." unique_id=739607951]
+script = ExtResource("10_fbsx8")
+dialogue_name = "stage_1"
+dialogue_label = "stage1_step1"
