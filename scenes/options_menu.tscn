@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cpbi1q6yyeysn"]
+
+[ext_resource type="Script" uid="uid://hq48s4ea8518" path="res://scenes/options_menu.gd" id="1_ijpji"]
+[ext_resource type="FontFile" uid="uid://6s033s0g361t" path="res://addons/dialogic/Example Assets/Fonts/PixeloidSansBold-1jpBg.ttf" id="1_liyum"]
+
+[node name="Options Menu" type="Node2D" unique_id=629435928]
+script = ExtResource("1_ijpji")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1582580623]
+offset_right = 1277.0
+offset_bottom = 723.0
+color = Color(0.04395193, 0.04395193, 0.04395192, 1)
+
+[node name="Options info" type="Label" parent="." unique_id=103050621]
+offset_left = 401.0
+offset_top = 207.5
+offset_right = 879.0
+offset_bottom = 272.5
+theme_override_fonts/font = ExtResource("1_liyum")
+theme_override_font_sizes/font_size = 25
+text = "*Rick Roll* (haha...) okay here
+    is the button to go back:"
+
+[node name="Button_Manager_Options" type="Control" parent="." unique_id=340830017]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Back" type="Button" parent="Button_Manager_Options" unique_id=148647802]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.275
+anchor_top = -1.55
+anchor_right = 4.5
+anchor_bottom = 1.2
+offset_left = 486.5
+offset_top = 362.0
+offset_right = 624.5
+offset_bottom = 309.0
+theme_override_fonts/font = ExtResource("1_liyum")
+theme_override_font_sizes/font_size = 40
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button_Manager_Options/Back" to="." method="_on_back_pressed"]

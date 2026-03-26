@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Truth"
-run/main_scene="uid://b1s5a0hg4k2qn"
+run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
