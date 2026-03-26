@@ -20,7 +20,7 @@ size = Vector2(251, 201)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7d7gv"]
 size = Vector2(94.00012, 54.000122)
 
-[node name="TruthBedroom2" type="Node2D" unique_id=2133708482 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
+[node name="KevinBedroom" type="Node2D" unique_id=2133708482 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_ghv62")
 room_name = "kevin_bedroom"
 door_container = NodePath("Environment/Doors")
