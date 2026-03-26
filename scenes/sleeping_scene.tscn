@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://csdgs6xm0wont"]
+
+[ext_resource type="Script" uid="uid://b73tu48sifrah" path="res://systems/sleeping_scene.gd" id="1_15brm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+bg_color = Color(0.057510607, 0.05751062, 0.057510577, 1)
+
+[node name="SleepingScene" type="Node2D" unique_id=62611504]
+script = ExtResource("1_15brm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=448616422]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=88586522]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lquwl")
+
+[node name="CryPlayer" type="AudioStreamPlayer" parent="." unique_id=1681437418]

@@ -2,6 +2,7 @@
 extends Node
 
 var inventory: Dictionary[String, Item]
+var ui_enabled: bool = true
 
 func obtain(item: Item):
 	inventory[item.item_name] = item

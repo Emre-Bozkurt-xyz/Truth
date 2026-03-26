@@ -5,8 +5,6 @@ extends CharacterBody2D
 @export var acceleration: float = 20.0
 @export var friction: float = 50.0
 
-@export var inv: Inv
-
 var locked: bool = false
 
 func _ready() -> void:

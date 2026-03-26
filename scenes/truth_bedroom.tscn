@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cg7mh8o38ax51" path="res://systems/item/world_item.tscn" id="7_bkspa"]
 [ext_resource type="Script" uid="uid://7ll0nedhl6ok" path="res://systems/environment/door.gd" id="7_jfhh3"]
 [ext_resource type="Texture2D" uid="uid://bejla0xrjm2au" path="res://assets/renders/diary_truth_bedroom.png" id="9_jfhh3"]
-[ext_resource type="PackedScene" uid="uid://dphh13vg15hgj" path="res://systems/player/player.tscn" id="10_bvybi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -22,6 +21,7 @@ size = Vector2(94.00012, 54.000122)
 
 [node name="TruthBedroom" type="Node2D" unique_id=1419511038 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_u16mr")
+room_name = "truth_bedroom"
 door_container = NodePath("Environment/Doors")
 floor_marker = NodePath("Floor")
 left_cam_limit = NodePath("Left")
@@ -114,6 +114,3 @@ position = Vector2(1016, 6)
 
 [node name="Right" type="Marker2D" parent="." unique_id=797125771]
 position = Vector2(1920, 438)
-
-[node name="Player" parent="." unique_id=581451676 instance=ExtResource("10_bvybi")]
-position = Vector2(1005, 700)

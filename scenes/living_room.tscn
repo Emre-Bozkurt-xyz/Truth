@@ -21,6 +21,7 @@ size = Vector2(94.00012, 54.000122)
 
 [node name="TruthBedroom" type="Node2D" unique_id=1051288321 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_8ih8r")
+room_name = "living_room"
 door_container = NodePath("Environment/Doors")
 floor_marker = NodePath("Floor")
 left_cam_limit = NodePath("Left")

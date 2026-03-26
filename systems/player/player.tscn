@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://croilvcyc3wnn" path="res://systems/interaction/interactor.gd" id="2_e4lrk"]
 [ext_resource type="Script" uid="uid://dynt26sno302y" path="res://systems/interaction/proximity_sensor.gd" id="3_4khys"]
 [ext_resource type="Texture2D" uid="uid://cq7tl162evpok" path="res://icon.svg" id="4_7n85q"]
-[ext_resource type="PackedScene" uid="uid://u4ygru55abeu" path="res://inventory/inv_UI.tscn" id="5_e4lrk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_272bh"]
 radius = 80.0
@@ -44,13 +43,6 @@ script = ExtResource("3_4khys")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor/ProximitySensor" unique_id=2001543375]
 shape = SubResource("RectangleShape2D_q27vv")
 debug_color = Color(0.77254903, 0.5764706, 1, 0.11764706)
-
-[node name="Icon2" type="Sprite2D" parent="." unique_id=162634759]
-position = Vector2(0, -65.00001)
-scale = Vector2(0.4375, 1.015625)
-texture = ExtResource("4_7n85q")
-
-[node name="Inv_UI" parent="." unique_id=912777243 instance=ExtResource("5_e4lrk")]
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=98378531]
 position = Vector2(4, -262)

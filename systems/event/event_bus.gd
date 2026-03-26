@@ -2,6 +2,7 @@
 extends Node
 
 signal DoorEntered(door: Door)
+signal RoomEntered(room_name: String)
 
 #region Items
 signal ItemPickup(item: Item)
