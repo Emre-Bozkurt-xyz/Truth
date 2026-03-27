@@ -3,6 +3,8 @@ extends Sprite2D
 
 @export var character_id: String
 @export var spawn_during: GameController.GameState
+@export var look_at_player: bool = false
+@export var indicator_look_at_player: bool = false
 @export var one_shot_dialogue: bool = true
 @export var dialogue_name: String
 @export var dialogue_label: String
@@ -11,6 +13,8 @@ extends Sprite2D
 
 var selected: bool
 var waiting: bool
+var player_found: bool = false
+var initial_indicator_pos: Vector2
 
 func _ready() -> void:
 	if Global.game_controller.game_state != spawn_during:
@@ -29,6 +33,31 @@ func _ready() -> void:
 	if proximity_target != null:
 		proximity_target.selection_changed.connect(_on_selection_changed)
 		proximity_target.interacted.connect(_on_interacted)
+	
+	while not player_found:
+		if Global.player != null:
+			player_found = true
+			if indicator != null: initial_indicator_pos = indicator.position
+		
+		await get_tree().process_frame
+
+
+func _physics_process(_delta: float) -> void:
+	if not player_found: return
+	
+	var dir: Vector2 = global_position.direction_to(Global.player.global_position)
+	var facing_right: bool = dir.x < 0.0
+	
+	if look_at_player:
+		if facing_right:
+			flip_h = true
+		else:
+			flip_h = false
+	if indicator_look_at_player:
+		if facing_right:
+			indicator.position.x = initial_indicator_pos.x
+		else:
+			indicator.position.x = initial_indicator_pos.x * -1.0
 
 
 func _on_interacted():
