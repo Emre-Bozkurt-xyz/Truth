@@ -5,8 +5,46 @@ enum GameState {
 	GAME_BEGIN,
 	STARTED,
 	PRE_MINIGAME,
+	COLLECTING,
 	MINIGAME,
-	POST_MINIGAME
+	POST_MINIGAME, 
+	MONSTERS,
+	KEVIN_GONE
+}
+
+var state_dialogues = {
+	GameState.STARTED: {
+		"kevin": "kevin_intro",
+		"mark": "mark_intro",
+		"iris": "iris_intro"
+	},
+	GameState.PRE_MINIGAME: {
+		"mark": "pre_minigame"
+	},
+	
+	GameState.COLLECTING: {
+		"mark": "marks_account",
+		"iris": "iris_account"
+		
+	},
+	
+	GameState.MINIGAME: {
+		 #either make it so that talking to mark starts, or just walking in living room
+	},
+	GameState.POST_MINIGAME: {
+		"post_convo": "post_minigame", #not talking to anyone specifically
+		
+	},
+	GameState.MONSTERS: {
+	
+		
+		#idk if i should mark them as mark & iris still
+		"mark": "angry_monster",
+		"iris": "crying_monster"
+	},
+	GameState.KEVIN_GONE:{
+		"kevin": "disappear"
+	}
 }
 
 @onready var loading_screen: Control = %LoadingScreen

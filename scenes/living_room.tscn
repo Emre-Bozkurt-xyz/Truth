@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bj7085w7ir2w8" path="res://assets/renders/living_room_tv.png" id="3_v1l6s"]
 [ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="4_rdpj6"]
 [ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_cidui"]
-[ext_resource type="PackedScene" uid="uid://cg7mh8o38ax51" path="res://systems/item/world_item.tscn" id="7_rdpj6"]
+[ext_resource type="PackedScene" path="res://systems/item/world_item.tscn" id="7_rdpj6"]
 [ext_resource type="Texture2D" uid="uid://bvfubupc8o67g" path="res://assets/renders/receipt_living_room.png" id="8_cidui"]
 [ext_resource type="Resource" uid="uid://dognm5pudlp7d" path="res://systems/item/items/receipt.tres" id="8_fbsx8"]
 [ext_resource type="Texture2D" uid="uid://carvu1dbisbqo" path="res://assets/blood.png" id="10_fbsx8"]
-[ext_resource type="Script" uid="uid://d3htq4rxhelnr" path="res://systems/vfx.gd" id="11_exyd1"]
+[ext_resource type="Script" path="res://systems/vfx.gd" id="11_exyd1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -88,7 +88,6 @@ position = Vector2(1783, 551)
 world_item_id = "receipt"
 item = ExtResource("8_fbsx8")
 indicator = NodePath("Indicator")
-pickup_timeline = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/WorldItem" unique_id=1317653327]
 texture = ExtResource("8_cidui")
@@ -108,7 +107,6 @@ position = Vector2(1835.0002, 513)
 scale = Vector2(0.2970899, 0.2885783)
 script = ExtResource("11_exyd1")
 spawn_during = Array[int]([0, 1])
-metadata/_custom_type_script = "uid://d3htq4rxhelnr"
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment" unique_id=169089213]
 self_modulate = Color(1, 1, 1, 0.41960785)
