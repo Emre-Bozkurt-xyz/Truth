@@ -5,6 +5,8 @@ extends Resource
 @export var display_name: String
 @export var tasks: Array[Task]
 @export var next_quest: Quest
+@export var progress_state: bool
+@export var to_state: GameController.GameState
 
 var is_complete: bool = false
 
@@ -35,3 +37,5 @@ func _on_task_completed(task: Task):
 	if all_tasks_complete():
 		is_complete = true
 		EventBus.QuestComplete.emit(self)
+		if progress_state:
+			Global.game_controller.game_state = to_state

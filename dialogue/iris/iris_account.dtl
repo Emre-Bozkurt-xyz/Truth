@@ -1,12 +1,12 @@
 truth: Iris...
-iris:  Oh, hi Truth. 
-truth: I wanted to ask you something. 
+iris: Oh, hi Truth.
+truth: I wanted to ask you something.
 truth: [color=#e85670][i]She stiffens a little. Like she already expects to say the wrong thing.[/i]
 truth: Did you notice anything that might help? Even something small.
 iris: Um... I-I was going to say something earlier, but...
 iris: It's probably useless.
-truth: Maybe not. 
-truth: Sometimes it's just about seeing it from a different angle. 
+truth: Maybe not.
+truth: Sometimes it's just about seeing it from a different angle.
 iris: R-right...
 truth: Go ahead.
 iris: Um... when the lights went out...
@@ -39,9 +39,10 @@ truth: And that’s everything?
 iris: ...
 iris: Y-yeah.
 iris: S-sorry... I told you it was useless.
-truth: No. 
+truth: No.
 truth: It helps.
 truth: [color=#e85670][i]She relaxes. Just a little.[/i]
 truth: Thanks, Iris.
 truth: [color=#e85670][i]I don’t know if it actually helps.[/i]
 truth: [color=#e85670][i]But she seems to need it to.[/i]
+[signal arg="iris_account_complete"]
