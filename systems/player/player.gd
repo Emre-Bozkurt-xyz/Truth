@@ -46,3 +46,7 @@ func _physics_process(_delta: float) -> void:
 		animation_player.speed_scale = 1
 	
 	move_and_slide()
+
+
+func play_walk_sound():
+	pass
