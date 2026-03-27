@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://systems/vfx.gd" id="11_exyd1"]
 [ext_resource type="Texture2D" uid="uid://c4cdtswxf1uyr" path="res://assets/characters/mark_monster.png" id="11_sc017"]
 [ext_resource type="Texture2D" uid="uid://b8g2hwxxhc5e8" path="res://assets/characters/mark_idle.png" id="11_tcv1k"]
+[ext_resource type="Texture2D" uid="uid://buikqktcu7rnx" path="res://assets/eyes.png" id="11_uo0jg"]
 [ext_resource type="Texture2D" uid="uid://djuatxfm0qdrh" path="res://assets/characters/iris_idle.png" id="12_tcv1k"]
 [ext_resource type="Texture2D" uid="uid://b6n0qmktnvnxp" path="res://assets/characters/kevin_idle.png" id="13_sc017"]
 [ext_resource type="Texture2D" uid="uid://dgitryxetr4hd" path="res://assets/characters/truth_stabbing_mark.png" id="14_30exw"]
@@ -26,6 +27,93 @@ load_path = "res://.godot/imported/indicator.png-740da2a3433db51a7f665c61673dc20
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_exyd1"]
 size = Vector2(1460, 2427.7773)
+
+[sub_resource type="Animation" id="Animation_3y53x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-154.54546, -881.8182)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.8481948, 0.8481948)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_karft"]
+resource_name = "flutter"
+length = 0.5
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.049999997, 0.099999994, 0.14999999, 0.19999999, 0.25, 0.29999998, 0.4, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-154.54546, -881.8182), Vector2(-22.72728, -900), Vector2(-40.9091, -786.3635), Vector2(-150.00002, -859.09094), Vector2(-72.72729, -790.9091), Vector2(-127.27274, -1009.09094), Vector2(-131.81819, -859.09106), Vector2(-36.363647, -654.5454), Vector2(145.45456, -863.63635)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.049999997, 0.099999994, 0.14999999, 0.19999999, 0.25, 0.29999998, 0.4, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.8481948, 0.8481948), Vector2(0.70306826, 0.70306826), Vector2(0.8565259, 0.8565259), Vector2(0.9609143, 0.9578035), Vector2(0.9609143, 0.9578035), Vector2(0.8733773, 0.8705499), Vector2(1.1647232, 1.0590764), Vector2(0.93815947, 0.93800974), Vector2(1.0506341, 1.1174994)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.049999997, 0.099999994, 0.14999999, 0.19999999, 0.25, 0.29999998, 0.4, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.20808831, 0.086808205, -0.48283464, 0.51832026, -0.41068867, 0.087397546, 0.42350274, -0.56413853]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7smae"]
+_data = {
+&"RESET": SubResource("Animation_3y53x"),
+&"flutter": SubResource("Animation_karft")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30exw"]
 size = Vector2(3054.9985, 2422.2214)
@@ -137,7 +225,6 @@ scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_exyd1")
 
 [node name="angry_monster" type="Sprite2D" parent="." unique_id=1681505653 node_paths=PackedStringArray("player_snap", "proximity_target", "indicator")]
-visible = false
 position = Vector2(1579, 405)
 scale = Vector2(0.22, 0.22)
 texture = ExtResource("11_sc017")
@@ -151,6 +238,15 @@ hide_on_timeline_finish = true
 dialogue_name = "angry_monster"
 proximity_target = NodePath("ProximityTarget2")
 indicator = NodePath("")
+
+[node name="Eyes" type="Sprite2D" parent="angry_monster" unique_id=892518036]
+position = Vector2(-154.54546, -881.8182)
+scale = Vector2(0.8481948, 0.8481948)
+texture = ExtResource("11_uo0jg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="angry_monster/Eyes" unique_id=1068731712]
+libraries/ = SubResource("AnimationLibrary_7smae")
+autoplay = &"flutter"
 
 [node name="ProximityTarget2" parent="angry_monster" unique_id=1661766427 instance=ExtResource("4_rdpj6")]
 position = Vector2(-4754.5454, 168.18185)

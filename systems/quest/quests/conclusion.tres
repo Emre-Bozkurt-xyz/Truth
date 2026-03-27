@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://cihi7icd0xrym"]
+
+[ext_resource type="Script" uid="uid://dpqeeo4okflix" path="res://systems/quest/quest.gd" id="1_ak7wr"]
+[ext_resource type="Script" uid="uid://bfpo04t3m1jsp" path="res://systems/quest/task.gd" id="2_iu2la"]
+[ext_resource type="Script" uid="uid://tcih8r585fs5" path="res://systems/quest/tasks/dialogic_signal_tracker_task.gd" id="3_iu2la"]
+
+[sub_resource type="Resource" id="Resource_5gjci"]
+script = ExtResource("3_iu2la")
+signal_name = "DE RIEN"
+task_id = "de_rien"
+task_description = "Go to the living room... look at what you have done."
+metadata/_custom_type_script = "uid://tcih8r585fs5"
+
+[resource]
+script = ExtResource("1_ak7wr")
+quest_name = "conclusion"
+display_name = "I... What's happening to me..."
+tasks = Array[ExtResource("2_iu2la")]([SubResource("Resource_5gjci")])
+metadata/_custom_type_script = "uid://dpqeeo4okflix"

@@ -231,6 +231,7 @@ flip_h = true
 script = ExtResource("11_52g5x")
 character_id = "crying_monster"
 spawn_during = 7
+hide_on_timeline_finish = true
 dialogue_name = "crying_monster"
 proximity_target = NodePath("ProximityTarget2")
 indicator = NodePath("Indicator")
