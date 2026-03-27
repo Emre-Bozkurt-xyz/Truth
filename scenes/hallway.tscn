@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://djp34v4olkugu"]
 
-[ext_resource type="Script" path="res://scenes/hallway.gd" id="1_txc3n"]
+[ext_resource type="Script" uid="uid://c2onjb4mvlqbq" path="res://scenes/hallway.gd" id="1_txc3n"]
 [ext_resource type="Texture2D" uid="uid://bkq5fh5n3ss1x" path="res://assets/renders/hallway.png" id="2_1k2v8"]
 [ext_resource type="Texture2D" uid="uid://b5xdy76r07dri" path="res://assets/renders/hallway_stairs.png" id="3_txc3n"]
 [ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="3_w57m6"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="11_52g5x"]
 [ext_resource type="Script" path="res://systems/vfx.gd" id="11_gvesl"]
 [ext_resource type="Texture2D" uid="uid://djuatxfm0qdrh" path="res://assets/characters/iris_idle.png" id="12_52g5x"]
+[ext_resource type="Texture2D" uid="uid://lh4hj6oaoi6m" path="res://assets/characters/iris_monster.png" id="14_keade"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -245,6 +246,7 @@ shape = SubResource("RectangleShape2D_ew26q")
 [node name="crying_monster" type="Sprite2D" parent="." unique_id=168674033 node_paths=PackedStringArray("proximity_target", "indicator")]
 position = Vector2(2075, 449)
 scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_keade")
 flip_h = true
 script = ExtResource("11_52g5x")
 character_id = "crying_monster"
