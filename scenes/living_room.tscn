@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_cidui"]
 [ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="10_exyd1"]
 [ext_resource type="Texture2D" uid="uid://carvu1dbisbqo" path="res://assets/blood.png" id="10_fbsx8"]
-[ext_resource type="Script" path="res://systems/vfx.gd" id="11_exyd1"]
+[ext_resource type="Script" uid="uid://d3htq4rxhelnr" path="res://systems/vfx.gd" id="11_exyd1"]
 [ext_resource type="Texture2D" uid="uid://b8g2hwxxhc5e8" path="res://assets/characters/mark_idle.png" id="11_tcv1k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
@@ -99,7 +99,26 @@ texture = ExtResource("10_fbsx8")
 region_enabled = true
 region_rect = Rect2(1704.725, 1767.5128, 680.4, 692.5502)
 script = ExtResource("11_exyd1")
-spawn_during = Array[int]([7, 1])
+spawn_during = Array[int]([7, 6, 8])
+
+[node name="big_blood1" type="Sprite2D" parent="Environment" unique_id=1919819453]
+self_modulate = Color(1, 1, 1, 0.7490196)
+position = Vector2(850.8705, 213.60608)
+scale = Vector2(0.83633435, 0.6202585)
+texture = ExtResource("10_fbsx8")
+region_enabled = true
+region_rect = Rect2(2355.0571, 1826.3309, 1086.9385, 572.0729)
+script = ExtResource("11_exyd1")
+spawn_during = Array[int]([7, 1, 8])
+
+[node name="big_blood2" type="Sprite2D" parent="Environment" unique_id=289256614]
+position = Vector2(1260, 31.999954)
+scale = Vector2(0.8334251, 0.62056166)
+texture = ExtResource("10_fbsx8")
+region_enabled = true
+region_rect = Rect2(2793.6465, 996.8253, 438.5891, 676.9529)
+script = ExtResource("11_exyd1")
+spawn_during = Array[int]([1, 6, 8])
 
 [node name="Left" type="Marker2D" parent="." unique_id=2132395752]
 position = Vector2(4, 582)

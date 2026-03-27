@@ -197,7 +197,17 @@ texture = ExtResource("16_rtync")
 region_enabled = true
 region_rect = Rect2(6988.8477, 1158.9127, 524.3999, 562.5383)
 script = ExtResource("17_suaxg")
-spawn_during = Array[int]([1, 0])
+spawn_during = Array[int]([6, 7, 8])
+
+[node name="bloodWallLivingroom" type="Sprite2D" parent="Environment" unique_id=163409030]
+self_modulate = Color(1, 1, 1, 0.7058824)
+position = Vector2(999.99994, 275)
+scale = Vector2(0.2970899, 0.2885783)
+texture = ExtResource("16_rtync")
+region_enabled = true
+region_rect = Rect2(343.26727, 234.0614, 896.2476, 1363.4404)
+script = ExtResource("17_suaxg")
+spawn_during = Array[int]([8])
 
 [node name="Left" type="Marker2D" parent="." unique_id=2132395752]
 position = Vector2(4, 582)
