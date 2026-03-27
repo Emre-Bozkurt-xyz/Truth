@@ -102,6 +102,7 @@ var stages = {
 
 
 func _ready():
+	Global.player.locked = true
 	current_lives = max_lives
 	
 	if not Dialogic.signal_event.is_connected(_on_choice_made):
@@ -304,6 +305,7 @@ func _on_loss_timeline_ended():
 
 func _win():
 	Global.game_controller.game_state = GameController.GameState.POST_MINIGAME
+	Global.player.locked = false
 	Global.game_controller.change_scene("sleeping_scene")
 
 

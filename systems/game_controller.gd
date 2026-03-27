@@ -1,6 +1,8 @@
 class_name GameController
 extends Node
 
+const MINIGAME = preload("uid://bjidgvsmwa5sx")
+
 enum GameState {
 	GAME_BEGIN,
 	STARTED,
@@ -72,8 +74,9 @@ func _ready() -> void:
 	
 
 func start_minigame():
-	var minigame = preload("res://minigame.tscn").instantiate()
-	get_tree().current_scene.add_child(minigame)
+	var minigame = MINIGAME.instantiate()
+	current_scene.add_child(minigame)
+	print("ADDED MINIGAME")
 
 
 	
