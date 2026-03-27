@@ -119,6 +119,7 @@ texture = ExtResource("9_2xesi")
 flip_h = true
 script = ExtResource("10_gxht5")
 character_id = "kevin_GONE"
+spawn_during = 7
 dialogue_name = "disappear"
 proximity_target = NodePath("ProximityTarget2")
 indicator = NodePath("Indicator")
