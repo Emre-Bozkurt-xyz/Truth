@@ -4,12 +4,7 @@
 
 [resource]
 script = ExtResource("1_2m1vb")
-item_id = "receipt"
+item_id = "pickup_receipt"
 item_name = "Receipt"
-<<<<<<< Updated upstream
-description = "A receipt from the Hobbyist Store, dated for the 13th. "
-=======
 description = "A receipt from the Hobbyist Store"
-pickup_timeline = "pickup_crumpled"
->>>>>>> Stashed changes
 metadata/_custom_type_script = "uid://igbhmeqmrjtw"

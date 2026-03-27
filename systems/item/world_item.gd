@@ -61,7 +61,7 @@ func _on_choice_made(arg: String):
 			Global.world_item_state.set(world_item_id, true)
 			
 			
-			Dialogic.start("pickup_" + item.item_id)
+			Dialogic.start(item.item_id)
 				
 			queue_free()
 		"item_pickup_decline":

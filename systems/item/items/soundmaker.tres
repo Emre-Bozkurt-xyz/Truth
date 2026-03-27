@@ -5,14 +5,8 @@
 
 [resource]
 script = ExtResource("1_ny72k")
-<<<<<<< Updated upstream
-item_id = "soundmaker"
-item_name = "Noisemaker"
-=======
-item_id = "noisemaker"
+item_id = "pickup_noisemaker"
 item_name = "Soundmaker"
->>>>>>> Stashed changes
 icon = ExtResource("1_7a4ic")
 description = "An odd looking object that seems to contain a speaker."
-pickup_timeline = "pickup_noisemaker"
 metadata/_custom_type_script = "uid://igbhmeqmrjtw"

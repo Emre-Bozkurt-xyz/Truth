@@ -4,14 +4,7 @@
 
 [resource]
 script = ExtResource("1_56nk1")
-<<<<<<< Updated upstream
-item_id = "paper"
-item_name = "Crumpled Paper"
-description = "A sequence of arrows written repeatedly on a crumpled up piece of paper. Found in Kevin's room. "
-=======
-item_id = "crumpled"
+item_id = "pickup_crumpled"
 item_name = "Piece of paper"
 description = "Something seems to be drawn on it..."
->>>>>>> Stashed changes
-pickup_timeline = "pickup_crumpled"
 metadata/_custom_type_script = "uid://igbhmeqmrjtw"
