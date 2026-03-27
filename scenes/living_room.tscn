@@ -17,8 +17,11 @@ size = Vector2(124, 542)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m06uc"]
 size = Vector2(251, 201)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fbsx8"]
+load_path = "res://.godot/imported/indicator.png-740da2a3433db51a7f665c61673dc201.ctex"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_exyd1"]
-size = Vector2(2019.9998, 2422.2214)
+size = Vector2(1460, 2427.7773)
 
 [node name="LivingRoom" type="Node2D" unique_id=1051288321 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_8ih8r")
@@ -110,8 +113,8 @@ position = Vector2(1015, 25)
 [node name="Right" type="Marker2D" parent="." unique_id=797125771]
 position = Vector2(1920, 438)
 
-[node name="mark_STARTED" type="Sprite2D" parent="." unique_id=1991043169 node_paths=PackedStringArray("proximity_target", "indicator")]
-position = Vector2(1550, 474)
+[node name="Mark_STARTED" type="Sprite2D" parent="." unique_id=439243124 node_paths=PackedStringArray("proximity_target", "indicator")]
+position = Vector2(1581, 473)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("11_tcv1k")
 flip_h = true
@@ -122,14 +125,14 @@ dialogue_name = "mark_intro"
 proximity_target = NodePath("ProximityTarget2")
 indicator = NodePath("Indicator")
 
-[node name="Indicator" parent="mark_STARTED" unique_id=1144236144 instance=ExtResource("5_cidui")]
+[node name="Indicator" parent="Mark_STARTED" unique_id=1710507976 instance=ExtResource("5_cidui")]
 position = Vector2(22.222366, -94.44441)
 scale = Vector2(3.28125, 3.8888907)
+texture = SubResource("CompressedTexture2D_fbsx8")
 
-[node name="ProximityTarget2" parent="mark_STARTED" unique_id=1649069224 instance=ExtResource("4_rdpj6")]
-interactable_after = 1
+[node name="ProximityTarget2" parent="Mark_STARTED" unique_id=1836328017 instance=ExtResource("4_rdpj6")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mark_STARTED/ProximityTarget2" unique_id=288639008]
-position = Vector2(120, 40)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mark_STARTED/ProximityTarget2" unique_id=1717561972]
+position = Vector2(-295, 9.999973)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_exyd1")
