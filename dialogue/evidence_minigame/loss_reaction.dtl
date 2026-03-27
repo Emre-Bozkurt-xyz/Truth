@@ -2,4 +2,8 @@ truth: [color=#e85670][i] I... lost the argument? [/i]
 truth: [color=#e85670][i]They keep forgetting, denying.[/i]
 truth: [color=#e85670][i]At this point, I wonder...[/i]
 truth: [color=#e85670][i]Are they choosing not to see?[/i]
+if {losses} == 1.0:
+	truth: I've messed up one time so far... let me not try and do that again.
+elif {losses} > 1.0:
+	truth: I've messed up {losses} times so far...
 truth: I have to try again.

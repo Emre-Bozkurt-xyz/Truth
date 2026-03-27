@@ -67,7 +67,8 @@ layout/style_directory={
 variables={
 "door_name": "",
 "item_description": "",
-"item_name": ""
+"item_name": "",
+"losses": 0
 }
 layout/style_list=["res://dialogue/styling/New_File.tres"]
 layout/default_style="res://dialogue/styling/New_File.tres"
