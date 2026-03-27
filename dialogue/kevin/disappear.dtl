@@ -16,22 +16,23 @@ truth: Everyone else just ignores what's right in front of them.
 kevin: That's the problem.
 kevin: It's right in front of you.
 kevin: And you still can't see it.
-kevin: You know that, right? 
+kevin: You know that, right?
 truth: ...
 kevin: ...
-kevin: Or maybe you don't. 
+kevin: Or maybe you don't.
 kevin: Maybe it's easier like this.
-kevin: Blame me. 
+kevin: Blame me.
 kevin: Build your whole little story around me.
-kevin: So you don't have to look any closer. 
+kevin: So you don't have to look any closer.
 truth: ...
 kevin: You already know what happened.
-kevin: ... 
+kevin: ...
 kevin: You were there.
-kevin: YOU WERE  
+kevin: YOU WERE
 kevin: YOU [b]WERE THERE[/b]
 audio "res://assets/sounds/rot.mp3" [volume="-29.0"]
-kevin: [b][aa][ns][mood = LOUD][font_size=20]ROT IN HELL R O T   I N   H E L L  R O T  IN H E L L—ROT IN—  HELL ROT IN HELL ROT IN HELL R—OT— 
+kevin: [b][aa][ns][mood = LOUD][font_size=20]ROT IN HELL R O T   I N   H E L L  R O T  IN H E L L—ROT IN—  HELL ROT IN HELL ROT IN HELL R—OT—
 audio "res://assets/sounds/rot2.mp3" [volume="-17.0"]
 kevin: [aa][ns][i][b][mood = LOUD][font_size=10] LOOK AT IT LOOK AT IT LOOK AT IT YOU SEE IT NOW DON'T YOU
 kevin: [aa][ns][b][mood = LOUD][font_size=20]ROT IN HELL ROT IN HELL ROT IN HELL ROT IN HELL ROT IN HELL ROT IN HELL
+do Global.switch_to_conclusion()

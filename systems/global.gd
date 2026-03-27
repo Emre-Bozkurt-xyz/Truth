@@ -17,3 +17,8 @@ func start_evidence_collection():
 	QuestManager.start_quest(COLLECT_EVIDENCE)
 	game_controller.game_state = game_controller.GameState.COLLECTING
 	pass
+
+
+func switch_to_conclusion():
+	game_controller.current_scene.get_node("KevinGone").queue_free()
+	game_controller.game_state = GameController.GameState.CONCLUSION
