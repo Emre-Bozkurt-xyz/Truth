@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b6n0qmktnvnxp" path="res://assets/characters/kevin_idle.png" id="14_5il7n"]
 [ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="15_vgkb3"]
 [ext_resource type="Texture2D" uid="uid://carvu1dbisbqo" path="res://assets/blood.png" id="16_rtync"]
-[ext_resource type="Script" path="res://systems/vfx.gd" id="17_suaxg"]
+[ext_resource type="Script" uid="uid://d3htq4rxhelnr" path="res://systems/vfx.gd" id="17_suaxg"]
 [ext_resource type="Texture2D" uid="uid://b8g2hwxxhc5e8" path="res://assets/characters/mark_idle.png" id="18_suaxg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
