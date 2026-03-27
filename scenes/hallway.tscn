@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://djp34v4olkugu"]
 
-[ext_resource type="Script" uid="uid://c2onjb4mvlqbq" path="res://scenes/hallway.gd" id="1_txc3n"]
+[ext_resource type="Script" path="res://scenes/hallway.gd" id="1_txc3n"]
 [ext_resource type="Texture2D" uid="uid://bkq5fh5n3ss1x" path="res://assets/renders/hallway.png" id="2_1k2v8"]
 [ext_resource type="Texture2D" uid="uid://b5xdy76r07dri" path="res://assets/renders/hallway_stairs.png" id="3_txc3n"]
 [ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="3_w57m6"]
@@ -10,7 +10,9 @@
 [ext_resource type="Resource" uid="uid://dognm5pudlp7d" path="res://systems/item/items/receipt.tres" id="8_w57m6"]
 [ext_resource type="Texture2D" uid="uid://bvfubupc8o67g" path="res://assets/renders/receipt_living_room.png" id="9_drbwl"]
 [ext_resource type="Texture2D" uid="uid://b8g2hwxxhc5e8" path="res://assets/characters/mark_idle.png" id="10_hwv8p"]
+[ext_resource type="Texture2D" uid="uid://carvu1dbisbqo" path="res://assets/blood.png" id="10_keade"]
 [ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="11_52g5x"]
+[ext_resource type="Script" uid="uid://d3htq4rxhelnr" path="res://systems/vfx.gd" id="11_gvesl"]
 [ext_resource type="Texture2D" uid="uid://djuatxfm0qdrh" path="res://assets/characters/iris_idle.png" id="12_52g5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
@@ -161,6 +163,27 @@ interactable_after = 3
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_hwv8p")
 debug_color = Color(0, 0.6, 0.69803923, 0.0627451)
+
+[node name="bloodWallLivingroom" type="Sprite2D" parent="Environment" unique_id=1509995026]
+self_modulate = Color(1, 1, 1, 0.54509807)
+position = Vector2(687, 768)
+rotation = -1.5348077
+scale = Vector2(0.37376073, 1.4824394)
+texture = ExtResource("10_keade")
+region_enabled = true
+region_rect = Rect2(1704.725, 1767.5128, 680.4, 692.5502)
+script = ExtResource("11_gvesl")
+spawn_during = Array[int]([1, 0, 8])
+
+[node name="bloodWallLivingroom2" type="Sprite2D" parent="Environment" unique_id=1968034989]
+self_modulate = Color(1, 1, 1, 0.7294118)
+position = Vector2(2035.3949, 86)
+scale = Vector2(0.28402203, 0.2885783)
+texture = ExtResource("10_keade")
+region_enabled = true
+region_rect = Rect2(1449.2749, 119.64685, 1897.3752, 753.22925)
+script = ExtResource("11_gvesl")
+spawn_during = Array[int]([0, 1, 8])
 
 [node name="Left" type="Marker2D" parent="." unique_id=2132395752]
 position = Vector2(1, 546)
