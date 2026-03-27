@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_832ae")
-item_id = "battery_pack"
+item_id = "battery"
 item_name = "Battery pack"
 icon = ExtResource("1_4t6u0")
 description = "A battery pack that has red smears on it. "
