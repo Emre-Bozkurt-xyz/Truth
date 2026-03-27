@@ -282,7 +282,7 @@ scale = Vector2(0.2, 0.19552691)
 texture = ExtResource("15_uo0jg")
 script = ExtResource("10_exyd1")
 character_id = "mark_DEAD"
-spawn_during = 5
+spawn_during = 9
 proximity_target = NodePath("ProximityTarget2")
 indicator = NodePath("Indicator")
 
