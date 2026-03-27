@@ -9,6 +9,10 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite
 
+
+@export var footstep_sounds: Array[AudioStream]
+@onready var footstep_player: AudioStreamPlayer2D = $FootstepPlayer
+
 var locked: bool = false
 var last_dir: float = 0
 var was_idle: bool = true
@@ -37,6 +41,7 @@ func _physics_process(_delta: float) -> void:
 	if abs(velocity.x) < 30 and not was_idle:
 		animation_player.speed_scale = 1
 		animation_player.play("Idle")
+		stop_walk_sound()
 		was_idle = true
 	elif not abs(velocity.x) < 30:
 		animation_player.speed_scale = float(walk_fps) / 10.0
@@ -47,6 +52,18 @@ func _physics_process(_delta: float) -> void:
 	
 	move_and_slide()
 
+func stop_walk_sound():
+	footstep_player.stop()
+	
 
 func play_walk_sound():
-	pass
+	if footstep_player.playing:
+		return
+	
+	if footstep_sounds.size() > 0:
+		footstep_player.stream = footstep_sounds.pick_random()
+		
+	
+	
+	footstep_player.play()
+	

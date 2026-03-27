@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cwaaj08pnmjfq" path="res://systems/player/player.gd" id="1_q27vv"]
 [ext_resource type="Script" uid="uid://croilvcyc3wnn" path="res://systems/interaction/interactor.gd" id="2_e4lrk"]
+[ext_resource type="AudioStream" uid="uid://ba6aiisxp22fu" path="res://assets/sounds/walk1.mp3" id="2_s35ra"]
 [ext_resource type="Script" uid="uid://dynt26sno302y" path="res://systems/interaction/proximity_sensor.gd" id="3_4khys"]
+[ext_resource type="AudioStream" uid="uid://d3vmmb64ld4lj" path="res://assets/sounds/walk2.mp3" id="3_w2e1i"]
+[ext_resource type="AudioStream" uid="uid://dm8xane1r5350" path="res://assets/sounds/walk3.mp3" id="4_8lo8x"]
 [ext_resource type="Texture2D" uid="uid://dsm7dam6h6vyd" path="res://assets/characters/truth_idle.png" id="4_q27vv"]
 [ext_resource type="Texture2D" uid="uid://b71hwqjtgw8wq" path="res://assets/characters/Truth_Walk_Cycle_2-1.png" id="5_lfquo"]
 [ext_resource type="Texture2D" uid="uid://2pvtabgwnjtn" path="res://assets/characters/Truth_Walk_Cycle_2-2.png" id="6_vxbwt"]
@@ -131,6 +134,7 @@ _data = {
 [node name="Player" type="CharacterBody2D" unique_id=581451676]
 collision_mask = 5
 script = ExtResource("1_q27vv")
+footstep_sounds = Array[AudioStream]([ExtResource("2_s35ra"), ExtResource("3_w2e1i"), ExtResource("4_8lo8x")])
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1282853346]
 position = Vector2(0, -340)
@@ -165,3 +169,5 @@ texture = ExtResource("4_q27vv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1697754804]
 libraries/ = SubResource("AnimationLibrary_4khys")
+
+[node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="." unique_id=655841810]
