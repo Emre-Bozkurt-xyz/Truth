@@ -88,7 +88,7 @@ scale = Vector2(0.2970899, 0.2885783)
 script = ExtResource("11_exyd1")
 spawn_during = Array[int]([0, 1])
 
-[node name="bloodWallLivingroom" type="Sprite2D" parent="Environment" unique_id=169089213]
+[node name="bloodWall" type="Sprite2D" parent="Environment" unique_id=169089213]
 self_modulate = Color(1, 1, 1, 0.41960785)
 position = Vector2(1835.0002, 513)
 scale = Vector2(0.2970899, 0.2885783)
@@ -97,6 +97,16 @@ region_enabled = true
 region_rect = Rect2(1704.725, 1767.5128, 680.4, 692.5502)
 script = ExtResource("11_exyd1")
 spawn_during = Array[int]([7, 1])
+
+[node name="Sprite2D2" type="Sprite2D" parent="Environment" unique_id=917697385]
+self_modulate = Color(1, 1, 1, 0.41960785)
+position = Vector2(1907, 705.00006)
+scale = Vector2(0.2970899, 0.2885783)
+texture = ExtResource("10_fbsx8")
+region_enabled = true
+region_rect = Rect2(1704.725, 1767.5128, 680.4, 692.5502)
+script = ExtResource("11_exyd1")
+spawn_during = Array[int]([0, 1])
 
 [node name="Left" type="Marker2D" parent="." unique_id=2132395752]
 position = Vector2(4, 582)
