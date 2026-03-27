@@ -2,6 +2,8 @@
 extends GameScene
 
 func _ready() -> void:
+	if Engine.is_editor_hint(): return
+	
 	if Global.game_controller.game_state == GameController.GameState.MINIGAME:
 		await get_tree().process_frame
 		Global.game_controller.start_minigame()
