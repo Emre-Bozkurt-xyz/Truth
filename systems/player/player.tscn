@@ -4,6 +4,16 @@
 [ext_resource type="Script" uid="uid://croilvcyc3wnn" path="res://systems/interaction/interactor.gd" id="2_e4lrk"]
 [ext_resource type="Script" uid="uid://dynt26sno302y" path="res://systems/interaction/proximity_sensor.gd" id="3_4khys"]
 [ext_resource type="Texture2D" uid="uid://dsm7dam6h6vyd" path="res://assets/characters/truth_idle.png" id="4_q27vv"]
+[ext_resource type="Texture2D" uid="uid://b71hwqjtgw8wq" path="res://assets/characters/Truth_Walk_Cycle_2-1.png" id="5_lfquo"]
+[ext_resource type="Texture2D" uid="uid://2pvtabgwnjtn" path="res://assets/characters/Truth_Walk_Cycle_2-2.png" id="6_vxbwt"]
+[ext_resource type="Texture2D" uid="uid://c1ld87yba8l3e" path="res://assets/characters/Truth_Walk_Cycle_2-3.png" id="7_lgqrg"]
+[ext_resource type="Texture2D" uid="uid://bkoiatqncb442" path="res://assets/characters/Truth_Walk_Cycle_2-4.png" id="8_s35ra"]
+[ext_resource type="Texture2D" uid="uid://c2hrv2udc7b1a" path="res://assets/characters/Truth_Walk_Cycle_2-5.png" id="9_w2e1i"]
+[ext_resource type="Texture2D" uid="uid://b166b7tpnufy8" path="res://assets/characters/Truth_Walk_Cycle_2-6.png" id="10_8lo8x"]
+[ext_resource type="Texture2D" uid="uid://dcpf1xqkihmqu" path="res://assets/characters/Truth_Walk_Cycle_2-7.png" id="11_islsc"]
+[ext_resource type="Texture2D" uid="uid://c2y1d8vtd871r" path="res://assets/characters/Truth_Walk_Cycle_2-8.png" id="12_imv5b"]
+[ext_resource type="Texture2D" uid="uid://cx7au3wiwvymm" path="res://assets/characters/Truth_Walk_Cycle_2-9.png" id="13_6njwd"]
+[ext_resource type="Texture2D" uid="uid://cngb1awaxevug" path="res://assets/characters/Truth_Walk_Cycle_2-10.png" id="14_mjxyr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_272bh"]
 radius = 80.0
@@ -11,6 +21,35 @@ height = 278.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q27vv"]
 size = Vector2(324, 578)
+
+[sub_resource type="Animation" id="Animation_lfquo"]
+resource_name = "Idle"
+length = 0.01
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_q27vv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_q27vv"]
 length = 0.001
@@ -26,9 +65,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("4_q27vv")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_e4lrk"]
 resource_name = "Walk"
+loop_mode = 1
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -36,14 +89,27 @@ tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.20000002, 0.3, 0.4, 0.5, 0.59999996, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("4_q27vv")]
+"values": [ExtResource("5_lfquo"), ExtResource("6_vxbwt"), ExtResource("7_lgqrg"), ExtResource("8_s35ra"), ExtResource("9_w2e1i"), ExtResource("10_8lo8x"), ExtResource("11_islsc"), ExtResource("12_imv5b"), ExtResource("13_6njwd"), ExtResource("14_mjxyr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -100), Vector2(0, -105), Vector2(0, -110), Vector2(0, -105), Vector2(0, -100)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4khys"]
 _data = {
+&"Idle": SubResource("Animation_lfquo"),
 &"RESET": SubResource("Animation_q27vv"),
 &"Walk": SubResource("Animation_e4lrk")
 }
@@ -79,8 +145,8 @@ position = Vector2(4, -262)
 current = true
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=326399238]
-position = Vector2(3, -219)
-scale = Vector2(0.2, 0.2)
+position = Vector2(3, -233)
+scale = Vector2(0.22, 0.22)
 texture = ExtResource("4_q27vv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1697754804]

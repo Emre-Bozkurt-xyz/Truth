@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="4_rdpj6"]
 [ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_cidui"]
 [ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="10_exyd1"]
-[ext_resource type="Texture2D" uid="uid://carvu1dbisbqo" path="res://assets/blood.png" id="10_fbsx8"]
 [ext_resource type="Script" path="res://systems/vfx.gd" id="11_exyd1"]
 [ext_resource type="Texture2D" uid="uid://c4cdtswxf1uyr" path="res://assets/characters/mark_monster.png" id="11_sc017"]
 [ext_resource type="Texture2D" uid="uid://b8g2hwxxhc5e8" path="res://assets/characters/mark_idle.png" id="11_tcv1k"]
@@ -30,18 +29,6 @@ size = Vector2(1460, 2427.7773)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30exw"]
 size = Vector2(3054.9985, 2422.2214)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcv1k"]
-size = Vector2(1460, 2427.7773)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc017"]
-size = Vector2(1529.9998, 2422.2214)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uo0jg"]
-size = Vector2(1460, 2427.7773)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3y53x"]
-size = Vector2(3319.999, 1849.9995)
 
 [node name="LivingRoom" type="Node2D" unique_id=1051288321 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_fbsx8")
@@ -66,6 +53,7 @@ position = Vector2(965, 431)
 texture = ExtResource("2_8ih8r")
 
 [node name="bg2" type="Sprite2D" parent="Environment/bg" unique_id=1891171341]
+visible = false
 z_index = 20
 z_as_relative = false
 texture = ExtResource("3_v1l6s")
@@ -111,48 +99,20 @@ scale = Vector2(0.2970899, 0.2885783)
 script = ExtResource("11_exyd1")
 spawn_during = Array[int]([0, 1])
 
-[node name="bloodWallLivingroom" type="Sprite2D" parent="Environment" unique_id=169089213]
-self_modulate = Color(1, 1, 1, 0.41960785)
-position = Vector2(1835.0002, 513)
-scale = Vector2(0.2970899, 0.2885783)
-texture = ExtResource("10_fbsx8")
-region_enabled = true
-region_rect = Rect2(1704.725, 1767.5128, 680.4, 692.5502)
-script = ExtResource("11_exyd1")
-spawn_during = Array[int]([6, 7, 8])
-
-[node name="big_blood1" type="Sprite2D" parent="Environment" unique_id=1919819453]
-self_modulate = Color(1, 1, 1, 0.7490196)
-position = Vector2(850.8705, 213.60608)
-scale = Vector2(0.83633435, 0.6202585)
-texture = ExtResource("10_fbsx8")
-region_enabled = true
-region_rect = Rect2(2355.0571, 1826.3309, 1086.9385, 572.0729)
-script = ExtResource("11_exyd1")
-spawn_during = Array[int]([8])
-
-[node name="big_blood2" type="Sprite2D" parent="Environment" unique_id=289256614]
-position = Vector2(1260, 31.999954)
-scale = Vector2(0.8334251, 0.62056166)
-texture = ExtResource("10_fbsx8")
-region_enabled = true
-region_rect = Rect2(2793.6465, 996.8253, 438.5891, 676.9529)
-script = ExtResource("11_exyd1")
-spawn_during = Array[int]([6, 7, 8])
-
 [node name="Left" type="Marker2D" parent="." unique_id=2132395752]
 position = Vector2(4, 582)
 
 [node name="Bottom" type="Marker2D" parent="." unique_id=1408346509]
-position = Vector2(1019, 696)
+position = Vector2(1015, 730)
 
 [node name="Top" type="Marker2D" parent="." unique_id=1190551335]
-position = Vector2(1015, 25)
+position = Vector2(1004, -10)
 
 [node name="Right" type="Marker2D" parent="." unique_id=797125771]
 position = Vector2(1920, 438)
 
 [node name="Mark_STARTED" type="Sprite2D" parent="." unique_id=439243124 node_paths=PackedStringArray("proximity_target", "indicator")]
+visible = false
 position = Vector2(1581, 473)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("11_tcv1k")
@@ -177,7 +137,8 @@ scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_exyd1")
 
 [node name="angry_monster" type="Sprite2D" parent="." unique_id=1681505653 node_paths=PackedStringArray("proximity_target", "indicator")]
-position = Vector2(1521, 465)
+visible = false
+position = Vector2(1557, 403)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("11_sc017")
 flip_h = true
@@ -200,30 +161,19 @@ scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_30exw")
 
 [node name="mark_MINIGAME" type="Sprite2D" parent="." unique_id=303128158 node_paths=PackedStringArray("proximity_target", "indicator")]
-position = Vector2(1263, 413)
-scale = Vector2(0.2, 0.2)
+visible = false
+position = Vector2(1270.0001, 438)
+scale = Vector2(0.21, 0.21)
 texture = ExtResource("11_tcv1k")
 flip_h = true
 script = ExtResource("10_exyd1")
 character_id = "mark_MINIGAME"
 spawn_during = 5
-proximity_target = NodePath("ProximityTarget2")
-indicator = NodePath("Indicator")
-
-[node name="Indicator" parent="mark_MINIGAME" unique_id=443095909 instance=ExtResource("5_cidui")]
-position = Vector2(22.222366, -94.44441)
-scale = Vector2(3.28125, 3.8888907)
-texture = SubResource("CompressedTexture2D_fbsx8")
-
-[node name="ProximityTarget2" parent="mark_MINIGAME" unique_id=516724445 instance=ExtResource("4_rdpj6")]
-interactable_after = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mark_MINIGAME/ProximityTarget2" unique_id=13502207]
-position = Vector2(-295, 9.999973)
-scale = Vector2(1.0000001, 1.0000001)
-shape = SubResource("RectangleShape2D_tcv1k")
+proximity_target = NodePath("")
+indicator = NodePath("")
 
 [node name="iris_MINIGAME" type="Sprite2D" parent="." unique_id=1745939695 node_paths=PackedStringArray("proximity_target", "indicator")]
+visible = false
 position = Vector2(944, 353)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("12_tcv1k")
@@ -231,43 +181,20 @@ flip_h = true
 script = ExtResource("10_exyd1")
 character_id = "iris_MINIGAME"
 spawn_during = 5
-proximity_target = NodePath("ProximityTarget2")
-indicator = NodePath("Indicator")
-
-[node name="Indicator" parent="iris_MINIGAME" unique_id=1328942080 instance=ExtResource("5_cidui")]
-position = Vector2(22.222366, -94.44441)
-scale = Vector2(3.28125, 3.8888907)
-
-[node name="ProximityTarget2" parent="iris_MINIGAME" unique_id=644846500 instance=ExtResource("4_rdpj6")]
-interactable_after = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="iris_MINIGAME/ProximityTarget2" unique_id=151047103]
-position = Vector2(-30.001465, 40)
-scale = Vector2(1.0000001, 1.0000001)
-shape = SubResource("RectangleShape2D_sc017")
+proximity_target = NodePath("")
+indicator = NodePath("")
 
 [node name="kevin_MINIGAME" type="Sprite2D" parent="." unique_id=186770145 node_paths=PackedStringArray("proximity_target", "indicator")]
-position = Vector2(681.00006, 364)
+visible = false
+position = Vector2(679, 356)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("13_sc017")
 flip_h = true
 script = ExtResource("10_exyd1")
 character_id = "kevin_MINIGAME"
 spawn_during = 5
-proximity_target = NodePath("ProximityTarget2")
-indicator = NodePath("Indicator")
-
-[node name="Indicator" parent="kevin_MINIGAME" unique_id=865679852 instance=ExtResource("5_cidui")]
-position = Vector2(22.222366, -94.44441)
-scale = Vector2(3.28125, 3.8888907)
-
-[node name="ProximityTarget2" parent="kevin_MINIGAME" unique_id=1063343886 instance=ExtResource("4_rdpj6")]
-interactable_after = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="kevin_MINIGAME/ProximityTarget2" unique_id=639388840]
-position = Vector2(-320, 58.333252)
-scale = Vector2(1.0000001, 1.0000001)
-shape = SubResource("RectangleShape2D_uo0jg")
+proximity_target = NodePath("")
+indicator = NodePath("")
 
 [node name="SCENE" type="Sprite2D" parent="." unique_id=1585767087]
 unique_name_in_owner = true
@@ -277,23 +204,13 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("14_30exw")
 
 [node name="mark_DEAD" type="Sprite2D" parent="." unique_id=200798866 node_paths=PackedStringArray("proximity_target", "indicator")]
-position = Vector2(1494, 597.05)
-scale = Vector2(0.2, 0.19552691)
+visible = false
+position = Vector2(954, 588)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("15_uo0jg")
 script = ExtResource("10_exyd1")
 character_id = "mark_DEAD"
 spawn_during = 9
-proximity_target = NodePath("ProximityTarget2")
-indicator = NodePath("Indicator")
-
-[node name="Indicator" parent="mark_DEAD" unique_id=290784823 instance=ExtResource("5_cidui")]
-position = Vector2(22.222366, -94.44441)
-scale = Vector2(3.28125, 3.8888907)
-
-[node name="ProximityTarget2" parent="mark_DEAD" unique_id=1338753568 instance=ExtResource("4_rdpj6")]
-interactable_after = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mark_DEAD/ProximityTarget2" unique_id=1650753386]
-position = Vector2(-555, -290)
-scale = Vector2(1.0000001, 1.0000001)
-shape = SubResource("RectangleShape2D_3y53x")
+dialogue_name = "mark_dead"
+proximity_target = NodePath("")
+indicator = NodePath("")

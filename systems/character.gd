@@ -16,17 +16,19 @@ func _ready() -> void:
 	if Global.game_controller.game_state != spawn_during:
 		queue_free()
 		return
+	visible = true
 	
 	var state = Global.character_dialogue_state.get(character_id)
-	if state != null and state and one_shot_dialogue:
+	if state != null and proximity_target != null and state and one_shot_dialogue:
 		proximity_target.interactable = false
 	else:
 		Global.character_dialogue_state[character_id] = false
 	
 	Dialogic.timeline_ended.connect(_on_dialogue_finish)
 	
-	proximity_target.selection_changed.connect(_on_selection_changed)
-	proximity_target.interacted.connect(_on_interacted)
+	if proximity_target != null:
+		proximity_target.selection_changed.connect(_on_selection_changed)
+		proximity_target.interacted.connect(_on_interacted)
 
 
 func _on_interacted():
@@ -36,7 +38,7 @@ func _on_interacted():
 		return
 	
 	Global.character_dialogue_state.set(character_id, true)
-	if one_shot_dialogue:
+	if one_shot_dialogue and proximity_target != null and indicator != null:
 		proximity_target.interactable = false
 		indicator.visible = false
 	

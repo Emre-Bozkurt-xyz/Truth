@@ -47,6 +47,7 @@ directories/dtl_directory={
 "item_pickup_dialogue": "res://dialogue/item_pickup_dialogue.dtl",
 "kevin_intro": "res://dialogue/kevin/kevin_intro.dtl",
 "loss_reaction": "res://dialogue/evidence_minigame/loss_reaction.dtl",
+"mark_dead": "res://mark_dead.dtl",
 "mark_intro": "res://dialogue/mark/mark_intro.dtl",
 "marks_account": "res://dialogue/mark/marks_account.dtl",
 "mistake_reaction": "res://dialogue/evidence_minigame/mistake_reaction.dtl",

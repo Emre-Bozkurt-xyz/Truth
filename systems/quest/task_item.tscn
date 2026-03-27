@@ -26,10 +26,12 @@ grow_vertical = 2
 
 [node name="StepDescription" type="Label" parent="HBoxContainer" unique_id=1784682766]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Quest step"
 label_settings = SubResource("LabelSettings_0ibjt")
+autowrap_mode = 2
 
 [node name="StepProgress" type="Label" parent="HBoxContainer" unique_id=861187945]
 unique_name_in_owner = true
