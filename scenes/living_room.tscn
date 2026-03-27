@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://efk8e240r0yv"]
 
-[ext_resource type="Script" uid="uid://c5cq0kt5smexe" path="res://scenes/living_room.gd" id="1_fbsx8"]
+[ext_resource type="Script" path="res://scenes/living_room.gd" id="1_fbsx8"]
 [ext_resource type="Texture2D" uid="uid://bcuw2s1kbkqgw" path="res://assets/renders/living_room.png" id="2_8ih8r"]
 [ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="3_sci4a"]
 [ext_resource type="Texture2D" uid="uid://bj7085w7ir2w8" path="res://assets/renders/living_room_tv.png" id="3_v1l6s"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_cidui"]
 [ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="10_exyd1"]
 [ext_resource type="Texture2D" uid="uid://carvu1dbisbqo" path="res://assets/blood.png" id="10_fbsx8"]
-[ext_resource type="Script" path="res://systems/vfx.gd" id="11_exyd1"]
+[ext_resource type="Script" uid="uid://d3htq4rxhelnr" path="res://systems/vfx.gd" id="11_exyd1"]
 [ext_resource type="Texture2D" uid="uid://c4cdtswxf1uyr" path="res://assets/characters/mark_monster.png" id="11_sc017"]
 [ext_resource type="Texture2D" uid="uid://b8g2hwxxhc5e8" path="res://assets/characters/mark_idle.png" id="11_tcv1k"]
 
