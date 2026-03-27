@@ -35,6 +35,9 @@ size = Vector2(1529.9998, 2422.2214)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ew26q"]
 size = Vector2(1514.9999, 2422.2214)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvesl"]
+size = Vector2(2335, 2422.2214)
+
 [node name="Hallway" type="Node2D" unique_id=1664769679 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_txc3n")
 room_name = "hallway"
@@ -238,3 +241,25 @@ scale = Vector2(3.28125, 3.8888907)
 position = Vector2(-107.5, 40)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_ew26q")
+
+[node name="crying_monster" type="Sprite2D" parent="." unique_id=168674033 node_paths=PackedStringArray("proximity_target", "indicator")]
+position = Vector2(2075, 449)
+scale = Vector2(0.2, 0.2)
+flip_h = true
+script = ExtResource("11_52g5x")
+character_id = "crying_monster"
+spawn_during = 1
+dialogue_name = "crying_monster"
+proximity_target = NodePath("ProximityTarget2")
+indicator = NodePath("Indicator")
+
+[node name="Indicator" parent="crying_monster" unique_id=398074973 instance=ExtResource("5_txc3n")]
+position = Vector2(22.222366, -94.44441)
+scale = Vector2(3.28125, 3.8888907)
+
+[node name="ProximityTarget2" parent="crying_monster" unique_id=1520344584 instance=ExtResource("4_drbwl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crying_monster/ProximityTarget2" unique_id=857325284]
+position = Vector2(-517.5, 40)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_gvesl")

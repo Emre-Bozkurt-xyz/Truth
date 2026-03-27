@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="10_exyd1"]
 [ext_resource type="Texture2D" uid="uid://carvu1dbisbqo" path="res://assets/blood.png" id="10_fbsx8"]
 [ext_resource type="Script" path="res://systems/vfx.gd" id="11_exyd1"]
+[ext_resource type="Texture2D" uid="uid://c4cdtswxf1uyr" path="res://assets/characters/mark_monster.png" id="11_sc017"]
 [ext_resource type="Texture2D" uid="uid://b8g2hwxxhc5e8" path="res://assets/characters/mark_idle.png" id="11_tcv1k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
@@ -22,6 +23,9 @@ load_path = "res://.godot/imported/indicator.png-740da2a3433db51a7f665c61673dc20
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_exyd1"]
 size = Vector2(1460, 2427.7773)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30exw"]
+size = Vector2(3054.9985, 2422.2214)
 
 [node name="LivingRoom" type="Node2D" unique_id=1051288321 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_8ih8r")
@@ -155,3 +159,26 @@ texture = SubResource("CompressedTexture2D_fbsx8")
 position = Vector2(-295, 9.999973)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_exyd1")
+
+[node name="angry_monster" type="Sprite2D" parent="." unique_id=1681505653 node_paths=PackedStringArray("proximity_target", "indicator")]
+position = Vector2(1521, 465)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_sc017")
+flip_h = true
+script = ExtResource("10_exyd1")
+character_id = "angry_monster"
+spawn_during = 7
+dialogue_name = "angry_monster"
+proximity_target = NodePath("ProximityTarget2")
+indicator = NodePath("Indicator")
+
+[node name="Indicator" parent="angry_monster" unique_id=551559148 instance=ExtResource("5_cidui")]
+position = Vector2(22.222366, -94.44441)
+scale = Vector2(3.28125, 3.8888907)
+
+[node name="ProximityTarget2" parent="angry_monster" unique_id=1661766427 instance=ExtResource("4_rdpj6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="angry_monster/ProximityTarget2" unique_id=38777694]
+position = Vector2(-792.501, 40)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_30exw")
