@@ -17,9 +17,6 @@ size = Vector2(124, 542)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m06uc"]
 size = Vector2(251, 201)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc017"]
-size = Vector2(2215, 2422.2214)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_exyd1"]
 size = Vector2(2019.9998, 2422.2214)
 
@@ -112,30 +109,6 @@ position = Vector2(1015, 25)
 
 [node name="Right" type="Marker2D" parent="." unique_id=797125771]
 position = Vector2(1920, 438)
-
-[node name="mark_COLLECTING" type="Sprite2D" parent="." unique_id=2052558688 node_paths=PackedStringArray("proximity_target", "indicator")]
-visible = false
-position = Vector2(1462, 490)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("11_tcv1k")
-flip_h = true
-script = ExtResource("10_exyd1")
-character_id = "mark_COLLECTING"
-spawn_during = 3
-dialogue_name = "marks_account"
-proximity_target = NodePath("ProximityTarget2")
-indicator = NodePath("Indicator")
-
-[node name="Indicator" parent="mark_COLLECTING" unique_id=922263515 instance=ExtResource("5_cidui")]
-position = Vector2(22.222366, -94.44441)
-scale = Vector2(3.28125, 3.8888907)
-
-[node name="ProximityTarget2" parent="mark_COLLECTING" unique_id=158868705 instance=ExtResource("4_rdpj6")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mark_COLLECTING/ProximityTarget2" unique_id=376476577]
-position = Vector2(22.5, 40)
-scale = Vector2(1.0000001, 1.0000001)
-shape = SubResource("RectangleShape2D_sc017")
 
 [node name="mark_STARTED" type="Sprite2D" parent="." unique_id=1991043169 node_paths=PackedStringArray("proximity_target", "indicator")]
 position = Vector2(1550, 474)
