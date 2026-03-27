@@ -1,6 +1,5 @@
 truth: [color=#e85670][i]I can barely see it. Just... in the corner of my eye…\[i]
 truth: [color=#db1d3f][i]A nightmare.\[i]
-
 truth: [color=#db1d3f][i]I can feel its stare. \[i]
 truth: [color=#db1d3f][i]Those disgraceful eyes digging straight into me. \[i]
 truth: [color=#db1d3f][i]I feel… exposed. \[i]
@@ -14,3 +13,15 @@ truth: [color=#db1d3f][i]They never do.[/i][/color]
 truth: I have to show them.
 truth: They won't believe the unbelievable.
 truth: [b]I have to make them see.[/b]
+truth: ...
+truth: Stop... looking...
+truth: ...
+[signal arg="stab_start"]
+truth: [b] I SAID STOP LOOKING AT ME. [/b]
+[signal arg="stab_stop"]
+[signal arg="stab_start"]
+truth: [b] STOP. [/b]
+[signal arg="stab_stop"]
+[signal arg="stab_start"]
+truth: [color=#db1d3f][b][i]Why are you still looking at me?![/i][/b]
+[signal arg="stab_stop"]
