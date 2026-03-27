@@ -45,7 +45,8 @@ func _on_selection_changed(state: bool):
 
 
 func _on_dialogue_finish():
+	if waiting:
+		Global.character_dialogue_state.set(character_id, true)
+		if one_shot_dialogue:
+			proximity_target.interactable = false
 	waiting = false
-	Global.character_dialogue_state.set(character_id, true)
-	if one_shot_dialogue:
-		proximity_target.interactable = false
