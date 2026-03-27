@@ -10,4 +10,5 @@ func _ready() -> void:
 	Dialogic.start("crying_sleeping")
 	
 	await Dialogic.timeline_ended
+	Global.game_controller.game_state = GameController.GameState.MONSTERS
 	Global.game_controller.change_scene("truth_bedroom", "bed")

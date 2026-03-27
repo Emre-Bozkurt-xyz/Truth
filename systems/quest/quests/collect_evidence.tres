@@ -24,6 +24,8 @@ script = ExtResource("1_oeh07")
 quest_name = "collect_evidence_1"
 display_name = "Collect evidence"
 tasks = Array[ExtResource("2_fr1xu")]([SubResource("Resource_wmklg"), SubResource("Resource_0ojo4")])
+progress_state = true
+to_state = 5
 metadata/_custom_type_script = "uid://dpqeeo4okflix"
 
 [sub_resource type="Resource" id="Resource_ijc8s"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://efk8e240r0yv"]
 
-[ext_resource type="Script" uid="uid://clklmd8jxks2t" path="res://scenes/game_scene.gd" id="1_8ih8r"]
+[ext_resource type="Script" uid="uid://c5cq0kt5smexe" path="res://scenes/living_room.gd" id="1_fbsx8"]
 [ext_resource type="Texture2D" uid="uid://bcuw2s1kbkqgw" path="res://assets/renders/living_room.png" id="2_8ih8r"]
 [ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="3_sci4a"]
 [ext_resource type="Texture2D" uid="uid://bj7085w7ir2w8" path="res://assets/renders/living_room_tv.png" id="3_v1l6s"]
@@ -28,7 +28,7 @@ size = Vector2(1460, 2427.7773)
 size = Vector2(3054.9985, 2422.2214)
 
 [node name="LivingRoom" type="Node2D" unique_id=1051288321 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
-script = ExtResource("1_8ih8r")
+script = ExtResource("1_fbsx8")
 room_name = "living_room"
 door_container = NodePath("Environment/Doors")
 floor_marker = NodePath("Floor")
