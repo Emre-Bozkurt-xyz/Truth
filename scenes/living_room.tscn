@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_cidui"]
 [ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="10_exyd1"]
 [ext_resource type="Texture2D" uid="uid://carvu1dbisbqo" path="res://assets/blood.png" id="10_fbsx8"]
-[ext_resource type="Script" uid="uid://d3htq4rxhelnr" path="res://systems/vfx.gd" id="11_exyd1"]
+[ext_resource type="Script" path="res://systems/vfx.gd" id="11_exyd1"]
 [ext_resource type="Texture2D" uid="uid://b8g2hwxxhc5e8" path="res://assets/characters/mark_idle.png" id="11_tcv1k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]

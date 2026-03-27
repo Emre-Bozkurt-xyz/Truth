@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://djp34v4olkugu"]
 
-[ext_resource type="Script" path="res://scenes/hallway.gd" id="1_txc3n"]
+[ext_resource type="Script" uid="uid://c2onjb4mvlqbq" path="res://scenes/hallway.gd" id="1_txc3n"]
 [ext_resource type="Texture2D" uid="uid://bkq5fh5n3ss1x" path="res://assets/renders/hallway.png" id="2_1k2v8"]
 [ext_resource type="Texture2D" uid="uid://b5xdy76r07dri" path="res://assets/renders/hallway_stairs.png" id="3_txc3n"]
 [ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="3_w57m6"]
@@ -9,10 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cg7mh8o38ax51" path="res://systems/item/world_item.tscn" id="7_nlnob"]
 [ext_resource type="Resource" uid="uid://dognm5pudlp7d" path="res://systems/item/items/receipt.tres" id="8_w57m6"]
 [ext_resource type="Texture2D" uid="uid://bvfubupc8o67g" path="res://assets/renders/receipt_living_room.png" id="9_drbwl"]
-[ext_resource type="Texture2D" uid="uid://b8g2hwxxhc5e8" path="res://assets/characters/mark_idle.png" id="10_hwv8p"]
 [ext_resource type="Texture2D" uid="uid://carvu1dbisbqo" path="res://assets/blood.png" id="10_keade"]
 [ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="11_52g5x"]
-[ext_resource type="Script" uid="uid://d3htq4rxhelnr" path="res://systems/vfx.gd" id="11_gvesl"]
+[ext_resource type="Script" path="res://systems/vfx.gd" id="11_gvesl"]
 [ext_resource type="Texture2D" uid="uid://djuatxfm0qdrh" path="res://assets/characters/iris_idle.png" id="12_52g5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
@@ -34,7 +33,7 @@ size = Vector2(94.00012, 54.000122)
 size = Vector2(1529.9998, 2422.2214)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ew26q"]
-size = Vector2(1889.9998, 2422.2214)
+size = Vector2(1514.9999, 2422.2214)
 
 [node name="Hallway" type="Node2D" unique_id=1664769679 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_txc3n")
@@ -195,7 +194,7 @@ position = Vector2(1031, 2)
 position = Vector2(2453, 428)
 
 [node name="iris_COLLECTING" type="Sprite2D" parent="." unique_id=1836849559 node_paths=PackedStringArray("proximity_target", "indicator")]
-position = Vector2(1555, 485)
+position = Vector2(1704, 463)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("12_52g5x")
 flip_h = true
@@ -218,7 +217,7 @@ scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_keade")
 
 [node name="iris_START" type="Sprite2D" parent="." unique_id=917377817 node_paths=PackedStringArray("proximity_target", "indicator")]
-position = Vector2(1215, 480)
+position = Vector2(1015, 457)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("12_52g5x")
 flip_h = true
@@ -236,6 +235,6 @@ scale = Vector2(3.28125, 3.8888907)
 [node name="ProximityTarget2" parent="iris_START" unique_id=261754929 instance=ExtResource("4_drbwl")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="iris_START/ProximityTarget2" unique_id=1126404980]
-position = Vector2(80, 40)
+position = Vector2(-107.5, 40)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_ew26q")
