@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://djuatxfm0qdrh" path="res://assets/characters/iris_idle.png" id="12_tcv1k"]
 [ext_resource type="Texture2D" uid="uid://b6n0qmktnvnxp" path="res://assets/characters/kevin_idle.png" id="13_sc017"]
 [ext_resource type="Texture2D" uid="uid://dgitryxetr4hd" path="res://assets/characters/truth_stabbing_mark.png" id="14_30exw"]
+[ext_resource type="Texture2D" uid="uid://cxsd1fvf6kx31" path="res://assets/characters/Marks Death (blood).png" id="15_uo0jg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -38,6 +39,9 @@ size = Vector2(1529.9998, 2422.2214)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uo0jg"]
 size = Vector2(1460, 2427.7773)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3y53x"]
+size = Vector2(3319.999, 1849.9995)
 
 [node name="LivingRoom" type="Node2D" unique_id=1051288321 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_fbsx8")
@@ -271,3 +275,25 @@ visible = false
 position = Vector2(1467, 446.99997)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("14_30exw")
+
+[node name="mark_DEAD" type="Sprite2D" parent="." unique_id=200798866 node_paths=PackedStringArray("proximity_target", "indicator")]
+position = Vector2(1494, 597.05)
+scale = Vector2(0.2, 0.19552691)
+texture = ExtResource("15_uo0jg")
+script = ExtResource("10_exyd1")
+character_id = "mark_DEAD"
+spawn_during = 5
+proximity_target = NodePath("ProximityTarget2")
+indicator = NodePath("Indicator")
+
+[node name="Indicator" parent="mark_DEAD" unique_id=290784823 instance=ExtResource("5_cidui")]
+position = Vector2(22.222366, -94.44441)
+scale = Vector2(3.28125, 3.8888907)
+
+[node name="ProximityTarget2" parent="mark_DEAD" unique_id=1338753568 instance=ExtResource("4_rdpj6")]
+interactable_after = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mark_DEAD/ProximityTarget2" unique_id=1650753386]
+position = Vector2(-555, -290)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_3y53x")
