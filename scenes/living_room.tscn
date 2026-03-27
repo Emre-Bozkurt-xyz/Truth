@@ -112,7 +112,8 @@ position = Vector2(1004, -10)
 position = Vector2(1920, 438)
 
 [node name="Mark_STARTED" type="Sprite2D" parent="." unique_id=439243124 node_paths=PackedStringArray("proximity_target", "indicator")]
-position = Vector2(1575, 455)
+visible = false
+position = Vector2(1576, 455)
 scale = Vector2(0.22, 0.22)
 texture = ExtResource("11_tcv1k")
 flip_h = true
@@ -136,6 +137,7 @@ scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_exyd1")
 
 [node name="angry_monster" type="Sprite2D" parent="." unique_id=1681505653 node_paths=PackedStringArray("player_snap", "proximity_target", "indicator")]
+visible = false
 position = Vector2(1579, 405)
 scale = Vector2(0.22, 0.22)
 texture = ExtResource("11_sc017")
@@ -163,8 +165,8 @@ position = Vector2(-1845.4543, 1268.1819)
 
 [node name="mark_MINIGAME" type="Sprite2D" parent="." unique_id=303128158 node_paths=PackedStringArray("proximity_target", "indicator")]
 visible = false
-position = Vector2(1270.0001, 438)
-scale = Vector2(0.21, 0.21)
+position = Vector2(1165.0001, 396.00003)
+scale = Vector2(0.205, 0.205)
 texture = ExtResource("11_tcv1k")
 flip_h = true
 script = ExtResource("10_exyd1")
