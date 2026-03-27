@@ -1,7 +1,9 @@
 class_name Character
 extends Sprite2D
 
+@export var character_id: String
 @export var spawn_during: GameController.GameState
+@export var one_shot_dialogue: bool = true
 @export var dialogue_name: String
 @export var dialogue_label: String
 @export var proximity_target: ProximityTarget
@@ -14,6 +16,12 @@ func _ready() -> void:
 	if Global.game_controller.game_state != spawn_during:
 		queue_free()
 		return
+	
+	var state = Global.character_dialogue_state.get(character_id)
+	if state != null and state and one_shot_dialogue:
+		proximity_target.interactable = false
+	else:
+		Global.character_dialogue_state[character_id] = false
 	
 	Dialogic.timeline_ended.connect(_on_dialogue_finish)
 	
@@ -38,3 +46,6 @@ func _on_selection_changed(state: bool):
 
 func _on_dialogue_finish():
 	waiting = false
+	Global.character_dialogue_state.set(character_id, true)
+	if one_shot_dialogue:
+		proximity_target.interactable = false
