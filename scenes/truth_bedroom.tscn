@@ -35,6 +35,7 @@ size = Vector2(108.11041, 54.000122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgkb3"]
 size = Vector2(755.5542, 2427.7773)
+size = Vector2(1460, 2427.7773)
 
 [node name="TruthBedroom" type="Node2D" unique_id=1419511038 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_u16mr")
@@ -168,6 +169,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("14_5il7n")
 flip_h = true
 script = ExtResource("15_vgkb3")
+character_id = "kevin_STARTED"
 dialogue_name = "kevin_intro"
 proximity_target = NodePath("ProximityTarget2")
 indicator = NodePath("Indicator")
@@ -177,10 +179,8 @@ position = Vector2(22.222366, -94.44441)
 scale = Vector2(3.28125, 3.8888907)
 
 [node name="ProximityTarget2" parent="Environment/Kevin" unique_id=2050369518 instance=ExtResource("2_i2l1n")]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Kevin/ProximityTarget2" unique_id=2105018434]
-position = Vector2(-16.668945, 58.333252)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_vgkb3")
 

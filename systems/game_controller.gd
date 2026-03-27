@@ -27,7 +27,7 @@ enum GameState {
 	#GameState.COLLECTING: {
 		#"mark": "marks_account",
 		#"iris": "iris_account"
-		#
+		
 	#},
 	#
 	#GameState.MINIGAME: {
