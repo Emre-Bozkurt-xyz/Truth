@@ -157,7 +157,7 @@ truth: ... I'm not sure.
 kevin: ...
 truth: Maybe when Kevin tried to break the display case, he hurt himself.
 mark: I feel like he'd have thought of that.
-leave batterypack 
+leave batterypack
 truth: ... Listen, I don't know. All I know is this caused the blackout. There's no doubt.
 mark: I guess you're right about that...
 iris: A-and Kevin was the only one in that area!
@@ -301,11 +301,11 @@ iris: Super confusing… his down looks like our up.
 [background arg="res://dialogue/evidence_minigame/drawings/draw14.png" fade="0.6"]
 truth: Right arrow…
 [background arg="res://dialogue/evidence_minigame/drawings/draw15.png" fade="0.6"]
-leave crumpled2 
+leave crumpled2
 truth: Left arrow… and straight to the back entrance.
 
 kevin: ...
-[background arg="" fade="0.6"]
+[background fade="0.6"]
 
 mark: I think you're right... but...
 truth: But what?

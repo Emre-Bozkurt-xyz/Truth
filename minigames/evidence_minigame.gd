@@ -303,8 +303,8 @@ func _on_loss_timeline_ended():
 
 
 func _win():
-	print("Minigame WIN")
-	# You can add win logic here - maybe close the minigame, award points, etc.
+	Global.game_controller.game_state = GameController.GameState.POST_MINIGAME
+	Global.game_controller.change_scene("sleeping_scene")
 
 
 func _lose():
