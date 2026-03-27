@@ -10,7 +10,8 @@
 [ext_resource type="Resource" uid="uid://dognm5pudlp7d" path="res://systems/item/items/receipt.tres" id="8_w57m6"]
 [ext_resource type="Texture2D" uid="uid://bvfubupc8o67g" path="res://assets/renders/receipt_living_room.png" id="9_drbwl"]
 [ext_resource type="Texture2D" uid="uid://b8g2hwxxhc5e8" path="res://assets/characters/mark_idle.png" id="10_hwv8p"]
-[ext_resource type="Script" path="res://systems/character.gd" id="11_52g5x"]
+[ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="11_52g5x"]
+[ext_resource type="Texture2D" uid="uid://djuatxfm0qdrh" path="res://assets/characters/iris_idle.png" id="12_52g5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -28,7 +29,13 @@ size = Vector2(251, 201)
 size = Vector2(94.00012, 54.000122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ew26q"]
-size = Vector2(809.44617, 2422.2214)
+size = Vector2(2019.9998, 2422.2214)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52g5x"]
+size = Vector2(2215, 2422.2214)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_keade"]
+size = Vector2(1529.9998, 2422.2214)
 
 [node name="Hallway" type="Node2D" unique_id=1664769679 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_txc3n")
@@ -167,23 +174,71 @@ position = Vector2(1031, 2)
 [node name="Right" type="Marker2D" parent="." unique_id=797125771]
 position = Vector2(2453, 428)
 
-[node name="Mark" type="Sprite2D" parent="." unique_id=582821736 node_paths=PackedStringArray("proximity_target", "indicator")]
+[node name="mark_STARTED" type="Sprite2D" parent="." unique_id=582821736 node_paths=PackedStringArray("proximity_target", "indicator")]
 position = Vector2(1104, 486)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("10_hwv8p")
 flip_h = true
 script = ExtResource("11_52g5x")
+character_id = "mark_STARTED"
 dialogue_name = "mark_intro"
 proximity_target = NodePath("ProximityTarget2")
 indicator = NodePath("Indicator")
 
-[node name="Indicator" parent="Mark" unique_id=1169578243 instance=ExtResource("5_txc3n")]
+[node name="Indicator" parent="mark_STARTED" unique_id=1169578243 instance=ExtResource("5_txc3n")]
 position = Vector2(22.222366, -94.44441)
 scale = Vector2(3.28125, 3.8888907)
 
-[node name="ProximityTarget2" parent="Mark" unique_id=789901815 instance=ExtResource("4_drbwl")]
+[node name="ProximityTarget2" parent="mark_STARTED" unique_id=789901815 instance=ExtResource("4_drbwl")]
+interactable_after = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mark/ProximityTarget2" unique_id=918511608]
-position = Vector2(4.9997563, 39.99994)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mark_STARTED/ProximityTarget2" unique_id=918511608]
+position = Vector2(120, 40)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_ew26q")
+
+[node name="mark_PRE" type="Sprite2D" parent="." unique_id=368867358 node_paths=PackedStringArray("proximity_target", "indicator")]
+position = Vector2(1921, 456)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_hwv8p")
+flip_h = true
+script = ExtResource("11_52g5x")
+character_id = "mark_PRE"
+spawn_during = 2
+dialogue_name = "pre_minigame"
+proximity_target = NodePath("ProximityTarget2")
+indicator = NodePath("Indicator")
+
+[node name="Indicator" parent="mark_PRE" unique_id=1533152103 instance=ExtResource("5_txc3n")]
+position = Vector2(22.222366, -94.44441)
+scale = Vector2(3.28125, 3.8888907)
+
+[node name="ProximityTarget2" parent="mark_PRE" unique_id=1675577646 instance=ExtResource("4_drbwl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mark_PRE/ProximityTarget2" unique_id=1774853410]
+position = Vector2(22.5, 40)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_52g5x")
+
+[node name="iris_COLLECTING" type="Sprite2D" parent="." unique_id=1836849559 node_paths=PackedStringArray("proximity_target", "indicator")]
+position = Vector2(1463, 489)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_52g5x")
+flip_h = true
+script = ExtResource("11_52g5x")
+character_id = "iris_COLLECTING"
+spawn_during = 3
+dialogue_name = "iris_account"
+proximity_target = NodePath("ProximityTarget2")
+indicator = NodePath("Indicator")
+
+[node name="Indicator" parent="iris_COLLECTING" unique_id=1984837297 instance=ExtResource("5_txc3n")]
+position = Vector2(22.222366, -94.44441)
+scale = Vector2(3.28125, 3.8888907)
+
+[node name="ProximityTarget2" parent="iris_COLLECTING" unique_id=72702774 instance=ExtResource("4_drbwl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="iris_COLLECTING/ProximityTarget2" unique_id=1667644405]
+position = Vector2(-30.001465, 40)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_keade")

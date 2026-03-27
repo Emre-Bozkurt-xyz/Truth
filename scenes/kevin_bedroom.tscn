@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://b77rrtxaww3gw" path="res://systems/item/items/paper.tres" id="7_7d7gv"]
 [ext_resource type="Texture2D" uid="uid://dhw817ys3khfb" path="res://assets/renders/paper_kevin_bedroom.png" id="7_ghv62"]
 [ext_resource type="Texture2D" uid="uid://b6n0qmktnvnxp" path="res://assets/characters/kevin_idle.png" id="9_2xesi"]
-[ext_resource type="Script" path="res://systems/character.gd" id="10_gxht5"]
+[ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="10_gxht5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -118,6 +118,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("9_2xesi")
 flip_h = true
 script = ExtResource("10_gxht5")
+character_id = "kevin_GONE"
 dialogue_name = "disappear"
 proximity_target = NodePath("ProximityTarget2")
 indicator = NodePath("Indicator")
