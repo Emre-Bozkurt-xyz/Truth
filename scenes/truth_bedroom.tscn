@@ -16,7 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://b6n0qmktnvnxp" path="res://assets/characters/kevin_idle.png" id="14_5il7n"]
 [ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="15_vgkb3"]
 [ext_resource type="Texture2D" uid="uid://carvu1dbisbqo" path="res://assets/blood.png" id="16_rtync"]
-[ext_resource type="Script" uid="uid://d3htq4rxhelnr" path="res://systems/vfx.gd" id="17_suaxg"]
+[ext_resource type="Script" path="res://systems/vfx.gd" id="17_suaxg"]
+[ext_resource type="Texture2D" uid="uid://b8g2hwxxhc5e8" path="res://assets/characters/mark_idle.png" id="18_suaxg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -35,6 +36,9 @@ size = Vector2(108.11041, 54.000122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgkb3"]
 size = Vector2(1460, 2427.7773)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vd15q"]
+size = Vector2(1809.9996, 2422.2214)
 
 [node name="TruthBedroom" type="Node2D" unique_id=1419511038 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_u16mr")
@@ -216,3 +220,25 @@ position = Vector2(1016, 6)
 
 [node name="Right" type="Marker2D" parent="." unique_id=797125771]
 position = Vector2(1920, 438)
+
+[node name="mark_COLLECTING" type="Sprite2D" parent="." unique_id=1992402470 node_paths=PackedStringArray("proximity_target", "indicator")]
+position = Vector2(647.00006, 467)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("18_suaxg")
+script = ExtResource("15_vgkb3")
+character_id = "mark_COLLECTING"
+spawn_during = 4
+dialogue_name = "marks_account"
+proximity_target = NodePath("ProximityTarget2")
+indicator = NodePath("Indicator")
+
+[node name="Indicator" parent="mark_COLLECTING" unique_id=853238724 instance=ExtResource("5_bkspa")]
+position = Vector2(22.222366, -94.44441)
+scale = Vector2(3.28125, 3.8888907)
+
+[node name="ProximityTarget2" parent="mark_COLLECTING" unique_id=956920516 instance=ExtResource("2_i2l1n")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mark_COLLECTING/ProximityTarget2" unique_id=688497772]
+position = Vector2(379.99976, 40)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_vd15q")

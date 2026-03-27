@@ -30,14 +30,11 @@ size = Vector2(251, 201)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hwv8p"]
 size = Vector2(94.00012, 54.000122)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ew26q"]
-size = Vector2(2019.9998, 2422.2214)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_52g5x"]
-size = Vector2(2215, 2422.2214)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_keade"]
 size = Vector2(1529.9998, 2422.2214)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ew26q"]
+size = Vector2(1889.9998, 2422.2214)
 
 [node name="Hallway" type="Node2D" unique_id=1664769679 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_txc3n")
@@ -197,60 +194,14 @@ position = Vector2(1031, 2)
 [node name="Right" type="Marker2D" parent="." unique_id=797125771]
 position = Vector2(2453, 428)
 
-[node name="mark_STARTED" type="Sprite2D" parent="." unique_id=582821736 node_paths=PackedStringArray("proximity_target", "indicator")]
-position = Vector2(1104, 486)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("10_hwv8p")
-flip_h = true
-script = ExtResource("11_52g5x")
-character_id = "mark_STARTED"
-dialogue_name = "mark_intro"
-proximity_target = NodePath("ProximityTarget2")
-indicator = NodePath("Indicator")
-
-[node name="Indicator" parent="mark_STARTED" unique_id=1169578243 instance=ExtResource("5_txc3n")]
-position = Vector2(22.222366, -94.44441)
-scale = Vector2(3.28125, 3.8888907)
-
-[node name="ProximityTarget2" parent="mark_STARTED" unique_id=789901815 instance=ExtResource("4_drbwl")]
-interactable_after = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mark_STARTED/ProximityTarget2" unique_id=918511608]
-position = Vector2(120, 40)
-scale = Vector2(1.0000001, 1.0000001)
-shape = SubResource("RectangleShape2D_ew26q")
-
-[node name="mark_PRE" type="Sprite2D" parent="." unique_id=368867358 node_paths=PackedStringArray("proximity_target", "indicator")]
-position = Vector2(1921, 456)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("10_hwv8p")
-flip_h = true
-script = ExtResource("11_52g5x")
-character_id = "mark_PRE"
-spawn_during = 2
-dialogue_name = "pre_minigame"
-proximity_target = NodePath("ProximityTarget2")
-indicator = NodePath("Indicator")
-
-[node name="Indicator" parent="mark_PRE" unique_id=1533152103 instance=ExtResource("5_txc3n")]
-position = Vector2(22.222366, -94.44441)
-scale = Vector2(3.28125, 3.8888907)
-
-[node name="ProximityTarget2" parent="mark_PRE" unique_id=1675577646 instance=ExtResource("4_drbwl")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mark_PRE/ProximityTarget2" unique_id=1774853410]
-position = Vector2(22.5, 40)
-scale = Vector2(1.0000001, 1.0000001)
-shape = SubResource("RectangleShape2D_52g5x")
-
 [node name="iris_COLLECTING" type="Sprite2D" parent="." unique_id=1836849559 node_paths=PackedStringArray("proximity_target", "indicator")]
-position = Vector2(1463, 489)
+position = Vector2(1555, 485)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("12_52g5x")
 flip_h = true
 script = ExtResource("11_52g5x")
 character_id = "iris_COLLECTING"
-spawn_during = 3
+spawn_during = 4
 dialogue_name = "iris_account"
 proximity_target = NodePath("ProximityTarget2")
 indicator = NodePath("Indicator")
@@ -265,3 +216,26 @@ scale = Vector2(3.28125, 3.8888907)
 position = Vector2(-30.001465, 40)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_keade")
+
+[node name="iris_START" type="Sprite2D" parent="." unique_id=917377817 node_paths=PackedStringArray("proximity_target", "indicator")]
+position = Vector2(1215, 480)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_52g5x")
+flip_h = true
+script = ExtResource("11_52g5x")
+character_id = "iris_START"
+spawn_during = 1
+dialogue_name = "iris_intro"
+proximity_target = NodePath("ProximityTarget2")
+indicator = NodePath("Indicator")
+
+[node name="Indicator" parent="iris_START" unique_id=1526446795 instance=ExtResource("5_txc3n")]
+position = Vector2(22.222366, -94.44441)
+scale = Vector2(3.28125, 3.8888907)
+
+[node name="ProximityTarget2" parent="iris_START" unique_id=261754929 instance=ExtResource("4_drbwl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="iris_START/ProximityTarget2" unique_id=1126404980]
+position = Vector2(80, 40)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ew26q")
