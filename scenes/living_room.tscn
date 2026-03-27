@@ -267,6 +267,7 @@ shape = SubResource("RectangleShape2D_uo0jg")
 
 [node name="SCENE" type="Sprite2D" parent="." unique_id=1585767087]
 unique_name_in_owner = true
+visible = false
 position = Vector2(1467, 446.99997)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("14_30exw")
