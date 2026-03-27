@@ -1,18 +1,14 @@
 truth: Alright. Thanks for being here guys. 
+iris: Mark told me to come... what is this about?..
 truth: I told Mark this already, but we're here to talk about what happened on the 13th. 
-truth: Something is off about that day. 
-mark: I don't remember anything unusual... but maybe I missed something. What do you mean?
+truth: Something's off about that day. 
+mark: Like I said, I don't remember anything unusual... but maybe I missed something. What do you mean?
 iris: I-I... I don't really know... maybe...
 kevin: ...
 truth: We went out that night. You all remember that, right?
 mark: I do remember that.
-
-iris: I think so?...
-
-
+iris: Yeah?..
 kevin: What? What are you guys talking about? We never went anywhere!
-
-
 truth: Kevin... are you serious?
 
 label stage1_step1
@@ -31,7 +27,5 @@ truth: [color=#e85670][i] I took the receipt out of my pocket and held it up for
 truth: This receipt tells us all we need to know. We went to the hobby store.
 truth: It clearly shows the date, the name of the place and even what we all bought.
 kevin: Oh yeah... I guess I remember now...
-
 iris: We went to the shop, but then what?.. W-what was wrong?
-
 [signal arg="stage_1_complete"]

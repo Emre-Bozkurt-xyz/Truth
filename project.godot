@@ -28,6 +28,7 @@ QuestManager="*uid://busvnp5jouxrw"
 directories/dch_directory={
 "batterypack": "res://dialogue/characters/evidence pics/batterypack.dch",
 "crumpled": "res://dialogue/characters/evidence pics/crumpled.dch",
+"crumpled2": "res://dialogue/characters/evidence pics/crumpled2.dch",
 "drawing": "res://dialogue/characters/evidence pics/drawing.dch",
 "iris": "res://dialogue/characters/iris.dch",
 "kevin": "res://dialogue/characters/kevin.dch",

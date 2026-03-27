@@ -40,8 +40,8 @@ truth: I have to think about all the evidence I've gotten so far... the thing th
 	[signal arg="evidence1_crumpled"]
 - Battery pack
 	[signal arg="evidence1_battery"]
-truth: Obviously the noisemaker. 
-join noisemaker right 
+truth: Obviously the noisemaker.
+join noisemaker right
 
 iris: This little thing... i-it made such a loud noise?
 kevin: Hm. I've seen these before, they are really loud.
@@ -140,7 +140,7 @@ iris: Surge..?
 kevin: Slow down man. A power surge? How the hell was that done?
 truth: With a specific item, it wouldn't be hard at all. One made specifically for this...
 label evidence_2
-truth: What caused the power surge? 
+truth: What caused the power surge?
 - Receipt
 	[signal arg="evidence2_receipt"]
 - Noisemaker
@@ -149,12 +149,15 @@ truth: What caused the power surge?
 	[signal arg="evidence2_crumpled"]
 - Battery pack
 	[signal arg="evidence2_battery"]
+truth: This is the last of the things I found at the store.
+join batterypack right
 truth: This battery pack. Plug this guy anywhere, and suddenly the small grey box doesn't matter anymore. Surge, overload, lights out. Even the cameras would cut off.
 mark: What is that red stuff on it? Is it blood?
 truth: ... I'm not sure.
 kevin: ...
 truth: Maybe when Kevin tried to break the display case, he hurt himself.
 mark: I feel like he'd have thought of that.
+leave batterypack 
 truth: ... Listen, I don't know. All I know is this caused the blackout. There's no doubt.
 mark: I guess you're right about that...
 iris: A-and Kevin was the only one in that area!
@@ -230,9 +233,9 @@ truth: How was the culprit able to move in the dark?
 	[signal arg="evidence3_crumpled"]
 - Battery pack
 	[signal arg="evidence3_battery"]
-[background arg="" fade="0.6"]
+[background fade="0.6"]
 
-
+join crumpled2 right
 truth: This. A paper I found in Kevin's room.
 mark: Hm. This means that he didn't bring it to the store.
 truth: I'm not sure how you can conclude that, but you're right. It wasn't on him.
@@ -242,6 +245,7 @@ mark: Whatever.
 iris: Guys... I'm confused. What does this have to do with anything?
 mark: You said it has to do with him getting around?
 truth: Yeah.
+leave crumpled2
 mark: If he didn't bring this paper with him, and you're saying it has to do with everything, what was its use?
 truth: Well, it had to serve its purpose beforehand.
 mark: No shit... I'm asking you how these arrows have anything to do with him moving around.
@@ -253,7 +257,7 @@ mark: Oh, damn. You're right. I see now.
 kevin: I don't see. How am I supposed to follow directions in the dark? How do I know what my left is?
 iris: Um... if I was really deep in the store like that, I wouldn't know what directions are...
 label arrows_drawing
-mark: Look at Truth's shitty drawing, it all makes sense. There is a way to follow those instructions.
+mark: Thinking about Truth's shitty drawing, it all makes sense. There is a way to follow those instructions.
 truth: The way Kevin was able to follow the paper's instructions was\:
 - Using his hearing
 	[signal arg="move_hearing"]
@@ -261,20 +265,48 @@ truth: The way Kevin was able to follow the paper's instructions was\:
 	[signal arg="move_touch"]
 - Echolocation
 	[signal arg="move_echo"]
+[background arg="res://dialogue/evidence_minigame/drawings/draw6.png" fade="0.6"]
+
 truth: He just felt his way around. Look at my drawing. There are clear stopping points.
-truth: Now look at the arrows. If we start him off at the supply corner...
+
+join crumpled2 right
+truth: Now look at the arrows.
 
 
-# #down, right, right
-truth: He follows the down arrow, going until he feels the wall...
-truth: He goes right, until he touches the aisle...
-truth: He turns right again, and there in front of him...
+
+[background arg="res://dialogue/evidence_minigame/drawings/draw7.png" fade="0.6"]
+truth: If we start him off facing the supply corner...
+
+
+truth: The tricky part is—his “down” isn’t the same as ours on this map. In his mind, down points behind him.
+[background arg="res://dialogue/evidence_minigame/drawings/draw8.png" fade="0.6"]
+truth: So this arrow here would take him straight back, until he hits the wall.
+mark: What are those laser beams coming out of his eyes?
+truth: ... that's supposed to show where he's looking. Anyways.
+[background arg="res://dialogue/evidence_minigame/drawings/draw9.png" fade="0.6"]
+truth: He turns left from there, moving until he brushes the counter...
+[background arg="res://dialogue/evidence_minigame/drawings/draw10.png" fade="0.6"]
+truth: Turns left again, until the aisle...
+[background arg="res://dialogue/evidence_minigame/drawings/draw11.png" fade="0.6"]
+truth: Then right, and right in front of him...
 iris: T-the figurine!
 kevin: ...
-iris: There are more arrows though...
-truth: Let's just do the same thing here.
-truth: He follows the arrows, retracing his steps to the supply corner. Then he turns right until he hits the wall, and goes left to get out the back entrance.
+iris: But there are more arrows...
+truth: We'll just trace them the same way.
+[background arg="res://dialogue/evidence_minigame/drawings/draw12.png" fade="0.6"]
+truth: Now he’s facing the figurine…
+[background arg="res://dialogue/evidence_minigame/drawings/draw13.png" fade="0.6"]
+truth: Down arrow…
+iris: Super confusing… his down looks like our up.
+[background arg="res://dialogue/evidence_minigame/drawings/draw14.png" fade="0.6"]
+truth: Right arrow…
+[background arg="res://dialogue/evidence_minigame/drawings/draw15.png" fade="0.6"]
+leave crumpled2 
+truth: Left arrow… and straight to the back entrance.
+
 kevin: ...
+[background arg="" fade="0.6"]
+
 mark: I think you're right... but...
 truth: But what?
 mark: I dunno... you're describing a perfect plan, but it doesn't feel like it ended that way.

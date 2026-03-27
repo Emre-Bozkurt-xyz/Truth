@@ -106,7 +106,7 @@ func _ready():
 	
 	if not Dialogic.signal_event.is_connected(_on_choice_made):
 		Dialogic.signal_event.connect(_on_choice_made)
-	start("stage_3")
+	start("stage_1")
 	
 
 # start a stage
