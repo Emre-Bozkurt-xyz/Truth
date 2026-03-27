@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://djp34v4olkugu"]
 
-[ext_resource type="Script" path="res://scenes/hallway.gd" id="1_txc3n"]
+[ext_resource type="Script" uid="uid://c2onjb4mvlqbq" path="res://scenes/hallway.gd" id="1_txc3n"]
 [ext_resource type="Texture2D" uid="uid://bkq5fh5n3ss1x" path="res://assets/renders/hallway.png" id="2_1k2v8"]
 [ext_resource type="Texture2D" uid="uid://b5xdy76r07dri" path="res://assets/renders/hallway_stairs.png" id="3_txc3n"]
 [ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="3_w57m6"]
 [ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="4_drbwl"]
 [ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_txc3n"]
 [ext_resource type="PackedScene" uid="uid://cg7mh8o38ax51" path="res://systems/item/world_item.tscn" id="7_nlnob"]
-[ext_resource type="Resource" uid="uid://b8xjqhr1hmf4b" path="res://systems/item/items/soundmaker.tres" id="8_drbwl"]
-[ext_resource type="Texture2D" uid="uid://4r700hm3c740" path="res://assets/renders/soundmaker_hallway.png" id="8_w57m6"]
+[ext_resource type="Resource" uid="uid://dognm5pudlp7d" path="res://systems/item/items/receipt.tres" id="8_w57m6"]
+[ext_resource type="Texture2D" uid="uid://bvfubupc8o67g" path="res://assets/renders/receipt_living_room.png" id="9_drbwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -22,7 +22,7 @@ size = Vector2(185, 460)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjeik"]
 size = Vector2(251, 201)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_drbwl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwv8p"]
 size = Vector2(94.00012, 54.000122)
 
 [node name="Hallway" type="Node2D" unique_id=1664769679 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
@@ -132,23 +132,22 @@ position = Vector2(2435, 694)
 shape = SubResource("RectangleShape2D_yjeik")
 
 [node name="WorldItem" parent="Environment" unique_id=1736156436 node_paths=PackedStringArray("indicator") instance=ExtResource("7_nlnob")]
-position = Vector2(960, 579)
-world_item_id = "soundmaker"
-item = ExtResource("8_drbwl")
+position = Vector2(933, 541)
+world_item_id = "receipt"
+item = ExtResource("8_w57m6")
 indicator = NodePath("Indicator")
 
-[node name="Sprite2D" type="Sprite2D" parent="Environment/WorldItem" unique_id=1379377565]
-scale = Vector2(0.82, 0.82)
-texture = ExtResource("8_w57m6")
+[node name="Sprite2D" type="Sprite2D" parent="Environment/WorldItem" unique_id=1821911992]
+texture = ExtResource("9_drbwl")
 
-[node name="Indicator" parent="Environment/WorldItem" unique_id=1659515325 instance=ExtResource("5_txc3n")]
+[node name="Indicator" parent="Environment/WorldItem" unique_id=958510055 instance=ExtResource("5_txc3n")]
 
-[node name="ProximityTarget" parent="Environment/WorldItem" unique_id=2146507959 instance=ExtResource("4_drbwl")]
-interactable_after = 2
+[node name="ProximityTarget" parent="Environment/WorldItem" unique_id=1651939356 instance=ExtResource("4_drbwl")]
+interactable_after = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WorldItem/ProximityTarget" unique_id=252697982]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WorldItem/ProximityTarget" unique_id=428102034]
 scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_drbwl")
+shape = SubResource("RectangleShape2D_hwv8p")
 debug_color = Color(0, 0.6, 0.69803923, 0.0627451)
 
 [node name="Left" type="Marker2D" parent="." unique_id=2132395752]

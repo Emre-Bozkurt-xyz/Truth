@@ -6,5 +6,5 @@
 script = ExtResource("1_2m1vb")
 item_id = "receipt"
 item_name = "Receipt"
-description = "A receipt from the Hobbyist Store"
+description = "A receipt from the Hobbyist Store, dated for the 13th. "
 metadata/_custom_type_script = "uid://igbhmeqmrjtw"

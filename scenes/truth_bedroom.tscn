@@ -6,11 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="2_wfs7u"]
 [ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_bkspa"]
 [ext_resource type="Resource" uid="uid://c4wixahd2y8py" path="res://systems/item/items/diary.tres" id="6_0naf5"]
-[ext_resource type="PackedScene" path="res://systems/item/world_item.tscn" id="7_bkspa"]
+[ext_resource type="PackedScene" uid="uid://cg7mh8o38ax51" path="res://systems/item/world_item.tscn" id="7_bkspa"]
 [ext_resource type="Script" uid="uid://7ll0nedhl6ok" path="res://systems/environment/door.gd" id="7_jfhh3"]
 [ext_resource type="Texture2D" uid="uid://bejla0xrjm2au" path="res://assets/renders/diary_truth_bedroom.png" id="9_jfhh3"]
 [ext_resource type="Resource" uid="uid://bhb60tdsynu6j" path="res://systems/item/items/battery.tres" id="10_atxgw"]
 [ext_resource type="Texture2D" uid="uid://dkagsr41ybeja" path="res://assets/renders/battery_kevin_bedroom.png" id="11_xkwa0"]
+[ext_resource type="Resource" uid="uid://gpuqvuq14xck" path="res://systems/item/items/soundmaker.tres" id="12_1f0fx"]
+[ext_resource type="Texture2D" uid="uid://4r700hm3c740" path="res://assets/renders/soundmaker_hallway.png" id="13_posdw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -22,6 +24,9 @@ size = Vector2(251, 201)
 size = Vector2(94.00012, 54.000122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atxgw"]
+size = Vector2(94.00012, 54.000122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5il7n"]
 size = Vector2(94.00012, 54.000122)
 
 [node name="TruthBedroom" type="Node2D" unique_id=1419511038 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
@@ -123,11 +128,31 @@ flip_h = true
 [node name="Indicator" parent="Environment/WorldItem2" unique_id=1999672694 instance=ExtResource("5_bkspa")]
 
 [node name="ProximityTarget" parent="Environment/WorldItem2" unique_id=1198565207 instance=ExtResource("2_i2l1n")]
-interactable_after = 2
+interactable_after = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WorldItem2/ProximityTarget" unique_id=1964723515]
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_atxgw")
+debug_color = Color(0, 0.6, 0.69803923, 0.0627451)
+
+[node name="WorldItem3" parent="Environment" unique_id=1960502827 node_paths=PackedStringArray("indicator") instance=ExtResource("7_bkspa")]
+position = Vector2(1063, 480)
+world_item_id = "soundmaker"
+item = ExtResource("12_1f0fx")
+indicator = NodePath("Indicator")
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/WorldItem3" unique_id=1913534767]
+scale = Vector2(0.82, 0.82)
+texture = ExtResource("13_posdw")
+
+[node name="Indicator" parent="Environment/WorldItem3" unique_id=569477906 instance=ExtResource("5_bkspa")]
+
+[node name="ProximityTarget" parent="Environment/WorldItem3" unique_id=196868775 instance=ExtResource("2_i2l1n")]
+interactable_after = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WorldItem3/ProximityTarget" unique_id=753624566]
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_5il7n")
 debug_color = Color(0, 0.6, 0.69803923, 0.0627451)
 
 [node name="Left" type="Marker2D" parent="." unique_id=2132395752]

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="3_2xesi"]
 [ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="4_gxht5"]
 [ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_f8yvb"]
-[ext_resource type="PackedScene" path="res://systems/item/world_item.tscn" id="6_ephxw"]
+[ext_resource type="PackedScene" uid="uid://cg7mh8o38ax51" path="res://systems/item/world_item.tscn" id="6_ephxw"]
 [ext_resource type="Resource" uid="uid://b77rrtxaww3gw" path="res://systems/item/items/paper.tres" id="7_7d7gv"]
 [ext_resource type="Texture2D" uid="uid://dhw817ys3khfb" path="res://assets/renders/paper_kevin_bedroom.png" id="7_ghv62"]
 
@@ -88,7 +88,7 @@ flip_h = true
 [node name="Indicator" parent="Environment/WorldItem" unique_id=1568676190 instance=ExtResource("5_f8yvb")]
 
 [node name="ProximityTarget" parent="Environment/WorldItem" unique_id=1973387771 instance=ExtResource("4_gxht5")]
-interactable_after = 2
+interactable_after = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WorldItem/ProximityTarget" unique_id=1892425050]
 scale = Vector2(0.9999999, 0.9999999)
