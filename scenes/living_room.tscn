@@ -211,6 +211,7 @@ scale = Vector2(3.28125, 3.8888907)
 texture = SubResource("CompressedTexture2D_fbsx8")
 
 [node name="ProximityTarget2" parent="mark_MINIGAME" unique_id=516724445 instance=ExtResource("4_rdpj6")]
+interactable_after = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mark_MINIGAME/ProximityTarget2" unique_id=13502207]
 position = Vector2(-295, 9.999973)
