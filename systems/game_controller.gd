@@ -9,7 +9,9 @@ enum GameState {
 	MINIGAME,
 	POST_MINIGAME, 
 	MONSTERS,
-	KEVIN_GONE
+	KEVIN_GONE,
+	CONCLUSION
+	
 }
 
 #var state_dialogues = {
