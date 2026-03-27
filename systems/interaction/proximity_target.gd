@@ -5,6 +5,8 @@ signal selection_changed(val: bool)
 signal interacted()
 
 @export var interactable_after: GameController.GameState = GameController.GameState.GAME_BEGIN
+var interactable: bool = true
+
 
 var selected: bool = false:
 	get: 
@@ -16,3 +18,7 @@ var selected: bool = false:
 
 func interact() -> void:
 	interacted.emit()
+
+
+func can_interact() -> bool:
+	return interactable and Global.is_curr_state_past(interactable_after)
