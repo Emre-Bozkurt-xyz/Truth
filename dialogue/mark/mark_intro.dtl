@@ -1,19 +1,19 @@
-truth: Hey, Mark. 
-mark: Oh, Truth. 
-mark: You been good lately? 
+truth: Hey, Mark.
+mark: Oh, Truth.
+mark: You been good lately?
 truth: [color=#e85670][i]Mark doesn’t flinch. Never does.[/i]
 truth: [color=#e85670][i]He looks straight at me—like he’s trying to read something off my face.[/i]
 truth: Yeah man, what's up?
-mark: Nothing bro, it's just you're... you, haha. 
+mark: Nothing bro, it's just you're... you, haha.
 truth: [color=#e85670][i]There it is...[/i]
-mark: You're on a different planet sometimes. 
-mark: Like you're looking at some shit the rest of us can't even see. 
-truth: If you're gonna be a dickhead, just say it straight. 
+mark: You're on a different planet sometimes.
+mark: Like you're looking at some shit the rest of us can't even see.
+truth: If you're gonna be a dickhead, just say it straight.
 mark: It's all love, man.
 truth: [color=#e85670][i]I don't feel like coming up with a witty response.[/i]
 [signal arg="mark_intro_complete"]
-truth: I also wanted to talk about something serious. 
-mark: Damn, you suddenly sound intense. What's up? 
+truth: I also wanted to talk about something serious.
+mark: Damn, you suddenly sound intense. What's up?
 truth: That night. The 13th.
 mark: ...What about it?
 truth: [color=#e85670][i]It’s been bothering me.[/i][/color]
@@ -25,24 +25,25 @@ truth: That’s what I thought too.
 truth: But think about it.
 truth: We went out.
 truth: There was a blackout.
-mark: Yeah, there was that. But so what? 
+mark: Yeah, there was that. But so what?
 truth: Then after, that loud noise.
 truth: And after that?
 mark: ...
 mark: I mean... nothing? We left?
-truth: Exactly. 
-truth: Something's off. 
+truth: Exactly.
+truth: Something's off.
 truth: Something happened in that gap, right after the lights went out.
-truth: And nobody knows. 
+truth: And nobody knows.
 mark: ...
 mark: Okay.
 mark: So what, you wanna play detective now?
 truth: [color=#e85670][i]This guy...[/i][/color]
-truth: I'm not gonna "play". 
-truth: I'll prove it. 
-truth: I'm going to reconstruct that night. 
+truth: I'm not gonna "play".
+truth: I'll prove it.
+truth: I'm going to reconstruct that night.
 truth: Piece by piece.
 mark: ...
 truth: I want everyone in the living room later.
 mark: Everyone?
 truth: Yeah.
+do Global.start_evidence_collection()

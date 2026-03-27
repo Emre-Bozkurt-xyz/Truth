@@ -32,6 +32,13 @@ func _ready() -> void:
 func _on_interacted():
 	if waiting: return
 	if dialogue_name == "": return
+	if Global.character_dialogue_state.get(character_id) and one_shot_dialogue:
+		return
+	
+	Global.character_dialogue_state.set(character_id, true)
+	if one_shot_dialogue:
+		proximity_target.interactable = false
+		indicator.visible = false
 	
 	Dialogic.start(dialogue_name, dialogue_label)
 	waiting = true
@@ -46,6 +53,3 @@ func _on_selection_changed(state: bool):
 
 func _on_dialogue_finish():
 	waiting = false
-	Global.character_dialogue_state.set(character_id, true)
-	if one_shot_dialogue:
-		proximity_target.interactable = false
