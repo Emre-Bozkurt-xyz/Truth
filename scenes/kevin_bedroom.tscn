@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b6n0qmktnvnxp" path="res://assets/characters/kevin_idle.png" id="9_2xesi"]
 [ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="10_gxht5"]
 [ext_resource type="Texture2D" uid="uid://carvu1dbisbqo" path="res://assets/blood.png" id="11_f8yvb"]
-[ext_resource type="Script" uid="uid://d3htq4rxhelnr" path="res://systems/vfx.gd" id="12_4ryrs"]
+[ext_resource type="Script" path="res://systems/vfx.gd" id="12_4ryrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -132,7 +132,7 @@ texture = ExtResource("9_2xesi")
 flip_h = true
 script = ExtResource("10_gxht5")
 character_id = "kevin_GONE"
-spawn_during = 7
+spawn_during = 8
 dialogue_name = "disappear"
 proximity_target = NodePath("ProximityTarget2")
 indicator = NodePath("Indicator")
