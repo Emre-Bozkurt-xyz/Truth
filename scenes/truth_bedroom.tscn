@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="2_i2l1n"]
 [ext_resource type="PackedScene" uid="uid://ytrj7iww7i0o" path="res://systems/environment/proximity_dialogue_door.tscn" id="2_wfs7u"]
 [ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_bkspa"]
+[ext_resource type="Resource" uid="uid://c4wixahd2y8py" path="res://systems/item/items/diary.tres" id="6_0naf5"]
 [ext_resource type="PackedScene" uid="uid://cg7mh8o38ax51" path="res://systems/item/world_item.tscn" id="7_bkspa"]
 [ext_resource type="Script" uid="uid://7ll0nedhl6ok" path="res://systems/environment/door.gd" id="7_jfhh3"]
 [ext_resource type="Texture2D" uid="uid://bejla0xrjm2au" path="res://assets/renders/diary_truth_bedroom.png" id="9_jfhh3"]
@@ -13,13 +14,16 @@
 [ext_resource type="Resource" uid="uid://gpuqvuq14xck" path="res://systems/item/items/soundmaker.tres" id="12_1f0fx"]
 [ext_resource type="Texture2D" uid="uid://4r700hm3c740" path="res://assets/renders/soundmaker_hallway.png" id="13_posdw"]
 [ext_resource type="Texture2D" uid="uid://b6n0qmktnvnxp" path="res://assets/characters/kevin_idle.png" id="14_5il7n"]
-[ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="15_vgkb3"]
+[ext_resource type="Script" path="res://systems/character.gd" id="15_vgkb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u16mr"]
 size = Vector2(251, 201)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1qkj"]
+size = Vector2(94.00012, 54.000122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atxgw"]
 size = Vector2(94.00012, 54.000122)
@@ -97,9 +101,23 @@ position = Vector2(1931, 674)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/StaticBody2D2" unique_id=437956466]
 shape = SubResource("RectangleShape2D_u16mr")
 
-[node name="Sprite2D" type="Sprite2D" parent="Environment" unique_id=2113995884]
+[node name="WorldItem" parent="Environment" unique_id=1862319695 node_paths=PackedStringArray("indicator") instance=ExtResource("7_bkspa")]
 position = Vector2(720, 510)
+world_item_id = "diary"
+item = ExtResource("6_0naf5")
+indicator = NodePath("Indicator")
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/WorldItem" unique_id=2113995884]
 texture = ExtResource("9_jfhh3")
+
+[node name="Indicator" parent="Environment/WorldItem" unique_id=216955117 instance=ExtResource("5_bkspa")]
+
+[node name="ProximityTarget" parent="Environment/WorldItem" unique_id=1240417860 instance=ExtResource("2_i2l1n")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WorldItem/ProximityTarget" unique_id=1359449399]
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_t1qkj")
+debug_color = Color(0, 0.6, 0.69803923, 0.0627451)
 
 [node name="WorldItem2" parent="Environment" unique_id=1736156436 node_paths=PackedStringArray("indicator") instance=ExtResource("7_bkspa")]
 position = Vector2(1628, 644)
@@ -135,7 +153,7 @@ texture = ExtResource("13_posdw")
 [node name="Indicator" parent="Environment/WorldItem3" unique_id=569477906 instance=ExtResource("5_bkspa")]
 
 [node name="ProximityTarget" parent="Environment/WorldItem3" unique_id=196868775 instance=ExtResource("2_i2l1n")]
-interactable_after = 1
+interactable_after = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WorldItem3/ProximityTarget" unique_id=753624566]
 scale = Vector2(0.9999999, 0.9999999)
@@ -143,13 +161,11 @@ shape = SubResource("RectangleShape2D_5il7n")
 debug_color = Color(0, 0.6, 0.69803923, 0.0627451)
 
 [node name="Kevin" type="Sprite2D" parent="Environment" unique_id=924977251 node_paths=PackedStringArray("proximity_target", "indicator")]
-position = Vector2(1337, 539)
+position = Vector2(1506, 534)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("14_5il7n")
 flip_h = true
 script = ExtResource("15_vgkb3")
-character_id = "kevin_bedroom"
-spawn_during = 1
 dialogue_name = "kevin_intro"
 proximity_target = NodePath("ProximityTarget2")
 indicator = NodePath("Indicator")
@@ -159,6 +175,7 @@ position = Vector2(22.222366, -94.44441)
 scale = Vector2(3.28125, 3.8888907)
 
 [node name="ProximityTarget2" parent="Environment/Kevin" unique_id=2050369518 instance=ExtResource("2_i2l1n")]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Kevin/ProximityTarget2" unique_id=2105018434]
 position = Vector2(-16.668945, 58.333252)

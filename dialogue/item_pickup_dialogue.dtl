@@ -1,7 +1,6 @@
 if {item_name} != "":
-	{item_name}\
-	{item_description}
-	- Take
+	Hm.
+	- Examine
 		[signal arg="item_pickup_accept"]
 	- Nevermind
 		[signal arg="item_pickup_decline"]
