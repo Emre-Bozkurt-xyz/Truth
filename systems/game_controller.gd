@@ -69,9 +69,7 @@ func _ready() -> void:
 	Dialogic.timeline_started.connect(_on_dialogue_start)
 	Dialogic.timeline_ended.connect(_on_dialogue_end)
 	EventBus.DoorEntered.connect(_on_door_entered)
-	
-	
-	
+
 
 func start_minigame():
 	var minigame = MINIGAME.instantiate()
@@ -79,7 +77,6 @@ func start_minigame():
 	print("ADDED MINIGAME")
 
 
-	
 func change_scene(scene_path: String, door_id: String = "") -> void:
 	loading_screen.enter()
 	
@@ -139,6 +136,10 @@ func spawn_player(door_id: String):
 				cam.limit_bottom = current_scene.bottom_cam_limit.global_position.y
 		
 	current_scene.add_child(player)
+
+
+func move_player(pos: Vector2):
+	Global.player.global_position.x = pos.x
 
 
 func _on_door_entered(door: Door):

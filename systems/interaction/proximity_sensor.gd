@@ -1,7 +1,7 @@
 class_name ProximitySensor
 extends Area2D
 
-var proximity_targets: Array[Area2D]
+var proximity_targets: Dictionary[ProximityTarget, int]
 var curr_selected: ProximityTarget
 
 func _ready() -> void:
@@ -9,8 +9,9 @@ func _ready() -> void:
 	area_exited.connect(_on_area_exited)
 
 func _on_area_entered(area: Area2D):
-	proximity_targets.append(area)
-	update_selected_target()
+	if area is ProximityTarget:
+		proximity_targets.set(area, area.interaction_priority)
+		update_selected_target()
 
 func _on_area_exited(area: Area2D):
 	proximity_targets.erase(area)
@@ -19,16 +20,19 @@ func _on_area_exited(area: Area2D):
 func update_selected_target():
 	var nearest = null
 	var nearest_dist: float = INF
-	for target in proximity_targets:
-		if target is ProximityTarget:
-			# Dont consider it if it isn't interactable
-			if not target.can_interact(): 
-				continue
-			
-			var dist: float = global_position.distance_to(target.global_position)
-			if absf(dist) < nearest_dist:
-				nearest_dist = absf(dist)
-				nearest = target
+	var highest_priority = proximity_targets.values().max()
+	for target in proximity_targets.keys():
+		if not target.interaction_priority == highest_priority:
+			continue
+		
+		# Dont consider it if it isn't interactable
+		if not target.can_interact(): 
+			continue
+		
+		var dist: float = global_position.distance_to(target.global_position)
+		if absf(dist) < nearest_dist:
+			nearest_dist = absf(dist)
+			nearest = target
 	
 	if nearest == curr_selected: return
 	if curr_selected: curr_selected.selected = false

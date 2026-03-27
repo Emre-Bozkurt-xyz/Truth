@@ -5,7 +5,10 @@ extends Sprite2D
 @export var spawn_during: GameController.GameState
 @export var look_at_player: bool = false
 @export var indicator_look_at_player: bool = false
+@export var player_snap: Node2D
+@export var auto_interact: bool = false
 @export var one_shot_dialogue: bool = true
+@export var hide_on_timeline_finish: bool = false
 @export var dialogue_name: String
 @export var dialogue_label: String
 @export var proximity_target: ProximityTarget
@@ -33,6 +36,8 @@ func _ready() -> void:
 	if proximity_target != null:
 		proximity_target.selection_changed.connect(_on_selection_changed)
 		proximity_target.interacted.connect(_on_interacted)
+		if auto_interact:
+			proximity_target.interaction_priority = 10
 	
 	while not player_found:
 		if Global.player != null:
@@ -53,7 +58,7 @@ func _physics_process(_delta: float) -> void:
 			flip_h = true
 		else:
 			flip_h = false
-	if indicator_look_at_player:
+	if indicator_look_at_player and indicator != null:
 		if facing_right:
 			indicator.position.x = initial_indicator_pos.x
 		else:
@@ -71,16 +76,27 @@ func _on_interacted():
 		proximity_target.interactable = false
 		indicator.visible = false
 	
+	if player_snap != null:
+		Global.game_controller.move_player(player_snap.global_position)
+	
 	Dialogic.start(dialogue_name, dialogue_label)
 	waiting = true
 
 
 func _on_selection_changed(state: bool):
 	selected = state
+	if state and auto_interact:
+		await get_tree().physics_frame
+		await get_tree().create_timer(0.5).timeout
+		await get_tree().process_frame
+		_on_interacted()
 	if indicator == null: return
 	
 	indicator.toggle(selected)
 
 
 func _on_dialogue_finish():
+	if waiting and hide_on_timeline_finish:
+		queue_free()
+		
 	waiting = false

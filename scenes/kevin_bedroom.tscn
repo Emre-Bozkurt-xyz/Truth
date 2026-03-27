@@ -113,7 +113,6 @@ position = Vector2(1015, -26)
 position = Vector2(1920, 438)
 
 [node name="KevinGone" type="Sprite2D" parent="." unique_id=832615499 node_paths=PackedStringArray("proximity_target", "indicator")]
-visible = false
 position = Vector2(887, 444.99997)
 scale = Vector2(0.22, 0.22)
 texture = ExtResource("9_2xesi")
@@ -121,6 +120,8 @@ flip_h = true
 script = ExtResource("10_gxht5")
 character_id = "kevin_GONE"
 spawn_during = 8
+look_at_player = true
+indicator_look_at_player = true
 dialogue_name = "disappear"
 proximity_target = NodePath("ProximityTarget2")
 indicator = NodePath("Indicator")

@@ -6,7 +6,7 @@ signal interacted()
 
 @export var interactable_after: GameController.GameState = GameController.GameState.GAME_BEGIN
 var interactable: bool = true
-
+var interaction_priority: int = 0
 
 var selected: bool = false:
 	get: 
