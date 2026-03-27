@@ -136,11 +136,6 @@ offset_right = 365.0
 offset_bottom = 342.0
 script = ExtResource("4_lquwl")
 
-[node name="Panel" type="Panel" parent="UI/QuestPanel" unique_id=778757584]
-layout_mode = 0
-offset_right = 367.0
-offset_bottom = 175.0
-
 [node name="MarginContainer" type="MarginContainer" parent="UI/QuestPanel" unique_id=808941632]
 layout_mode = 1
 anchors_preset = 15
