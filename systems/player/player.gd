@@ -19,6 +19,9 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if locked:
+		animation_player.speed_scale = 1
+		animation_player.play("Idle")
+		was_idle = true
 		velocity.x = 0.0
 		return
 	

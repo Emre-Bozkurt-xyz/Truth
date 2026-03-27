@@ -112,7 +112,6 @@ position = Vector2(1004, -10)
 position = Vector2(1920, 438)
 
 [node name="Mark_STARTED" type="Sprite2D" parent="." unique_id=439243124 node_paths=PackedStringArray("proximity_target", "indicator")]
-visible = false
 position = Vector2(1581, 473)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("11_tcv1k")
@@ -125,8 +124,8 @@ proximity_target = NodePath("ProximityTarget2")
 indicator = NodePath("Indicator")
 
 [node name="Indicator" parent="Mark_STARTED" unique_id=1710507976 instance=ExtResource("5_cidui")]
-position = Vector2(22.222366, -94.44441)
-scale = Vector2(3.28125, 3.8888907)
+position = Vector2(-584.9999, -24.999992)
+scale = Vector2(2, 2)
 texture = SubResource("CompressedTexture2D_fbsx8")
 
 [node name="ProximityTarget2" parent="Mark_STARTED" unique_id=1836328017 instance=ExtResource("4_rdpj6")]
@@ -136,29 +135,31 @@ position = Vector2(-295, 9.999973)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_exyd1")
 
-[node name="angry_monster" type="Sprite2D" parent="." unique_id=1681505653 node_paths=PackedStringArray("proximity_target", "indicator")]
-visible = false
-position = Vector2(1557, 403)
-scale = Vector2(0.2, 0.2)
+[node name="angry_monster" type="Sprite2D" parent="." unique_id=1681505653 node_paths=PackedStringArray("player_snap", "proximity_target", "indicator")]
+position = Vector2(1579, 405)
+scale = Vector2(0.22, 0.22)
 texture = ExtResource("11_sc017")
 flip_h = true
 script = ExtResource("10_exyd1")
 character_id = "angry_monster"
 spawn_during = 7
+player_snap = NodePath("PlayerSnap")
+auto_interact = true
+hide_on_timeline_finish = true
 dialogue_name = "angry_monster"
 proximity_target = NodePath("ProximityTarget2")
-indicator = NodePath("Indicator")
-
-[node name="Indicator" parent="angry_monster" unique_id=551559148 instance=ExtResource("5_cidui")]
-position = Vector2(22.222366, -94.44441)
-scale = Vector2(3.28125, 3.8888907)
+indicator = NodePath("")
 
 [node name="ProximityTarget2" parent="angry_monster" unique_id=1661766427 instance=ExtResource("4_rdpj6")]
+position = Vector2(-4754.5454, 168.18185)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="angry_monster/ProximityTarget2" unique_id=38777694]
 position = Vector2(-792.501, 40)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_30exw")
+
+[node name="PlayerSnap" type="Marker2D" parent="angry_monster" unique_id=463359192]
+position = Vector2(-1845.4543, 1268.1819)
 
 [node name="mark_MINIGAME" type="Sprite2D" parent="." unique_id=303128158 node_paths=PackedStringArray("proximity_target", "indicator")]
 visible = false
@@ -199,8 +200,8 @@ indicator = NodePath("")
 [node name="SCENE" type="Sprite2D" parent="." unique_id=1585767087]
 unique_name_in_owner = true
 visible = false
-position = Vector2(1467, 446.99997)
-scale = Vector2(0.2, 0.2)
+position = Vector2(1520, 393)
+scale = Vector2(0.22, 0.22)
 texture = ExtResource("14_30exw")
 
 [node name="mark_DEAD" type="Sprite2D" parent="." unique_id=200798866 node_paths=PackedStringArray("proximity_target", "indicator")]
