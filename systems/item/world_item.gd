@@ -59,6 +59,10 @@ func _on_choice_made(arg: String):
 			audio_player.play()
 			Inventory.obtain(item)
 			Global.world_item_state.set(world_item_id, true)
+			
+			
+			Dialogic.start(item.pickup_timeline)
+				
 			queue_free()
 		"item_pickup_decline":
 			waiting = false

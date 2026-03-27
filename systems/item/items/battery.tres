@@ -9,4 +9,5 @@ item_id = "battery_pack"
 item_name = "Battery pack"
 icon = ExtResource("1_4t6u0")
 description = "A battery pack that has been mostly drained."
+pickup_timeline = "pickup_battery"
 metadata/_custom_type_script = "uid://igbhmeqmrjtw"

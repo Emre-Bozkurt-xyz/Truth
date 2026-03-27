@@ -88,6 +88,7 @@ position = Vector2(1783, 551)
 world_item_id = "receipt"
 item = ExtResource("8_fbsx8")
 indicator = NodePath("Indicator")
+pickup_timeline = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/WorldItem" unique_id=1317653327]
 texture = ExtResource("8_cidui")
@@ -95,7 +96,7 @@ texture = ExtResource("8_cidui")
 [node name="Indicator" parent="Environment/WorldItem" unique_id=1352924489 instance=ExtResource("5_cidui")]
 
 [node name="ProximityTarget" parent="Environment/WorldItem" unique_id=1215526311 instance=ExtResource("4_rdpj6")]
-interactable_after = 2
+interactable_after = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WorldItem/ProximityTarget" unique_id=1847541951]
 scale = Vector2(0.9999999, 0.9999999)

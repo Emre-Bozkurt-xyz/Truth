@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b8xjqhr1hmf4b"]
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://gpuqvuq14xck"]
 
 [ext_resource type="Texture2D" uid="uid://bhktopckqwooi" path="res://assets/renders/soundmaker_hallway_raw.png" id="1_7a4ic"]
 [ext_resource type="Script" uid="uid://igbhmeqmrjtw" path="res://systems/item/item.gd" id="1_ny72k"]
@@ -9,4 +9,5 @@ item_id = "soundmaker"
 item_name = "Soundmaker"
 icon = ExtResource("1_7a4ic")
 description = "An odd looking object that seems to contain a speaker."
+pickup_timeline = "pickup_noisemaker"
 metadata/_custom_type_script = "uid://igbhmeqmrjtw"

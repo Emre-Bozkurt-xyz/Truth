@@ -7,4 +7,5 @@ script = ExtResource("1_56nk1")
 item_id = "paper"
 item_name = "Piece of paper"
 description = "Something seems to be drawn on it..."
+pickup_timeline = "pickup_crumpled"
 metadata/_custom_type_script = "uid://igbhmeqmrjtw"
