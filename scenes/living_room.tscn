@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://systems/vfx.gd" id="11_exyd1"]
 [ext_resource type="Texture2D" uid="uid://c4cdtswxf1uyr" path="res://assets/characters/mark_monster.png" id="11_sc017"]
 [ext_resource type="Texture2D" uid="uid://b8g2hwxxhc5e8" path="res://assets/characters/mark_idle.png" id="11_tcv1k"]
+[ext_resource type="Texture2D" uid="uid://djuatxfm0qdrh" path="res://assets/characters/iris_idle.png" id="12_tcv1k"]
+[ext_resource type="Texture2D" uid="uid://b6n0qmktnvnxp" path="res://assets/characters/kevin_idle.png" id="13_sc017"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -26,6 +28,15 @@ size = Vector2(1460, 2427.7773)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30exw"]
 size = Vector2(3054.9985, 2422.2214)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcv1k"]
+size = Vector2(1460, 2427.7773)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc017"]
+size = Vector2(1529.9998, 2422.2214)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uo0jg"]
+size = Vector2(1460, 2427.7773)
 
 [node name="LivingRoom" type="Node2D" unique_id=1051288321 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_fbsx8")
@@ -182,3 +193,72 @@ scale = Vector2(3.28125, 3.8888907)
 position = Vector2(-792.501, 40)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_30exw")
+
+[node name="mark_MINIGAME" type="Sprite2D" parent="." unique_id=303128158 node_paths=PackedStringArray("proximity_target", "indicator")]
+position = Vector2(1263, 413)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_tcv1k")
+flip_h = true
+script = ExtResource("10_exyd1")
+character_id = "mark_MINIGAME"
+spawn_during = 5
+proximity_target = NodePath("ProximityTarget2")
+indicator = NodePath("Indicator")
+
+[node name="Indicator" parent="mark_MINIGAME" unique_id=443095909 instance=ExtResource("5_cidui")]
+position = Vector2(22.222366, -94.44441)
+scale = Vector2(3.28125, 3.8888907)
+texture = SubResource("CompressedTexture2D_fbsx8")
+
+[node name="ProximityTarget2" parent="mark_MINIGAME" unique_id=516724445 instance=ExtResource("4_rdpj6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mark_MINIGAME/ProximityTarget2" unique_id=13502207]
+position = Vector2(-295, 9.999973)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_tcv1k")
+
+[node name="iris_MINIGAME" type="Sprite2D" parent="." unique_id=1745939695 node_paths=PackedStringArray("proximity_target", "indicator")]
+position = Vector2(944, 353)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_tcv1k")
+flip_h = true
+script = ExtResource("10_exyd1")
+character_id = "iris_MINIGAME"
+spawn_during = 5
+proximity_target = NodePath("ProximityTarget2")
+indicator = NodePath("Indicator")
+
+[node name="Indicator" parent="iris_MINIGAME" unique_id=1328942080 instance=ExtResource("5_cidui")]
+position = Vector2(22.222366, -94.44441)
+scale = Vector2(3.28125, 3.8888907)
+
+[node name="ProximityTarget2" parent="iris_MINIGAME" unique_id=644846500 instance=ExtResource("4_rdpj6")]
+interactable_after = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="iris_MINIGAME/ProximityTarget2" unique_id=151047103]
+position = Vector2(-30.001465, 40)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_sc017")
+
+[node name="kevin_MINIGAME" type="Sprite2D" parent="." unique_id=186770145 node_paths=PackedStringArray("proximity_target", "indicator")]
+position = Vector2(681.00006, 364)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("13_sc017")
+flip_h = true
+script = ExtResource("10_exyd1")
+character_id = "kevin_MINIGAME"
+spawn_during = 5
+proximity_target = NodePath("ProximityTarget2")
+indicator = NodePath("Indicator")
+
+[node name="Indicator" parent="kevin_MINIGAME" unique_id=865679852 instance=ExtResource("5_cidui")]
+position = Vector2(22.222366, -94.44441)
+scale = Vector2(3.28125, 3.8888907)
+
+[node name="ProximityTarget2" parent="kevin_MINIGAME" unique_id=1063343886 instance=ExtResource("4_rdpj6")]
+interactable_after = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kevin_MINIGAME/ProximityTarget2" unique_id=639388840]
+position = Vector2(-320, 58.333252)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_uo0jg")
