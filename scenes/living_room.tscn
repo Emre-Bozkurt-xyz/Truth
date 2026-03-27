@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bj7085w7ir2w8" path="res://assets/renders/living_room_tv.png" id="3_v1l6s"]
 [ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="4_rdpj6"]
 [ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_cidui"]
+[ext_resource type="Texture2D" uid="uid://djuatxfm0qdrh" path="res://assets/characters/iris_idle.png" id="9_fbsx8"]
+[ext_resource type="Script" path="res://systems/character.gd" id="10_exyd1"]
 [ext_resource type="Texture2D" uid="uid://carvu1dbisbqo" path="res://assets/blood.png" id="10_fbsx8"]
 [ext_resource type="Script" path="res://systems/vfx.gd" id="11_exyd1"]
 
@@ -14,6 +16,9 @@ size = Vector2(124, 542)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m06uc"]
 size = Vector2(251, 201)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcv1k"]
+size = Vector2(809.44617, 2422.2214)
 
 [node name="LivingRoom" type="Node2D" unique_id=1051288321 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_8ih8r")
@@ -104,3 +109,24 @@ position = Vector2(1015, 25)
 
 [node name="Right" type="Marker2D" parent="." unique_id=797125771]
 position = Vector2(1920, 438)
+
+[node name="Iris" type="Sprite2D" parent="." unique_id=1124990506 node_paths=PackedStringArray("proximity_target", "indicator")]
+position = Vector2(1104, 486)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_fbsx8")
+flip_h = true
+script = ExtResource("10_exyd1")
+dialogue_name = "iris_intro"
+proximity_target = NodePath("ProximityTarget2")
+indicator = NodePath("Indicator")
+
+[node name="Indicator" parent="Iris" unique_id=1581696873 instance=ExtResource("5_cidui")]
+position = Vector2(22.222366, -94.44441)
+scale = Vector2(3.28125, 3.8888907)
+
+[node name="ProximityTarget2" parent="Iris" unique_id=1498802426 instance=ExtResource("4_rdpj6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Iris/ProximityTarget2" unique_id=1135500216]
+position = Vector2(4.9997563, 39.99994)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_tcv1k")
