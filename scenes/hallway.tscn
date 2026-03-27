@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cg7mh8o38ax51" path="res://systems/item/world_item.tscn" id="7_nlnob"]
 [ext_resource type="Resource" uid="uid://dognm5pudlp7d" path="res://systems/item/items/receipt.tres" id="8_w57m6"]
 [ext_resource type="Texture2D" uid="uid://bvfubupc8o67g" path="res://assets/renders/receipt_living_room.png" id="9_drbwl"]
+[ext_resource type="Texture2D" uid="uid://b8g2hwxxhc5e8" path="res://assets/characters/mark_idle.png" id="10_hwv8p"]
+[ext_resource type="Script" path="res://systems/character.gd" id="11_52g5x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -24,6 +26,9 @@ size = Vector2(251, 201)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hwv8p"]
 size = Vector2(94.00012, 54.000122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ew26q"]
+size = Vector2(809.44617, 2422.2214)
 
 [node name="Hallway" type="Node2D" unique_id=1664769679 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_txc3n")
@@ -161,3 +166,24 @@ position = Vector2(1031, 2)
 
 [node name="Right" type="Marker2D" parent="." unique_id=797125771]
 position = Vector2(2453, 428)
+
+[node name="Mark" type="Sprite2D" parent="." unique_id=582821736 node_paths=PackedStringArray("proximity_target", "indicator")]
+position = Vector2(1104, 486)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_hwv8p")
+flip_h = true
+script = ExtResource("11_52g5x")
+dialogue_name = "mark_intro"
+proximity_target = NodePath("ProximityTarget2")
+indicator = NodePath("Indicator")
+
+[node name="Indicator" parent="Mark" unique_id=1169578243 instance=ExtResource("5_txc3n")]
+position = Vector2(22.222366, -94.44441)
+scale = Vector2(3.28125, 3.8888907)
+
+[node name="ProximityTarget2" parent="Mark" unique_id=789901815 instance=ExtResource("4_drbwl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mark/ProximityTarget2" unique_id=918511608]
+position = Vector2(4.9997563, 39.99994)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ew26q")
