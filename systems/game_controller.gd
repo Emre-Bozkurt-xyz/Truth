@@ -63,7 +63,7 @@ var lock_on_dialogue: bool = true
 
 func _ready() -> void:
 	Global.game_controller = self
-	game_state = GameState.GAME_BEGIN
+	game_state = GameState.POST_MINIGAME
 	change_scene("truth_bedroom", "bed")
 	
 	Dialogic.timeline_started.connect(_on_dialogue_start)

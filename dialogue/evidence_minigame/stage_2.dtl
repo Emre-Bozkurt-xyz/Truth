@@ -14,7 +14,7 @@ truth: The person who was acting weird was:
 	[signal arg="choice_1_kevin"]
 truth: Something about Kevin... he wasn't acting like himself that day. He kept doing little things that didn't make sense.
 kevin: Me? Do tell, what did I do that was soooooo weird? 
-truth: The evidence that points to his weird behavior is: *Option to select piece of evidence, present Mark's account*
+truth: The evidence that points to his weird behavior is: 
 truth: The two of you always, without fail, go to the tabletop section of the store. But this time, Kevin went to the complete opposite side.
 kevin: ... Really? I'm so weird for [i]that[/i]? God forbid a man wants to check out a new spot..
 iris: U-um, can I also say something?
