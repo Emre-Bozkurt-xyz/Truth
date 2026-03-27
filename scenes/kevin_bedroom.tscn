@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cg7mh8o38ax51" path="res://systems/item/world_item.tscn" id="6_ephxw"]
 [ext_resource type="Resource" uid="uid://b77rrtxaww3gw" path="res://systems/item/items/paper.tres" id="7_7d7gv"]
 [ext_resource type="Texture2D" uid="uid://dhw817ys3khfb" path="res://assets/renders/paper_kevin_bedroom.png" id="7_ghv62"]
+[ext_resource type="Texture2D" uid="uid://b6n0qmktnvnxp" path="res://assets/characters/kevin_idle.png" id="9_2xesi"]
+[ext_resource type="Script" path="res://systems/character.gd" id="10_gxht5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -17,6 +19,9 @@ size = Vector2(251, 201)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7d7gv"]
 size = Vector2(94.00012, 54.000122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8yvb"]
+size = Vector2(1919.9998, 2422.2214)
 
 [node name="KevinBedroom" type="Node2D" unique_id=2133708482 node_paths=PackedStringArray("door_container", "floor_marker", "left_cam_limit", "right_cam_limit", "top_cam_limit", "bottom_cam_limit")]
 script = ExtResource("1_ghv62")
@@ -106,3 +111,25 @@ position = Vector2(1015, 25)
 
 [node name="Right" type="Marker2D" parent="." unique_id=797125771]
 position = Vector2(1920, 438)
+
+[node name="KevinGone" type="Sprite2D" parent="." unique_id=832615499 node_paths=PackedStringArray("proximity_target", "indicator")]
+position = Vector2(1237, 459)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_2xesi")
+flip_h = true
+script = ExtResource("10_gxht5")
+dialogue_name = "disappear"
+proximity_target = NodePath("ProximityTarget2")
+indicator = NodePath("Indicator")
+
+[node name="Indicator" parent="KevinGone" unique_id=817834631 instance=ExtResource("5_f8yvb")]
+position = Vector2(22.222366, -94.44441)
+scale = Vector2(3.28125, 3.8888907)
+
+[node name="ProximityTarget2" parent="KevinGone" unique_id=2122253864 instance=ExtResource("4_gxht5")]
+interactable_after = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KevinGone/ProximityTarget2" unique_id=26481743]
+position = Vector2(65, 15)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_f8yvb")
