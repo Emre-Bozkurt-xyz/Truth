@@ -12,3 +12,4 @@ truth: ...
 truth: [color=#e85670][i]Something about this thing...[i]
 truth: [color=#e85670][i]The way it keeps shrinking back...[i]
 truth: [color=#db1d3f][b][i]It infuriates me.\[i][b]
+[signal arg="crying_monster_complete"]
