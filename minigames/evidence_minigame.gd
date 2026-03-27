@@ -102,7 +102,7 @@ var stages = {
 
 
 func _ready():
-	#Global.player.locked = true
+	Global.player.locked = true
 	current_lives = max_lives
 	
 	if not Dialogic.signal_event.is_connected(_on_choice_made):
