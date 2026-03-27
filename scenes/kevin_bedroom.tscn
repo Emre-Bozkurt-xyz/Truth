@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dhw817ys3khfb" path="res://assets/renders/paper_kevin_bedroom.png" id="7_ghv62"]
 [ext_resource type="Texture2D" uid="uid://b6n0qmktnvnxp" path="res://assets/characters/kevin_idle.png" id="9_2xesi"]
 [ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="10_gxht5"]
-[ext_resource type="Texture2D" uid="uid://carvu1dbisbqo" path="res://assets/blood.png" id="11_f8yvb"]
-[ext_resource type="Script" path="res://systems/vfx.gd" id="12_4ryrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(124, 542)
@@ -37,7 +35,7 @@ bottom_cam_limit = NodePath("Bottom")
 metadata/_custom_type_script = "uid://clklmd8jxks2t"
 
 [node name="Floor" type="Marker2D" parent="." unique_id=1621575072]
-position = Vector2(384, 666)
+position = Vector2(554, 676)
 
 [node name="Environment" type="Node2D" parent="." unique_id=1469737252]
 z_index = -1
@@ -102,32 +100,22 @@ scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_7d7gv")
 debug_color = Color(0, 0.6, 0.69803923, 0.0627451)
 
-[node name="bloodWallLivingroom" type="Sprite2D" parent="Environment" unique_id=406820112]
-self_modulate = Color(1, 1, 1, 0.54509807)
-position = Vector2(687, 768)
-rotation = -1.5348077
-scale = Vector2(0.37376073, 1.4824394)
-texture = ExtResource("11_f8yvb")
-region_enabled = true
-region_rect = Rect2(1704.725, 1767.5128, 680.4, 692.5502)
-script = ExtResource("12_4ryrs")
-spawn_during = Array[int]([7, 8])
-
 [node name="Left" type="Marker2D" parent="." unique_id=2132395752]
 position = Vector2(4, 582)
 
 [node name="Bottom" type="Marker2D" parent="." unique_id=1408346509]
-position = Vector2(1019, 696)
+position = Vector2(1015, 746)
 
 [node name="Top" type="Marker2D" parent="." unique_id=1190551335]
-position = Vector2(1015, 25)
+position = Vector2(1015, -26)
 
 [node name="Right" type="Marker2D" parent="." unique_id=797125771]
 position = Vector2(1920, 438)
 
 [node name="KevinGone" type="Sprite2D" parent="." unique_id=832615499 node_paths=PackedStringArray("proximity_target", "indicator")]
-position = Vector2(1237, 459)
-scale = Vector2(0.2, 0.2)
+visible = false
+position = Vector2(887, 444.99997)
+scale = Vector2(0.22, 0.22)
 texture = ExtResource("9_2xesi")
 flip_h = true
 script = ExtResource("10_gxht5")
@@ -138,8 +126,8 @@ proximity_target = NodePath("ProximityTarget2")
 indicator = NodePath("Indicator")
 
 [node name="Indicator" parent="KevinGone" unique_id=817834631 instance=ExtResource("5_f8yvb")]
-position = Vector2(22.222366, -94.44441)
-scale = Vector2(3.28125, 3.8888907)
+position = Vector2(-500, -63.63636)
+scale = Vector2(2, 2)
 
 [node name="ProximityTarget2" parent="KevinGone" unique_id=2122253864 instance=ExtResource("4_gxht5")]
 interactable_after = 7
@@ -148,14 +136,3 @@ interactable_after = 7
 position = Vector2(65, 15)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_f8yvb")
-
-[node name="bloodWallLivingroom" type="Sprite2D" parent="." unique_id=1008069725]
-self_modulate = Color(1, 1, 1, 0.59607846)
-position = Vector2(863.70386, 685.9094)
-rotation = -1.6135918
-scale = Vector2(0.102318145, 1.6072702)
-texture = ExtResource("11_f8yvb")
-region_enabled = true
-region_rect = Rect2(5077.171, 1197.0509, 905.7822, 400.45093)
-script = ExtResource("12_4ryrs")
-spawn_during = Array[int]([7, 8])

@@ -22,3 +22,7 @@ func start_evidence_collection():
 func switch_to_conclusion():
 	game_controller.current_scene.get_node("KevinGone").queue_free()
 	game_controller.game_state = GameController.GameState.CONCLUSION
+
+
+func quit_game():
+	get_tree().quit()
