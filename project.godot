@@ -54,6 +54,7 @@ directories/dtl_directory={
 "pickup_crumpled": "res://dialogue/evidence_minigame/evidence_collection/pickup_crumpled.dtl",
 "pickup_noisemaker": "res://dialogue/evidence_minigame/evidence_collection/pickup_noisemaker.dtl",
 "pickup_receipt": "res://dialogue/evidence_minigame/evidence_collection/pickup_receipt.dtl",
+"post_minigame": "res://dialogue/post_minigame.dtl",
 "pre_minigame": "res://dialogue/mark/pre_minigame.dtl",
 "stage_1": "res://dialogue/evidence_minigame/stage_1.dtl",
 "stage_2": "res://dialogue/evidence_minigame/stage_2.dtl",
