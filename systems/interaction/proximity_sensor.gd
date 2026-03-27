@@ -22,7 +22,7 @@ func update_selected_target():
 	for target in proximity_targets:
 		if target is ProximityTarget:
 			# Dont consider it if it isn't interactable
-			if not Global.is_curr_state_past(target.interactable_after): 
+			if not target.can_interact(): 
 				continue
 			
 			var dist: float = global_position.distance_to(target.global_position)

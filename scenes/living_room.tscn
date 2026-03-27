@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cli8k5s6slb2o" path="res://systems/interaction/proximity_target.tscn" id="4_rdpj6"]
 [ext_resource type="PackedScene" uid="uid://c6f3rqw24ihsu" path="res://systems/indicator.tscn" id="5_cidui"]
 [ext_resource type="Texture2D" uid="uid://djuatxfm0qdrh" path="res://assets/characters/iris_idle.png" id="9_fbsx8"]
-[ext_resource type="Script" path="res://systems/character.gd" id="10_exyd1"]
+[ext_resource type="Script" uid="uid://b6e48k4lj22hj" path="res://systems/character.gd" id="10_exyd1"]
 [ext_resource type="Texture2D" uid="uid://carvu1dbisbqo" path="res://assets/blood.png" id="10_fbsx8"]
 [ext_resource type="Script" path="res://systems/vfx.gd" id="11_exyd1"]
 
@@ -116,6 +116,8 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("9_fbsx8")
 flip_h = true
 script = ExtResource("10_exyd1")
+character_id = "iris_living_room"
+spawn_during = 1
 dialogue_name = "iris_intro"
 proximity_target = NodePath("ProximityTarget2")
 indicator = NodePath("Indicator")

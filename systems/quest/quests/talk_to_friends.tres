@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://7uhydbqesnaf"]
+
+[ext_resource type="Script" uid="uid://dpqeeo4okflix" path="res://systems/quest/quest.gd" id="1_ixjf2"]
+[ext_resource type="Script" uid="uid://bfpo04t3m1jsp" path="res://systems/quest/task.gd" id="2_rsst1"]
+[ext_resource type="Script" uid="uid://tcih8r585fs5" path="res://systems/quest/tasks/dialogic_signal_tracker_task.gd" id="3_rsst1"]
+
+[sub_resource type="Resource" id="Resource_gqo2a"]
+script = ExtResource("3_rsst1")
+signal_name = "mark_intro_complete"
+task_id = "talk_to_mark"
+task_description = "Talk to Mark."
+metadata/_custom_type_script = "uid://tcih8r585fs5"
+
+[sub_resource type="Resource" id="Resource_rsst1"]
+script = ExtResource("1_ixjf2")
+quest_name = "talk_to_friends_1"
+display_name = "Talk to your friends"
+tasks = Array[ExtResource("2_rsst1")]([SubResource("Resource_gqo2a")])
+metadata/_custom_type_script = "uid://dpqeeo4okflix"
+
+[sub_resource type="Resource" id="Resource_58ytw"]
+script = ExtResource("3_rsst1")
+signal_name = "kevin_intro_complete"
+task_id = "talk_to_kevin"
+task_description = "Talk to Kevin."
+metadata/_custom_type_script = "uid://tcih8r585fs5"
+
+[resource]
+script = ExtResource("1_ixjf2")
+quest_name = "talk_to_friends_0"
+display_name = "Talk to your friends"
+tasks = Array[ExtResource("2_rsst1")]([SubResource("Resource_58ytw")])
+next_quest = SubResource("Resource_rsst1")
+metadata/_custom_type_script = "uid://dpqeeo4okflix"
