@@ -1,5 +1,5 @@
 truth: ...what is this?
-join noisemaker right 
+join noisemaker right
 truth: [color=#e85670][i]A small bronze piece. Circular... has a lens. Looks kinda like a monocle.[/i][/color]
 truth: [color=#e85670][i]Definitely too heavy to be decorative.[/i][/color]
 truth: Wait...
@@ -8,8 +8,10 @@ truth: [color=#e85670][i]It was on the floor. Across the counter.[/i][/color]
 truth: [color=#e85670][i]It wouldn’t shut up.[/i][/color]
 truth: [color=#e85670][i]That sound... sharp. Piercing.[/i][/color]
 truth: [color=#e85670][i]Like it was drilling straight into my head. I couldn't hear my own thoughts. [/i][/color]
+truth: [color=#e85670][i]Looking closer... is that a speaker inside?  [/i][/color]
+truth: [color=#e85670][i]That would explain the volume...[/i][/color]
 leave noisemaker
 truth: ...
 truth: A noisemaker.
-truth: Or at least, something repurposed to be one. 
+truth: Or at least, something repurposed to be one.
 truth: [color=#e85670][i]Something small... but loud enough to cover anything.[/i][/color]
